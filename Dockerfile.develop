@@ -1,0 +1,39 @@
+FROM ubuntu:24.04 AS build
+
+RUN apt-get update -y
+RUN apt-get upgrade -y
+
+RUN apt-get install -y build-essential git libboost-all-dev cmake ninja-build python3 liblzma-dev unzip
+
+RUN useradd -ms /bin/bash myuser
+USER myuser
+
+# Download, build, and install innoextract so we can extract the BOSS TONE STUDIO installer
+WORKDIR /home/myuser
+ADD --chown=myuser https://github.com/dscharrer/innoextract.git#1.9 innoextract
+WORKDIR /home/myuser/innoextract
+RUN cmake -Bbuild -GNinja 
+RUN cmake --build build
+USER root
+RUN cmake --install build
+
+# Download BOSS TONE STUDIO for Katana Gen 3, Windows release from Roland
+USER myuser
+WORKDIR /home/myuser
+ARG BOSS_TONE_STUDIO_ZIP_PATH=ktn3_bts_w110.zip
+ARG BOSS_TONE_STUDIO_ZIP_URL=https://static.roland.com/assets/media/zip/$BOSS_TONE_STUDIO_ZIP_PATH
+ADD --chown=myuser $BOSS_TONE_STUDIO_ZIP_URL .
+
+# Extract the installer
+RUN unzip $BOSS_TONE_STUDIO_ZIP_PATH
+WORKDIR /home/myuser/installer_extracted
+RUN innoextract "../BOSS TONE STUDIO for KATANA Gen 3 Installer.exe"
+
+# Patch the WebView frontend to use the Tauri backend
+ADD html-patches/html-katana-gen-3.patch /home/myuser
+WORKDIR /home/myuser/installer_extracted/localappdata/Roland/BOSS TONE STUDIO for KATANA Gen 3/html
+RUN patch -p1 -fi /home/myuser/html-katana-gen-3.patch
+
+FROM scratch
+COPY --from=build ["/home/myuser/installer_extracted/localappdata/Roland/BOSS TONE STUDIO for KATANA Gen 3/html", "/tauri/html"]
+COPY --from=build ["/home/myuser/installer_extracted", "/installer_extracted"]

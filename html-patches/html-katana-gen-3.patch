@@ -1,0 +1,660 @@
+Only in html_unmodified/: export.html
+diff '--color=auto' -bur html_unmodified/index.html html/index.html
+--- html_unmodified/index.html	2025-06-28 15:25:51.693195327 -0400
++++ html/index.html	2025-06-27 20:24:47.537197169 -0400
+@@ -105,7 +105,12 @@
+         <script src="js/lib/jquery.ui.touch-punch.js"></script>
+         <script src="js/lib/boss/event-system-def.js"></script>
+         <script src="js/lib/boss/event-system.js"></script>
+-        <script src="js/lib/native.js"></script>
++        <script src="js/lib/native-tauri.js"></script>
++        <script>
++            document.addEventListener('DOMContentLoaded', () => {
++                // This will be executed when the DOM is ready
++            });
++        </script>
+         <script src="import.js"></script>
+         <script src="js/utilities/constant.js"></script>
+         <script src="js/utilities/converter.js"></script>
+diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/backup/file_manager.js html/js/businesslogic/bts/backup/file_manager.js
+--- html_unmodified/js/businesslogic/bts/backup/file_manager.js	2025-06-28 15:25:51.668911056 -0400
++++ html/js/businesslogic/bts/backup/file_manager.js	2025-06-27 20:50:00.292293093 -0400
+@@ -38,9 +38,9 @@
+      *  @param {string} name デフォルトのファイル名
+      *  @param {string} extension 保存するファイルの拡張子
+      */
+-    exportCloud: function(successFunc, errorFunc, name, extension) {
++    exportCloud: async function(successFunc, errorFunc, name, extension) {
+       var fs = $native.fs;
+-      var temp = fs.path('temporary');
++      var temp = await fs.path('temporary');
+       fs.event.savefilename = function(fileName) {
+         if (fileName) {
+           try {
+@@ -52,7 +52,7 @@
+         }
+       };
+       try {
+-        fs.event.savefilename(temp + name + '.' + extension);
++        await fs.event.savefilename(temp + name + '.' + extension);
+         $native.app.exportfile(temp + name + '.' + extension);
+       } catch (e) {
+         errorFunc();
+@@ -65,14 +65,14 @@
+      *  @param {function} errorFunc import失敗時に実行する関数
+      *  @param {string} extension 開きたいファイルの拡張子
+      */
+-    importFile: function(successFunc, errorFunc, extension) {
++    importFile: async function(successFunc, errorFunc, extension) {
+       var fs = $native.fs;
+       var fileName = [extension];
+-      fs.event.openfilename = function(file) {
++      fs.event.openfilename = async function(file) {
+         if (file) {
+           try {
+             $native.app.control('indicator start');
+-            var json = fs.readString(file);
++            var json = await fs.readString(file);
+             $native.app.control('indicator stop');
+             try {
+               successFunc(json, getFileName(file)); // コールバック関数の実行
+@@ -88,7 +88,7 @@
+           }
+         }
+       };
+-      fs.openfilename(fileName);
++      await fs.openfilename(fileName);
+     },
+     /**
+      *  CloudからのImport処理
+@@ -99,7 +99,7 @@
+      */
+     importCloud: function(successFunc, errorFunc, extension, filter) {
+       var fs = $native.fs;
+-      $native.app.event.command = function(param1, param2) {
++      $native.app.event.command = async function(param1, param2) {
+         if (param1 == 'import' || param1 == 'open') {
+           if (param2.substr(param2.lastIndexOf('.') + 1) != extension) {
+             return;
+@@ -108,11 +108,11 @@
+           if (file.match(/^\/[a-zA-Z]:\//)) {
+             file = file.substr(1);
+           }
+-          file = file.replace(/\//g, fs.separator());
++          file = file.replace(/\//g, await fs.separator());
+           if (file) {
+             try {
+               $native.app.control('indicator start');
+-              var json = fs.readString(file);
++              var json = await fs.readString(file);
+               $native.app.control('indicator stop');
+               try {
+                 successFunc(json);
+diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/librarian/librarian_services.js html/js/businesslogic/bts/librarian/librarian_services.js
+--- html_unmodified/js/businesslogic/bts/librarian/librarian_services.js	2025-06-28 15:25:51.669197181 -0400
++++ html/js/businesslogic/bts/librarian/librarian_services.js	2025-06-27 20:50:06.844293508 -0400
+@@ -444,11 +444,11 @@
+     var fs = $native.fs;
+     var nameFile = util.convert2ValidFileNameStr(liveset.name);
+     fileManager.exportFile(
+-      function (name) {
++      async function (name) {
+         if (typeof successFunc === 'function' && successFunc !== undefined) {
+           successFunc();
+         }
+-        fs.writeString(name, liveset.toJSON());
++        await fs.writeString(name, liveset.toJSON());
+       },
+       function () {
+         if (typeof errorFunc === 'function' && errorFunc !== undefined) {
+@@ -503,23 +503,23 @@
+     const readyData = librarianServices.exportBtxReadyData;
+     readyData.clear();
+     let fs = $native.fs;
+-    let tmpFileName = fs.path('temporary') + "tmpExportBtxTsl" + '.' + ProductSetting.livesetFile.extension;
++    let tmpFileName = await fs.path('temporary') + "tmpExportBtxTsl" + '.' + ProductSetting.livesetFile.extension;
+     let base64Tsl = "";
+ 
+     /* データ準備 */
+     try {
+       let binTslHexStr = "";
+-      fs.writeString(tmpFileName, liveset.toJSON()); /* ファイルを書き出し */
++      await fs.writeString(tmpFileName, liveset.toJSON()); /* ファイルを書き出し */
+ 
+       /* バイナリで読み出しなおす */
+-      const fileInfo = fs.stat(tmpFileName);
++      const fileInfo = await fs.stat(tmpFileName);
+       let fileSize = fileInfo.size;
+       const fsReadDataMaxSize = 0x80000;  /* quattro側で一回の読み出しサイズに制限がある */
+       let seek = 0;
+       while (seek < fileSize) {
+         let readSize = (fileSize > fsReadDataMaxSize) ? fsReadDataMaxSize : fileSize;
+         let partial = { offset: seek, length: readSize };
+-        binTslHexStr += fs.readData(tmpFileName, partial);
++        binTslHexStr += await fs.readData(tmpFileName, partial);
+         seek += readSize;
+       }
+ 
+@@ -608,9 +608,9 @@
+   exportCloud: function (liveset) {
+     var fs = $native.fs;
+     fileManager.exportCloud(
+-      function (name) {
++      async function (name) {
+         try {
+-          fs.writeString(name, liveset.toJSON());
++          await fs.writeString(name, liveset.toJSON());
+           popup_close(LIBRARIAN_ELEMENT_IDS.exportToCloudDialog.slice(1));
+         } catch (e) {
+           ERROR_DIALOG_MAP.fileError.open();
+diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/midi_connect_controller.js html/js/businesslogic/bts/midi_connect_controller.js
+--- html_unmodified/js/businesslogic/bts/midi_connect_controller.js	2025-06-28 15:25:51.669568664 -0400
++++ html/js/businesslogic/bts/midi_connect_controller.js	2025-06-27 21:27:32.820687709 -0400
+@@ -381,9 +381,9 @@
+      * 初回接続ダイアログを開く or Storageの情報を使って自動接続
+      * index.jsで呼び出し
+      */
+-     startInitSetting: function() {
+-      midiConnectionController.setInputs($native.midi.input.endpoints());
+-      midiConnectionController.setOutputs($native.midi.output.endpoints());
++     startInitSetting: async function() {
++      midiConnectionController.setInputs(await $native.midi.input.endpoints());
++      midiConnectionController.setOutputs(await $native.midi.output.endpoints());
+       midiDOMController.updateMIDISelector();
+ 
+       // input, outputのどちらかが0件の場合はDeviceNotFoundのダイアログを開く
+diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/system_icon_setting.js html/js/businesslogic/bts/system_icon_setting.js
+--- html_unmodified/js/businesslogic/bts/system_icon_setting.js	2025-06-28 15:25:51.669762887 -0400
++++ html/js/businesslogic/bts/system_icon_setting.js	2025-06-27 20:49:26.789261881 -0400
+@@ -21,14 +21,14 @@
+   let pathDirIcon;
+   let pathDirCustom;
+ 
+-  function mkdirIconSetting() {
++  async function mkdirIconSetting() {
+     try {
+-      const prefDir = fs.path('library') + 'pref/';
++      const prefDir = await fs.path('library') + 'pref/';
+       const pathDirIcon = prefDir + "icon/";
+       const pathDirCustom = pathDirIcon + "custom/";
+-      fs.mkdir(prefDir);
+-      fs.mkdir(pathDirIcon);
+-      fs.mkdir(pathDirCustom);
++      await fs.mkdir(prefDir);
++      await fs.mkdir(pathDirIcon);
++      await fs.mkdir(pathDirCustom);
+ 
+       return {
+         prefDir,
+@@ -151,9 +151,9 @@
+         if (from) {
+           try {
+             let fileName = getFileName(from);
+-            deleteImage(effectId, typeName, function (iconDir) {
++            deleteImage(effectId, typeName, async function (iconDir) {
+               const to = formatPath(iconDir + fileName);
+-              fs.copy(from, to);
++              await fs.copy(from, to);
+               let iconWidth = iconItem.find(".icon-item-img img")[0].naturalWidth * 78 / iconItem.find(".icon-item-img img")[0].naturalHeight;
+               listTypeEffect[effectIndex].typeLists[typeIndex].img = to;
+               listTypeEffect[effectIndex].typeLists[typeIndex].iconWidth = Math.round(iconWidth + 10);
+@@ -246,16 +246,16 @@
+     }
+   }
+ 
+-  function deleteImage(effectId, typeName, callback) {
++  async function deleteImage(effectId, typeName, callback) {
+     try {
+       let effectName = listTypeEffect.find(item => item.id == effectId).label;
+-      fs.mkdir(pathDirCustom + effectName + "/");
+-      fs.mkdir(pathDirCustom + effectName + "/" + typeName + "/");
++      await fs.mkdir(pathDirCustom + effectName + "/");
++      await fs.mkdir(pathDirCustom + effectName + "/" + typeName + "/");
+   
+       let iconDir = pathDirCustom + effectName + "/" + typeName + "/";
+-      let prefContent = fs.contents(iconDir);
+-      prefContent.forEach(item => {
+-        fs.unlink(iconDir + item.name); //delete all image exist
++      let prefContent = await fs.contents(iconDir);
++      prefContent.forEach(async item => {
++        await fs.unlink(iconDir + item.name); //delete all image exist
+       })
+ 
+       if (typeof callback == 'function') {
+diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/tips_controller.js html/js/businesslogic/bts/tips_controller.js
+--- html_unmodified/js/businesslogic/bts/tips_controller.js	2025-06-28 15:25:51.669791510 -0400
++++ html/js/businesslogic/bts/tips_controller.js	2025-06-27 22:42:56.990780424 -0400
+@@ -13,15 +13,15 @@
+ var tipsVersion = 1;
+ var variationCntTemp = [];
+ 
+-function makeDirTips()  {
++async function makeDirTips()  {
+   try {
+-    const prefDir = fs.path('library') + 'pref/';
+-    fs.mkdir(prefDir);
+-    fs.mkdir(prefDir + "tips/");
+-    fs.mkdir(prefDir + "tips_image/");
++    const prefDir = await fs.path('library') + 'pref/';
++    await fs.mkdir(prefDir);
++    await fs.mkdir(prefDir + "tips/");
++    await fs.mkdir(prefDir + "tips_image/");
+ 
+     const _tipsHtmlDir = prefDir + "tips/" + langStr + "/";
+-    fs.mkdir(_tipsHtmlDir);
++    await fs.mkdir(_tipsHtmlDir);
+ 
+     const _tipsImgDir = prefDir + "tips_image/" ;
+ 
+@@ -70,26 +70,19 @@
+   });
+ }
+ BTSTipsController.prototype.loadTips = function (urlTips, dataType, successFunc, errorFunc, completeFunc) {
+-  $.ajax({
+-    url: urlTips,
+-    type: 'GET',
+-    timeout: BTS_SERVICE_TIMEOUT_MSEC,
+-    dataType,
+-    success: function (obj) {
+-      if (typeof successFunc == 'function') {
+-        successFunc(obj);
+-      }
+-    },
+-    error: function () {
++  $native.http.request({ url: urlTips }, (err, body) => {
++    if (err) {
+       if (typeof errorFunc == 'function') {
+         errorFunc();
+       }
+-    },
+-    complete: function () {
++    } else {
++      if (typeof successFunc == 'function') {
++        successFunc(body);
++      }
++    }
+       if (typeof completeFunc == 'function') {
+         completeFunc();
+       }
+-    }
+   });
+ };
+ 
+@@ -137,19 +130,20 @@
+           'text',
+         
+           // success function
+-          (obj) => {
++          async (obj) => {
+             let onlineData = obj;
+             var localData = null;
+ 
+             //load from storage
+             try {
+-              var pathTips = fs.path('library') + 'pref/';
+-              let tipsContent = fs.contents(pathTips);
++              var pathTips = await fs.path('library') + 'pref/';
++              await fs.contents(pathTips).then(async tipsContent => {
+               if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
+                 // this.loadTips(pathTips + "tipsapi.js");
+-                localData = fs.readString(pathTips + "tipsapi.js")
++                  localData = await fs.readString(pathTips + "tipsapi.js")
+                 //$.globalEval(scriptContent);
+               }
++              });
+             } catch (error) {
+               // console.log(error);
+             }
+@@ -163,27 +157,30 @@
+             let tipsApi = new TipsApi();
+             langStr = tipsApi.GetLanguageStr();
+             tipsVersion = tipsApi.GetVersion();
+-            dirTips = makeDirTips();
++            dirTips = await makeDirTips();
+ 
+             if (localData && localData == onlineData) {
+               
+             } else {
+-              fs.writeString(pathTips + "tipsapi.js", onlineData);
++              await fs.writeString(pathTips + "tipsapi.js", onlineData);
+             }
+           },
+         
+           // error
+-          () => {
++          async () => {
+             //load from storage if no data on the server
+             var localData = null;
+             try {
+-              var pathTips = fs.path('library') + 'pref/';
+-              let tipsContent = fs.contents(pathTips);
++              var pathTips = await fs.path('library') + 'pref/';
++              await fs.contents(pathTips).then(async tipsContent => {
+               if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
+                 // this.loadTips(pathTips + "tipsapi.js");
+-                localData = fs.readString(pathTips + "tipsapi.js")
+-                //$.globalEval(scriptContent);
++                  await fs.readString(pathTips + "tipsapi.js").then(scriptContent => {
++                    localData = scriptContent;
++                    $.globalEval(scriptContent);
++                  });
+               }
++              });
+             } catch (error) {
+               // console.log(error);
+             }
+@@ -193,7 +190,7 @@
+               let tipsApi = new TipsApi();
+               langStr = tipsApi.GetLanguageStr();
+               tipsVersion = tipsApi.GetVersion();
+-              dirTips = makeDirTips();
++              dirTips = await makeDirTips();
+             }
+           }
+         );
+@@ -229,25 +226,20 @@
+ }
+ 
+ BTSTipsController.prototype.loadContentHtml = function (url, tipsItemArr, fileName, successFunc, errorFunc) {
+-  $.ajax({
+-    url: url,
+-    type: 'GET',
+-    dataType: 'html',
+-    timeout: BTS_SERVICE_TIMEOUT_MSEC,
+-    success: function (data) {
+-      if (typeof successFunc == 'function') {
+-        successFunc(data, url, fileName, tipsItemArr);
+-      }
+-    },
+-    error: function (e) {
++  $native.http.request({ url: url }, (err, data) => {
++    if (err) {
+       if (typeof errorFunc == 'function') {
+         errorFunc(fileName, tipsItemArr);
+       }
++    } else {
++      if (typeof successFunc == 'function') {
++        successFunc(data, url, fileName, tipsItemArr);
++      }
+     }
+   });
+ };
+ 
+-BTSTipsController.prototype.tipsImgLoaded = function(src, fullPath, fileName, tipsItemArr) {
++BTSTipsController.prototype.tipsImgLoaded = async function(src, fullPath, fileName, tipsItemArr) {
+   const self = this;
+   try {
+     let tipsImgDir = dirTips.tipsImgDir;
+@@ -257,15 +249,15 @@
+     const type = tipsItemArr[2];
+     const variation = tipsItemArr[3];
+     let imgPageDir = tipsImgDir + page + "/";
+-    fs.mkdir(imgPageDir);
++    await fs.mkdir(imgPageDir);
+     let imgBlockDir = block !== "" ? imgPageDir + block + "/" : imgPageDir;
+-    fs.mkdir(imgBlockDir);
++    await fs.mkdir(imgBlockDir);
+     let imgTypeDir = type !== "" ? imgBlockDir + type + "/" : imgBlockDir;
+-    fs.mkdir(imgTypeDir);
++    await fs.mkdir(imgTypeDir);
+     let imgVariationDir = variation !== "" ? imgTypeDir + variation + "/" : imgTypeDir;
+-    fs.mkdir(imgVariationDir);
++    await fs.mkdir(imgVariationDir);
+ 
+-    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
++    let tipsVariationDir = await self.createTipsVariationDir(page, block, type, variation);
+     let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
+ 
+     let origin = "Local";
+@@ -275,32 +267,35 @@
+         origin = "HTTP";
+     }
+     let imgName = fullPath.substring(fullPath.lastIndexOf('/') + 1)
+-    let imgContent = fs.contents(imgVariationDir);
+ 
++    await fs.contents(imgVariationDir).then(async imgContent => {
+     var targetPath = urlDefinition.TIPS_DOMAIN;
+     if (origin != "Local" || fullPath.includes(targetPath)) {
+       if (imgContent.findIndex(item => item.name == imgName) != -1) {
+-        fs.unlink(imgVariationDir + imgName);
++          await fs.unlink(imgVariationDir + imgName);
+       }
+ 
+       if(origin != "Local") {
+-        http.download(src, imgVariationDir + imgName);
++          await http.download(src, imgVariationDir + imgName);
+       } else {
+-        fs.copy(fullPath.replace("file:///", ""), imgVariationDir + imgName);
++          await fs.copy(fullPath.replace("file:///", ""), imgVariationDir + imgName);
+       }
+ 
+       // update content html
+-      let htmlContents = fs.contents(tipsVariationDir);
++        await fs.contents(tipsVariationDir).then(async htmlContents => {
+       if (htmlContents.findIndex(item => item.name == fileName) != -1) {
+-        let localContentHtml = fs.readString(tipsVariationDir + fileName);
++            await fs.readString(tipsVariationDir + fileName).then(async localContentHtml => {
+         let newContentHtml = localContentHtml.replace(src, imgVariationDir + imgName);
+-        fs.writeString(tipsVariationDir + fileName, newContentHtml);
++              await fs.writeString(tipsVariationDir + fileName, newContentHtml);
+ 
+         if(htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
+           self.htmlLoaded[htmlLoadedIndex].content = newContentHtml;
+         };
++            });
+       }
++        });
+     }
++    });
+   } catch (error) {
+     // console.error("Failed to load image:" + src);
+   }
+@@ -328,19 +323,19 @@
+ 
+ BTSTipsController.prototype.updateContentHtml = function () { // called from URLDefinition.prototype._updateTipsApi()
+   var self = this;
+-  let updateHtmlToStorage = (htmlContent, url, fileName, _tipDetail) => {
++  let updateHtmlToStorage = async (htmlContent, url, fileName, _tipDetail) => {
+     if (_tipDetail.length <=3) return;
+     const page = _tipDetail[0];
+     const block = _tipDetail[1];
+     const type = _tipDetail[2];
+     const variation = _tipDetail[3];
+ 
+-    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
+-    let tipsVariationContents = fs.contents(tipsVariationDir);
++    let tipsVariationDir = await self.createTipsVariationDir(page, block, type, variation);
++    await fs.contents(tipsVariationDir).then(async tipsVariationContents => {
+     if (tipsVariationContents.findIndex(item => item.name == fileName) != -1) {
+-      fs.unlink(tipsVariationDir + fileName); //file exist
++        await fs.unlink(tipsVariationDir + fileName); //file exist
+     }
+-    fs.writeString(tipsVariationDir + fileName, htmlContent); // create html file
++      await fs.writeString(tipsVariationDir + fileName, htmlContent); // create html file
+     let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
+     if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
+       self.htmlLoaded[htmlLoadedIndex] = {
+@@ -352,6 +347,7 @@
+         content: htmlContent
+       };
+     };
++    });
+ 
+     //check and update image
+     setTimeout(() => {
+@@ -359,14 +355,14 @@
+     }, 500);
+   }
+ 
+-  let updateHtmlFail = (fileName, _tipDetail) => {
++  let updateHtmlFail = async (fileName, _tipDetail) => {
+     if (_tipDetail.length <=3) return;
+     const page = _tipDetail[0];
+     const block = _tipDetail[1];
+     const type = _tipDetail[2];
+     const variation = _tipDetail[3];
+     let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
+-    let tipsVariationContents = fs.contents(tipsVariationDir);
++    await fs.contents(tipsVariationDir).then(async tipsVariationContents => {
+     let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
+     if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
+       self.htmlLoaded[htmlLoadedIndex] = {
+@@ -375,9 +371,10 @@
+         type,
+         variation,
+         url: tipsVariationDir + fileName,
+-        content: tipsVariationContents.findIndex(item => item.name == fileName) >= 0 ? fs.readString(tipsVariationContents + fileName) : null,
++          content: tipsVariationContents.findIndex(item => item.name == fileName) >= 0 ? await fs.readString(tipsVariationContents + fileName) : null,
+       };
+     };
++    });
+   }
+ 
+   let successFunc = () => {
+@@ -501,20 +498,20 @@
+   self.showTipsByTab(tipsElement);
+ };
+ 
+-BTSTipsController.prototype.createTipsVariationDir = function (page, block, type, variation) {
++BTSTipsController.prototype.createTipsVariationDir = async function (page, block, type, variation) {
+   try {
+     if (variation == undefined) {
+       variation = TIPS_VARIATION;
+     }
+     let tipsHtmlDir = dirTips.tipsHtmlDir;
+     let tipsPageDir = tipsHtmlDir + page + "/";
+-    fs.mkdir(tipsPageDir);
++    await fs.mkdir(tipsPageDir);
+     let tipsBlockDir = block !== "" ? tipsPageDir + block + "/" : tipsPageDir;
+-    fs.mkdir(tipsBlockDir);
++    await fs.mkdir(tipsBlockDir);
+     let tipsTypeDir = type !== "" ? tipsBlockDir + type + "/" : tipsBlockDir;
+-    fs.mkdir(tipsTypeDir);
++    await fs.mkdir(tipsTypeDir);
+     let tipsVariationDir = variation !== "" ? tipsTypeDir + variation + "/" : tipsTypeDir;
+-    fs.mkdir(tipsVariationDir);
++    await fs.mkdir(tipsVariationDir);
+ 
+     return tipsVariationDir;
+   } catch (error) {
+diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/url_definition.js html/js/businesslogic/bts/url_definition.js
+--- html_unmodified/js/businesslogic/bts/url_definition.js	2025-06-28 15:25:51.669823841 -0400
++++ html/js/businesslogic/bts/url_definition.js	2025-06-27 20:15:03.005563135 -0400
+@@ -101,38 +101,41 @@
+       completeFunc();
+     }
+   };
+-  $.ajax({
+-    url: ProductSetting.toneCentral.info().url,
+-    type: 'GET',
+-    contentType: "application/json",
+-    success: function (obj) {
+-      try {
+-        result.urlObj = JSON.parse(obj);
+-      } catch (e) {
+-        result.urlObj = obj;
+-      }
+-      result.isSuccess = true;
+-    },
+-    error: function () {
++
++  $native.http.request({ url: ProductSetting.toneCentral.info().url }, (err, body) => {
++    if (err) {
+       result.urlObj = null;
+       result.isSuccess = false;
+ 
+       if (ProductSetting.toneCentral.devMode == false) {
+         /* PIDDまでUUIDで表現された仮ファイルを取得する処理 */
+         const urlSubstitute = ProductSetting.toneCentral.info().urlSubstitute
+-        $.ajax({
+-          url: urlSubstitute,
+-          type: 'GET',
+-          dataType: 'json',
+-          success: function (obj) {
+-            result.urlObj = obj;
++        $native.http.request({ url: urlSubstitute }, (err, body) => {
++            if (err) {
++                result.urlObj = null;
++                result.isSuccess = false;
++            } else {
++                try {
++                    result.urlObj = JSON.parse(body);
++                } catch (e) {
++                    result.urlObj = body;
++                }
+             result.isSuccess = true;
+-          },
+-          complete: completeHndl
++            }
++            completeHndl();
+         });
++      } else {
++        completeHndl();
++      }
++    } else {
++        try {
++            result.urlObj = JSON.parse(body);
++        } catch (e) {
++            result.urlObj = body;
++        }
++        result.isSuccess = true;
++        completeHndl();
+       }
+-    },
+-    complete: completeHndl
+   });
+ };
+ 
+diff '--color=auto' -bur html_unmodified/js/businesslogic/btx_controller.js html/js/businesslogic/btx_controller.js
+--- html_unmodified/js/businesslogic/btx_controller.js	2025-06-28 15:25:51.685977688 -0400
++++ html/js/businesslogic/btx_controller.js	2025-06-27 20:47:11.493395082 -0400
+@@ -342,7 +342,7 @@
+     });
+ });
+ 
+-$native.btx.event.onSendMsgToBTS = (msg) => {
++$native.btx.event.onSendMsgToBTS = async (msg) => {
+     const importBtxData = librarianServices.importBtxData;
+ 
+     const getDownloadedTslFileData = (packetNo) => {
+@@ -525,13 +525,13 @@
+                 }
+ 
+                 const fs = $native.fs;
+-                const tmpFileName = fs.path('temporary') + "tmpImportBtxTsl" + '.' + ProductSetting.extension.liveset;
++                const tmpFileName = await fs.path('temporary') + "tmpImportBtxTsl" + '.' + ProductSetting.extension.liveset;
+                 try {
+                     /* ファイル書き出し */
+-                    fs.writeData(tmpFileName, binTslHexStr);
++                    await fs.writeData(tmpFileName, binTslHexStr);
+ 
+                     /* インポート */
+-                    let tslJson = fs.readString(tmpFileName);
++                    let tslJson = await fs.readString(tmpFileName);
+                     let liveset = new LibrarianModel('', librarianCommonInfo.settingMode);
+                     liveset.load(tslJson);
+                     if (liveset.cells[0].length > librarianCommonInfo.maxPatchNum) {
+diff '--color=auto' -bur html_unmodified/js/businesslogic/system_controller.js html/js/businesslogic/system_controller.js
+--- html_unmodified/js/businesslogic/system_controller.js	2025-06-28 15:25:51.686087373 -0400
++++ html/js/businesslogic/system_controller.js	2025-06-27 20:48:52.125335961 -0400
+@@ -57,7 +57,7 @@
+ 		midi.output.disconnect(outputs[i]);
+ 	});
+ 
+-	function list() {
++	async function list() {
+ 		var doc = '';
+ 
+ 		function header() {
+@@ -85,8 +85,8 @@
+ 				);
+ 		}
+ 
+-		inputs = midi.input.endpoints();
+-		outputs = midi.output.endpoints();
++		inputs = await midi.input.endpoints();
++		outputs = await midi.output.endpoints();
+ 
+ 		doc = header();
+ 		for (var i = 0, num = inputs.length; i < num; i++) {
+Only in html/js/lib: native-tauri.js
