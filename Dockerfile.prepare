@@ -1,9 +1,9 @@
-FROM ubuntu:24.04 AS build
+FROM ubuntu:24.04 AS prepare
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
 
-RUN apt-get install -y build-essential git libboost-all-dev cmake ninja-build python3 liblzma-dev unzip
+RUN apt-get install -y build-essential git libboost-all-dev cmake ninja-build python3 liblzma-dev unzip imagemagick 7zip
 
 RUN useradd -ms /bin/bash myuser
 USER myuser
@@ -34,6 +34,17 @@ ADD html-patches/html-katana-gen-3.patch /home/myuser
 WORKDIR /home/myuser/installer_extracted/localappdata/Roland/BOSS TONE STUDIO for KATANA Gen 3/html
 RUN patch -p1 -fi /home/myuser/html-katana-gen-3.patch
 
+WORKDIR /home/myuser/icons
+RUN cp -v "/home/myuser/installer_extracted/localappdata/Roland/BOSS TONE STUDIO for KATANA Gen 3/html/images/bts_logo.png" /home/myuser/
+RUN convert /home/myuser/bts_logo.png    -resize 128x128 png32:128x128.png
+RUN convert /home/myuser/bts_logo.png    -resize 256x256 png32:128x128@2x.png
+RUN convert /home/myuser/bts_logo.png    -resize 32x32   png32:32x32.png
+
+WORKDIR /home/myuser/installer_extracted/app
+RUN 7z x "BOSS TONE STUDIO for KATANA Gen 3.exe"
+
+
 FROM scratch
-COPY --from=build ["/home/myuser/installer_extracted/localappdata/Roland/BOSS TONE STUDIO for KATANA Gen 3/html", "/tauri/html"]
-COPY --from=build ["/home/myuser/installer_extracted", "/installer_extracted"]
+COPY --from=prepare /home/myuser/icons /tauri/src-tauri/icons
+COPY --from=prepare ["/home/myuser/installer_extracted/localappdata/Roland/BOSS TONE STUDIO for KATANA Gen 3/html/", "/tauri/html/"]
+COPY --from=prepare ["/home/myuser/installer_extracted", "/installer_extracted"]
