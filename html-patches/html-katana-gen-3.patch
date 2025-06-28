@@ -1,22 +1,662 @@
-Only in html_unmodified/: export.html
-diff '--color=auto' -bur html_unmodified/index.html html/index.html
+diff '--color=auto' -urN html_unmodified/export.html html/export.html
+--- html_unmodified/export.html	2025-06-28 15:25:51.693142468 -0400
++++ html/export.html	1969-12-31 19:00:00.000000000 -0500
+@@ -1,207 +0,0 @@
+-<!data type html>
+-<html lang="en">
+-<head>
+-<meta charset="utf-8">
+-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+-<meta name="format-detection" content="telephone=no, email=no, address=no">
+-<link rel="stylesheet" type="text/css" href="css/additionals">
+-<link rel="stylesheet" type="text/css" href="css/bar.css">
+-<link rel="stylesheet" type="text/css" href="css/bts-stompbox.css">
+-<link rel="stylesheet" type="text/css" href="css/btx-msg-dialog.css">
+-<link rel="stylesheet" type="text/css" href="css/btx-offline-view.css">
+-<link rel="stylesheet" type="text/css" href="css/chain.css">
+-<link rel="stylesheet" type="text/css" href="css/check-box.css">
+-<link rel="stylesheet" type="text/css" href="css/common.css">
+-<link rel="stylesheet" type="text/css" href="css/customs.css">
+-<link rel="stylesheet" type="text/css" href="css/dial.css">
+-<link rel="stylesheet" type="text/css" href="css/dial2.css">
+-<link rel="stylesheet" type="text/css" href="css/group-button-footer.css">
+-<link rel="stylesheet" type="text/css" href="css/group-button.css">
+-<link rel="stylesheet" type="text/css" href="css/inline-radio-button.css">
+-<link rel="stylesheet" type="text/css" href="css/knob.css">
+-<link rel="stylesheet" type="text/css" href="css/label.css">
+-<link rel="stylesheet" type="text/css" href="css/label_border.css">
+-<link rel="stylesheet" type="text/css" href="css/latch-button.css">
+-<link rel="stylesheet" type="text/css" href="css/menu-button.css">
+-<link rel="stylesheet" type="text/css" href="css/page.css">
+-<link rel="stylesheet" type="text/css" href="css/push-button.css">
+-<link rel="stylesheet" type="text/css" href="css/radio-button.css">
+-<link rel="stylesheet" type="text/css" href="css/select-box.css">
+-<link rel="stylesheet" type="text/css" href="css/select-list.css">
+-<link rel="stylesheet" type="text/css" href="css/select-panel.css">
+-<link rel="stylesheet" type="text/css" href="css/slider.css">
+-<link rel="stylesheet" type="text/css" href="css/spinner.css">
+-<link rel="stylesheet" type="text/css" href="css/stringer.css">
+-<link rel="stylesheet" type="text/css" href="css/tab.css">
+-<link rel="stylesheet" type="text/css" href="css/terms-of-use-page.css">
+-<link rel="stylesheet" type="text/css" href="css/text-input.css">
+-<link rel="stylesheet" type="text/css" href="css/toggle-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-app-logo-label.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-ctl-exp.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-dial-dialog-style.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-dial.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-group-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-having-suffix-stringer.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-icon-group-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-label.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-btn.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-edit-btn-select-box.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-liveset-table.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-export-to-dialog.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-liveset-list-style.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-patch-list-style.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-table.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-text-input.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-menu-list-style.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-menu-page.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-menu-select-box.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-message-label.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-numpad-list.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-numpad.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-patch-select.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-popup-wrapper.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-progress-bar-style.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-push-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-select-box.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-setting-menu-btn.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-slider.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-small-select-list.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-spinner.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-switch-toggle-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-tab.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-tuner.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts-write-btn-select-box.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/bts_dial_2ctrl.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/check-box.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/common.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/group-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/hidden.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/knob.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/label.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/latch-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/menu-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/page.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/push-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/select-box.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/select-list.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/slider.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/stringer.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/tab.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/text-input.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/toggle-button.css">
+-<link rel="stylesheet" type="text/css" href="css/bts/tonecentral.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-knob.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-label.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-latch-button.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-led.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-menu-button.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-navi-group-button.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-spinner.css">
+-<link rel="stylesheet" type="text/css" href="css/ktn/ktn-toggle-button.css">
+-<script src="js/lib/jquery.js"></script>
+-<script src="js/lib/boss"></script>
+-<script src="js/lib/jquery-ui.js"></script>
+-<script src="js/lib/jquery.ui.touch-punch.js"></script>
+-<script src="js/lib/native.js"></script>
+-<script src="import.js"></script>
+-<script src="js/config/editor_setting.js"></script>
+-<script src="js/config/librarian_setting.js"></script>
+-<script src="js/config/product_setting.js"></script>
+-<script src="js/config/address_map.js"></script>
+-<script src="js/config/message.js"></script>
+-<script src="js/config/resource.js"></script>
+-<script src="js/utilities/constant.js"></script>
+-<script src="js/utilities/converter.js"></script>
+-<script src="js/common/readwrite_logic.js"></script>
+-<script src="js/common/dialog.js"></script>
+-<script src="js/common/editor.js"></script>
+-<script src="js/common/librarian.js"></script>
+-<script src="js/common/librarian_cell.js"></script>
+-<script src="js/common/midi_controller.js"></script>
+-<script src="js/common/midi_dbg.js"></script>
+-<script src="js/common/parameter.js"></script>
+-<script src="js/item/bar_controller.js"></script>
+-<script src="js/item/check_box_controller.js"></script>
+-<script src="js/item/dial_controller.js"></script>
+-<script src="js/item/knob_controller.js"></script>
+-<script src="js/item/radio_button_controller.js"></script>
+-<script src="js/item/select_box_controller.js"></script>
+-<script src="js/item/select_list_controller.js"></script>
+-<script src="js/item/select_panel_controller.js"></script>
+-<script src="js/item/slider_controller.js"></script>
+-<script src="js/item/spinner_controller.js"></script>
+-<script src="js/item/stringer_controller.js"></script>
+-<script src="js/item/tab_controller.js"></script>
+-<script src="js/item/text_input_controller.js"></script>
+-<script src="js/item/toggle_button_controller.js"></script>
+-<script src="js/item/item_logic.js"></script>
+-<script src="js/businesslogic/btx_controller.js"></script>
+-<script src="js/businesslogic/editor_controller.js"></script>
+-<script src="js/businesslogic/librarian_controller.js"></script>
+-<script src="js/businesslogic/librarian_model.js"></script>
+-<script src="js/businesslogic/system_controller.js"></script>
+-<script src="js/businesslogic/bts/address_const.js"></script>
+-<script src="js/businesslogic/bts/add_svg.js"></script>
+-<script src="js/businesslogic/bts/bts_controller.js"></script>
+-<script src="js/businesslogic/bts/dial_wheel_action.js"></script>
+-<script src="js/businesslogic/bts/effect_controller.js"></script>
+-<script src="js/businesslogic/bts/error_dialog.js"></script>
+-<script src="js/businesslogic/bts/index.js"></script>
+-<script src="js/businesslogic/bts/log_manager.js"></script>
+-<script src="js/businesslogic/bts/menu_page_controller.js"></script>
+-<script src="js/businesslogic/bts/midi_connect_controller.js"></script>
+-<script src="js/businesslogic/bts/midi_observe_controller.js"></script>
+-<script src="js/businesslogic/bts/numpad.js"></script>
+-<script src="js/businesslogic/bts/numpad_list.js"></script>
+-<script src="js/businesslogic/bts/numpad_model.js"></script>
+-<script src="js/businesslogic/bts/patch_controller.js"></script>
+-<script src="js/businesslogic/bts/processing_controller.js"></script>
+-<script src="js/businesslogic/bts/system_icon_setting.js"></script>
+-<script src="js/businesslogic/bts/tips_controller.js"></script>
+-<script src="js/businesslogic/bts/url_definition.js"></script>
+-<script src="js/businesslogic/bts/util.js"></script>
+-<script src="js/businesslogic/bts/backup/all_backup.js"></script>
+-<script src="js/businesslogic/bts/backup/all_backup_model.js"></script>
+-<script src="js/businesslogic/bts/backup/all_data.js"></script>
+-<script src="js/businesslogic/bts/backup/file_manager.js"></script>
+-<script src="js/businesslogic/bts/backup/progress_dialog.js"></script>
+-<script src="js/businesslogic/bts/librarian/assign_librarian_dynamic_dom_controller.js"></script>
+-<script src="js/businesslogic/bts/librarian/assign_librarian_static_dom_events.js"></script>
+-<script src="js/businesslogic/bts/librarian/librarian.js"></script>
+-<script src="js/businesslogic/bts/librarian/librarian_const.js"></script>
+-<script src="js/businesslogic/bts/librarian/librarian_controller.js"></script>
+-<script src="js/businesslogic/bts/librarian/librarian_dialog_controller.js"></script>
+-<script src="js/businesslogic/bts/librarian/librarian_model.js"></script>
+-<script src="js/businesslogic/bts/librarian/librarian_services.js"></script>
+-<script src="js/businesslogic/bts/tonecentral/tone_central_controller.js"></script>
+-<script src="js/businesslogic/bts/tonecentral/tone_central_service.js"></script>
+-<script src="js/businesslogic/chain/ChainBlock.js"></script>
+-<script src="js/businesslogic/chain/ChainBranchPoint.js"></script>
+-<script src="js/businesslogic/chain/ChainBranchPointLine.js"></script>
+-<script src="js/businesslogic/chain/ChainCell.js"></script>
+-<script src="js/businesslogic/chain/ChainDivider.js"></script>
+-<script src="js/businesslogic/chain/ChainEffector.js"></script>
+-<script src="js/businesslogic/chain/ChainFV.js"></script>
+-<script src="js/businesslogic/chain/ChainInput.js"></script>
+-<script src="js/businesslogic/chain/ChainLine.js"></script>
+-<script src="js/businesslogic/chain/ChainMixer.js"></script>
+-<script src="js/businesslogic/chain/ChainSpeaker.js"></script>
+-<script src="js/businesslogic/chain/ChainSplitter.js"></script>
+-<script src="js/businesslogic/chain/chain_config.js"></script>
+-<script src="js/businesslogic/chain/chain_controller.js"></script>
+-<script src="js/businesslogic/chain/chain_util.js"></script>
+-<script src="js/businesslogic/ktn/assign_controller.js"></script>
+-<script src="js/businesslogic/ktn/assign_setting.js"></script>
+-<script src="js/businesslogic/ktn/ktn_mk1_model.js"></script>
+-<script src="js/businesslogic/ktn/ktn_mk2_model.js"></script>
+-<script src="js/businesslogic/ktn/ktn_mk2_model_init210.json"></script>
+-<script src="js/businesslogic/ktn/liveset_converter.js"></script>
+-<script src="js/businesslogic/ktn/model_controller.js"></script>
+-<script src="js/businesslogic/ktn/model_info.js"></script>
+-<script src="js/businesslogic/terms_of_use/app_terms_of_use.txt"></script>
+-<script src="js/businesslogic/terms_of_use/tou_controller.js"></script>
+-<script src="js/businesslogic/terms_of_use/tou_def.js"></script>
+-</head>
+-<body oncontextmenu="return false">
+-<div id="app-container">  <div id="layout-wrapper"></div></div></body>
+-</html>
+diff '--color=auto' -urN html_unmodified/index.html html/index.html
 --- html_unmodified/index.html	2025-06-28 15:25:51.693195327 -0400
 +++ html/index.html	2025-06-27 20:24:47.537197169 -0400
-@@ -105,7 +105,12 @@
-         <script src="js/lib/jquery.ui.touch-punch.js"></script>
-         <script src="js/lib/boss/event-system-def.js"></script>
-         <script src="js/lib/boss/event-system.js"></script>
+@@ -1,219 +1,224 @@
+-<!data type html>
+-    <html lang="en">
+-
+-    <head>
+-        <meta charset="utf-8">
+-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+-        <meta name="format-detection" content="telephone=no, email=no, address=no">
+-        <link rel="stylesheet" type="text/css" href="css/bar.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts-stompbox.css">
+-        <link rel="stylesheet" type="text/css" href="css/chain.css">
+-        <link rel="stylesheet" type="text/css" href="css/check-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/common.css">
+-        <link rel="stylesheet" type="text/css" href="css/dial.css">
+-        <link rel="stylesheet" type="text/css" href="css/dial2.css">
+-        <link rel="stylesheet" type="text/css" href="css/group-button-footer.css">
+-        <link rel="stylesheet" type="text/css" href="css/group-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/inline-radio-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/knob.css">
+-        <link rel="stylesheet" type="text/css" href="css/label.css">
+-        <link rel="stylesheet" type="text/css" href="css/label_border.css">
+-        <link rel="stylesheet" type="text/css" href="css/latch-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/menu-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/page.css">
+-        <link rel="stylesheet" type="text/css" href="css/push-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/radio-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/select-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/select-list.css">
+-        <link rel="stylesheet" type="text/css" href="css/select-panel.css">
+-        <link rel="stylesheet" type="text/css" href="css/slider.css">
+-        <link rel="stylesheet" type="text/css" href="css/spinner.css">
+-        <link rel="stylesheet" type="text/css" href="css/stringer.css">
+-        <link rel="stylesheet" type="text/css" href="css/tab.css">
+-        <link rel="stylesheet" type="text/css" href="css/text-input.css">
+-        <link rel="stylesheet" type="text/css" href="css/toggle-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-app-logo-label.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-ctl-exp.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-dial-dialog-style.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-dial.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-group-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-having-suffix-stringer.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-icon-group-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-label.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-btn.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-edit-btn-select-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-liveset-table.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-liveset-list-style.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-patch-list-style.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-table.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-text-input.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-menu-list-style.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-menu-page.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-menu-select-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-message-label.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-numpad-list.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-numpad.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-patch-select.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-popup-wrapper.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-progress-bar-style.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-push-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-select-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-setting-menu-btn.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-slider.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-small-select-list.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-spinner.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-switch-toggle-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-tab.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-tuner.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-write-btn-select-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts_dial_2ctrl.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/check-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/common.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/group-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/hidden.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/knob.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/label.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/latch-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/menu-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/page.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/push-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/select-box.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/select-list.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/slider.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/stringer.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/tab.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/text-input.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/toggle-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/tonecentral.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-knob.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-label.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-latch-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-led.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-menu-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-navi-group-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-spinner.css">
+-        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-toggle-button.css">
+-        <link rel="stylesheet" type="text/css" href="css/customs.css">
+-        <link rel="stylesheet" type="text/css" href="css/btx-msg-dialog.css">
+-
+-        <link rel="stylesheet" type="text/css" href="css/terms-of-use-page.css">
+-        <link rel="stylesheet" type="text/css" href="css/btx-offline-view.css">
+-        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-export-to-dialog.css">
+-
+-        <script src="js/lib/jquery.js"></script>
+-        <script src="js/lib/jquery-ui.js"></script>
+-        <script src="js/lib/jquery.ui.touch-punch.js"></script>
+-        <script src="js/lib/boss/event-system-def.js"></script>
+-        <script src="js/lib/boss/event-system.js"></script>
 -        <script src="js/lib/native.js"></script>
+-        <script src="import.js"></script>
+-        <script src="js/utilities/constant.js"></script>
+-        <script src="js/utilities/converter.js"></script>
+-        <script src="js/config/address_map.js"></script>
+-        <script src="js/config/editor_setting.js"></script>
+-        <script src="js/config/librarian_setting.js"></script>
+-        <script src="js/config/product_setting.js"></script>
+-        <script src="js/config/message.js"></script>
+-        <script src="js/common/midi_controller.js"></script>
+-        <script src="js/common/parameter.js"></script>
+-        <script src="js/businesslogic/bts/bts_controller.js"></script>
+-        <script src="js/common/readwrite_logic.js"></script>
+-        <script src="js/common/librarian_cell.js"></script>
+-        <script src="js/common/librarian.js"></script>
+-        <script src="js/common/editor.js"></script>
+-        <script src="js/item/bar_controller.js"></script>
+-        <script src="js/item/check_box_controller.js"></script>
+-        <script src="js/item/dial_controller.js"></script>
+-        <script src="js/item/knob_controller.js"></script>
+-        <script src="js/item/radio_button_controller.js"></script>
+-        <script src="js/item/select_box_controller.js"></script>
+-        <script src="js/item/select_list_controller.js"></script>
+-        <script src="js/item/select_panel_controller.js"></script>
+-        <script src="js/item/slider_controller.js"></script>
+-        <script src="js/item/spinner_controller.js"></script>
+-        <script src="js/item/stringer_controller.js"></script>
+-        <script src="js/item/tab_controller.js"></script>
+-        <script src="js/item/text_input_controller.js"></script>
+-        <script src="js/item/toggle_button_controller.js"></script>
+-        <script src="js/item/item_logic.js"></script>
+-        <script src="js/common/dialog.js"></script>
+-
+-        <script src="js/businesslogic/bts/address_const.js"></script>
+-        <script src="js/businesslogic/bts/add_svg.js"></script>
+-        <script src="js/businesslogic/bts/dial_wheel_action.js"></script>
+-        <script src="js/businesslogic/bts/effect_controller.js"></script>
+-        <script src="js/businesslogic/bts/error_dialog.js"></script>
+-        <script src="js/businesslogic/bts/index.js"></script>
+-        <script src="js/businesslogic/bts/log_manager.js"></script>
+-        <script src="js/businesslogic/bts/menu_page_controller.js"></script>
+-        <script src="js/businesslogic/bts/midi_connect_controller.js"></script>
+-        <script src="js/businesslogic/bts/midi_observe_controller.js"></script>
+-        <script src="js/businesslogic/bts/numpad.js"></script>
+-        <script src="js/businesslogic/bts/numpad_list.js"></script>
+-        <script src="js/businesslogic/bts/numpad_model.js"></script>
+-        <script src="js/businesslogic/bts/patch_controller.js"></script>
+-        <script src="js/businesslogic/bts/processing_controller.js"></script>
+-        <script src="js/businesslogic/bts/url_definition.js"></script>
+-        <script src="js/businesslogic/bts/util.js"></script>
+-
+-        <!-- Chain -->
+-        <script src="js/businesslogic/chain/chain_util.js"></script>
+-        <script src="js/businesslogic/chain/chain_config.js"></script>
+-        <script src="js/businesslogic/chain/ChainCell.js"></script>
+-        <script src="js/businesslogic/chain/ChainBlock.js"></script>
+-        <script src="js/businesslogic/chain/ChainLine.js"></script>
+-        <script src="js/businesslogic/chain/ChainBranchPointLine.js"></script>
+-        <script src="js/businesslogic/chain/ChainEffector.js"></script>
+-        <script src="js/businesslogic/chain/ChainInput.js"></script>
+-        <script src="js/businesslogic/chain/ChainSpeaker.js"></script>
+-        <script src="js/businesslogic/chain/ChainFV.js"></script>
+-        <script src="js/businesslogic/chain/ChainBranchPoint.js"></script>
+-        <script src="js/businesslogic/chain/ChainDivider.js"></script>
+-        <script src="js/businesslogic/chain/ChainMixer.js"></script>
+-        <script src="js/businesslogic/chain/ChainSplitter.js"></script>
+-        <script src="js/businesslogic/chain/chain_controller.js"></script>
+-
+-        <script src="js/businesslogic/bts/librarian/assign_librarian_dynamic_dom_controller.js"></script>
+-        <script src="js/businesslogic/bts/librarian/assign_librarian_static_dom_events.js"></script>
+-        <script src="js/businesslogic/bts/librarian/librarian.js"></script>
+-        <script src="js/businesslogic/bts/librarian/librarian_const.js"></script>
+-        <script src="js/businesslogic/bts/librarian/librarian_controller.js"></script>
+-        <script src="js/businesslogic/bts/librarian/librarian_dialog_controller.js"></script>
+-        <script src="js/businesslogic/bts/librarian/librarian_model.js"></script>
+-        <script src="js/businesslogic/bts/librarian/librarian_services.js"></script>
+-        <script src="js/businesslogic/bts/backup/all_data.js"></script>
+-        <script src="js/businesslogic/bts/backup/all_backup.js"></script>
+-        <script src="js/businesslogic/bts/backup/all_backup_model.js"></script>
+-        <script src="js/businesslogic/bts/backup/file_manager.js"></script>
+-        <script src="js/businesslogic/bts/backup/progress_dialog.js"></script>
+-        <!-- <script src="js/businesslogic/bts/tonecentral/tone_central_controller.js"></script>
+-        <script src="js/businesslogic/bts/tonecentral/tone_central_service.js"></script> -->
+-
+-        <!-- BTX -->
+-        <script src="js/businesslogic/btx_controller.js"></script>
+-
+-        <script src="js/businesslogic/ktn/liveset_converter.js"></script>
+-        <script src="js/businesslogic/ktn/model_info.js"></script>
+-        <script src="js/businesslogic/ktn/assign_controller.js"></script>
+-        <script src="js/businesslogic/ktn/assign_setting.js"></script>
+-        <script src="js/businesslogic/ktn/ktn_mk1_model.js"></script>
+-        <script src="js/businesslogic/ktn/ktn_mk2_model.js"></script>
+-        <script src="js/businesslogic/ktn/model_controller.js"></script>
+-        <script src="js/businesslogic/bts/system_icon_setting.js"></script>
+-
+-        <script src="js/businesslogic/bts/tips_controller.js"></script>
+-
+-        <script src="js/businesslogic/terms_of_use/tou_def.js"></script>
+-        <script src="js/businesslogic/terms_of_use/tou_controller.js"></script>
+-
+-        <script src="js/common/midi_dbg.js"></script>
+-        <title>BOSS TONE STUDIO for KATANA Gen 3</title>
+-    </head>
+-
+-    <body oncontextmenu="return false">
+-        <div id="app-container">
+-            <div id="layout-wrapper"></div>
+-        </div>
+-    </body>
+-
++<!data type html>
++    <html lang="en">
++
++    <head>
++        <meta charset="utf-8">
++        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
++        <meta name="format-detection" content="telephone=no, email=no, address=no">
++        <link rel="stylesheet" type="text/css" href="css/bar.css">
++        <link rel="stylesheet" type="text/css" href="css/bts-stompbox.css">
++        <link rel="stylesheet" type="text/css" href="css/chain.css">
++        <link rel="stylesheet" type="text/css" href="css/check-box.css">
++        <link rel="stylesheet" type="text/css" href="css/common.css">
++        <link rel="stylesheet" type="text/css" href="css/dial.css">
++        <link rel="stylesheet" type="text/css" href="css/dial2.css">
++        <link rel="stylesheet" type="text/css" href="css/group-button-footer.css">
++        <link rel="stylesheet" type="text/css" href="css/group-button.css">
++        <link rel="stylesheet" type="text/css" href="css/inline-radio-button.css">
++        <link rel="stylesheet" type="text/css" href="css/knob.css">
++        <link rel="stylesheet" type="text/css" href="css/label.css">
++        <link rel="stylesheet" type="text/css" href="css/label_border.css">
++        <link rel="stylesheet" type="text/css" href="css/latch-button.css">
++        <link rel="stylesheet" type="text/css" href="css/menu-button.css">
++        <link rel="stylesheet" type="text/css" href="css/page.css">
++        <link rel="stylesheet" type="text/css" href="css/push-button.css">
++        <link rel="stylesheet" type="text/css" href="css/radio-button.css">
++        <link rel="stylesheet" type="text/css" href="css/select-box.css">
++        <link rel="stylesheet" type="text/css" href="css/select-list.css">
++        <link rel="stylesheet" type="text/css" href="css/select-panel.css">
++        <link rel="stylesheet" type="text/css" href="css/slider.css">
++        <link rel="stylesheet" type="text/css" href="css/spinner.css">
++        <link rel="stylesheet" type="text/css" href="css/stringer.css">
++        <link rel="stylesheet" type="text/css" href="css/tab.css">
++        <link rel="stylesheet" type="text/css" href="css/text-input.css">
++        <link rel="stylesheet" type="text/css" href="css/toggle-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-app-logo-label.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-ctl-exp.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-dial-dialog-style.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-dial.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-group-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-having-suffix-stringer.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-icon-group-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-label.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-btn.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-edit-btn-select-box.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-liveset-table.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-liveset-list-style.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-patch-list-style.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-table.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-text-input.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-menu-list-style.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-menu-page.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-menu-select-box.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-message-label.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-numpad-list.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-numpad.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-patch-select.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-popup-wrapper.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-progress-bar-style.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-push-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-select-box.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-setting-menu-btn.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-slider.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-small-select-list.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-spinner.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-switch-toggle-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-tab.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-tuner.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-write-btn-select-box.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts_dial_2ctrl.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/check-box.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/common.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/group-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/hidden.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/knob.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/label.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/latch-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/menu-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/page.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/push-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/select-box.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/select-list.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/slider.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/stringer.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/tab.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/text-input.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/toggle-button.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/tonecentral.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-knob.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-label.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-latch-button.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-led.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-menu-button.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-navi-group-button.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-spinner.css">
++        <link rel="stylesheet" type="text/css" href="css/ktn/ktn-toggle-button.css">
++        <link rel="stylesheet" type="text/css" href="css/customs.css">
++        <link rel="stylesheet" type="text/css" href="css/btx-msg-dialog.css">
++
++        <link rel="stylesheet" type="text/css" href="css/terms-of-use-page.css">
++        <link rel="stylesheet" type="text/css" href="css/btx-offline-view.css">
++        <link rel="stylesheet" type="text/css" href="css/bts/bts-librarian-select-export-to-dialog.css">
++
++        <script src="js/lib/jquery.js"></script>
++        <script src="js/lib/jquery-ui.js"></script>
++        <script src="js/lib/jquery.ui.touch-punch.js"></script>
++        <script src="js/lib/boss/event-system-def.js"></script>
++        <script src="js/lib/boss/event-system.js"></script>
 +        <script src="js/lib/native-tauri.js"></script>
 +        <script>
 +            document.addEventListener('DOMContentLoaded', () => {
 +                // This will be executed when the DOM is ready
 +            });
 +        </script>
-         <script src="import.js"></script>
-         <script src="js/utilities/constant.js"></script>
-         <script src="js/utilities/converter.js"></script>
-diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/backup/file_manager.js html/js/businesslogic/bts/backup/file_manager.js
++        <script src="import.js"></script>
++        <script src="js/utilities/constant.js"></script>
++        <script src="js/utilities/converter.js"></script>
++        <script src="js/config/address_map.js"></script>
++        <script src="js/config/editor_setting.js"></script>
++        <script src="js/config/librarian_setting.js"></script>
++        <script src="js/config/product_setting.js"></script>
++        <script src="js/config/message.js"></script>
++        <script src="js/common/midi_controller.js"></script>
++        <script src="js/common/parameter.js"></script>
++        <script src="js/businesslogic/bts/bts_controller.js"></script>
++        <script src="js/common/readwrite_logic.js"></script>
++        <script src="js/common/librarian_cell.js"></script>
++        <script src="js/common/librarian.js"></script>
++        <script src="js/common/editor.js"></script>
++        <script src="js/item/bar_controller.js"></script>
++        <script src="js/item/check_box_controller.js"></script>
++        <script src="js/item/dial_controller.js"></script>
++        <script src="js/item/knob_controller.js"></script>
++        <script src="js/item/radio_button_controller.js"></script>
++        <script src="js/item/select_box_controller.js"></script>
++        <script src="js/item/select_list_controller.js"></script>
++        <script src="js/item/select_panel_controller.js"></script>
++        <script src="js/item/slider_controller.js"></script>
++        <script src="js/item/spinner_controller.js"></script>
++        <script src="js/item/stringer_controller.js"></script>
++        <script src="js/item/tab_controller.js"></script>
++        <script src="js/item/text_input_controller.js"></script>
++        <script src="js/item/toggle_button_controller.js"></script>
++        <script src="js/item/item_logic.js"></script>
++        <script src="js/common/dialog.js"></script>
++
++        <script src="js/businesslogic/bts/address_const.js"></script>
++        <script src="js/businesslogic/bts/add_svg.js"></script>
++        <script src="js/businesslogic/bts/dial_wheel_action.js"></script>
++        <script src="js/businesslogic/bts/effect_controller.js"></script>
++        <script src="js/businesslogic/bts/error_dialog.js"></script>
++        <script src="js/businesslogic/bts/index.js"></script>
++        <script src="js/businesslogic/bts/log_manager.js"></script>
++        <script src="js/businesslogic/bts/menu_page_controller.js"></script>
++        <script src="js/businesslogic/bts/midi_connect_controller.js"></script>
++        <script src="js/businesslogic/bts/midi_observe_controller.js"></script>
++        <script src="js/businesslogic/bts/numpad.js"></script>
++        <script src="js/businesslogic/bts/numpad_list.js"></script>
++        <script src="js/businesslogic/bts/numpad_model.js"></script>
++        <script src="js/businesslogic/bts/patch_controller.js"></script>
++        <script src="js/businesslogic/bts/processing_controller.js"></script>
++        <script src="js/businesslogic/bts/url_definition.js"></script>
++        <script src="js/businesslogic/bts/util.js"></script>
++
++        <!-- Chain -->
++        <script src="js/businesslogic/chain/chain_util.js"></script>
++        <script src="js/businesslogic/chain/chain_config.js"></script>
++        <script src="js/businesslogic/chain/ChainCell.js"></script>
++        <script src="js/businesslogic/chain/ChainBlock.js"></script>
++        <script src="js/businesslogic/chain/ChainLine.js"></script>
++        <script src="js/businesslogic/chain/ChainBranchPointLine.js"></script>
++        <script src="js/businesslogic/chain/ChainEffector.js"></script>
++        <script src="js/businesslogic/chain/ChainInput.js"></script>
++        <script src="js/businesslogic/chain/ChainSpeaker.js"></script>
++        <script src="js/businesslogic/chain/ChainFV.js"></script>
++        <script src="js/businesslogic/chain/ChainBranchPoint.js"></script>
++        <script src="js/businesslogic/chain/ChainDivider.js"></script>
++        <script src="js/businesslogic/chain/ChainMixer.js"></script>
++        <script src="js/businesslogic/chain/ChainSplitter.js"></script>
++        <script src="js/businesslogic/chain/chain_controller.js"></script>
++
++        <script src="js/businesslogic/bts/librarian/assign_librarian_dynamic_dom_controller.js"></script>
++        <script src="js/businesslogic/bts/librarian/assign_librarian_static_dom_events.js"></script>
++        <script src="js/businesslogic/bts/librarian/librarian.js"></script>
++        <script src="js/businesslogic/bts/librarian/librarian_const.js"></script>
++        <script src="js/businesslogic/bts/librarian/librarian_controller.js"></script>
++        <script src="js/businesslogic/bts/librarian/librarian_dialog_controller.js"></script>
++        <script src="js/businesslogic/bts/librarian/librarian_model.js"></script>
++        <script src="js/businesslogic/bts/librarian/librarian_services.js"></script>
++        <script src="js/businesslogic/bts/backup/all_data.js"></script>
++        <script src="js/businesslogic/bts/backup/all_backup.js"></script>
++        <script src="js/businesslogic/bts/backup/all_backup_model.js"></script>
++        <script src="js/businesslogic/bts/backup/file_manager.js"></script>
++        <script src="js/businesslogic/bts/backup/progress_dialog.js"></script>
++        <!-- <script src="js/businesslogic/bts/tonecentral/tone_central_controller.js"></script>
++        <script src="js/businesslogic/bts/tonecentral/tone_central_service.js"></script> -->
++
++        <!-- BTX -->
++        <script src="js/businesslogic/btx_controller.js"></script>
++
++        <script src="js/businesslogic/ktn/liveset_converter.js"></script>
++        <script src="js/businesslogic/ktn/model_info.js"></script>
++        <script src="js/businesslogic/ktn/assign_controller.js"></script>
++        <script src="js/businesslogic/ktn/assign_setting.js"></script>
++        <script src="js/businesslogic/ktn/ktn_mk1_model.js"></script>
++        <script src="js/businesslogic/ktn/ktn_mk2_model.js"></script>
++        <script src="js/businesslogic/ktn/model_controller.js"></script>
++        <script src="js/businesslogic/bts/system_icon_setting.js"></script>
++
++        <script src="js/businesslogic/bts/tips_controller.js"></script>
++
++        <script src="js/businesslogic/terms_of_use/tou_def.js"></script>
++        <script src="js/businesslogic/terms_of_use/tou_controller.js"></script>
++
++        <script src="js/common/midi_dbg.js"></script>
++        <title>BOSS TONE STUDIO for KATANA Gen 3</title>
++    </head>
++
++    <body oncontextmenu="return false">
++        <div id="app-container">
++            <div id="layout-wrapper"></div>
++        </div>
++    </body>
++
+     </html>
+\ No newline at end of file
+diff '--color=auto' -urN html_unmodified/js/businesslogic/bts/backup/file_manager.js html/js/businesslogic/bts/backup/file_manager.js
 --- html_unmodified/js/businesslogic/bts/backup/file_manager.js	2025-06-28 15:25:51.668911056 -0400
 +++ html/js/businesslogic/bts/backup/file_manager.js	2025-06-27 20:50:00.292293093 -0400
 @@ -38,9 +38,9 @@
@@ -90,7 +730,7 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/backup/file_manage
                $native.app.control('indicator stop');
                try {
                  successFunc(json);
-diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/librarian/librarian_services.js html/js/businesslogic/bts/librarian/librarian_services.js
+diff '--color=auto' -urN html_unmodified/js/businesslogic/bts/librarian/librarian_services.js html/js/businesslogic/bts/librarian/librarian_services.js
 --- html_unmodified/js/businesslogic/bts/librarian/librarian_services.js	2025-06-28 15:25:51.669197181 -0400
 +++ html/js/businesslogic/bts/librarian/librarian_services.js	2025-06-27 20:50:06.844293508 -0400
 @@ -444,11 +444,11 @@
@@ -147,23 +787,1699 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/librarian/libraria
            popup_close(LIBRARIAN_ELEMENT_IDS.exportToCloudDialog.slice(1));
          } catch (e) {
            ERROR_DIALOG_MAP.fileError.open();
-diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/midi_connect_controller.js html/js/businesslogic/bts/midi_connect_controller.js
+diff '--color=auto' -urN html_unmodified/js/businesslogic/bts/midi_connect_controller.js html/js/businesslogic/bts/midi_connect_controller.js
 --- html_unmodified/js/businesslogic/bts/midi_connect_controller.js	2025-06-28 15:25:51.669568664 -0400
 +++ html/js/businesslogic/bts/midi_connect_controller.js	2025-06-27 21:27:32.820687709 -0400
-@@ -381,9 +381,9 @@
-      * 初回接続ダイアログを開く or Storageの情報を使って自動接続
-      * index.jsで呼び出し
-      */
+@@ -1,844 +1,844 @@
+-/**
+- * [概要]
+- * MIDI接続処理全般
+- *
+- * [使用箇所]
+- * 全体
+- *
+- * assignMIDIEventをindex.jsで呼び出し
+- * midiConnectionController.startInitSetting()をindex.jsで呼び出し
+- *
+- */
+-
+-/* to prevent error for eslint */
+-/* global $native, util, ProductSetting, hex2, Editor, pointer,
+-    popup_open, popup_close, closeNumpad, closeNumpadList,
+-    MIDIController, midiConnectionController, patchMIDIController,
+-    midiDOMController, patchDOMController, librarianDOMController, btsDOMController,
+-    toneCentralController, processingController,
+-    ADDRESS_CONST,
+-    ERROR_DIALOG_MAP,
+- */
+-
+- (function() {
+-  /**
+-   * MIDI関連のHTML ID
+-   */
+-   var MIDI_ELEMENT_IDS = Object.freeze({
+-    midiConnectDialog: '#device-connect-select-dialog',
+-    midiConnectRefreshBtn: '#device-connect-select-dialog-refresh-btn',
+-    midiConnectSelector: '#device-connect-select-dialog-menu-btn',
+-    midiConnectCancelBtn: '#device-connect-select-dialog-cancel-btn',
+-    midiConnectOkBtn: '#device-connect-select-dialog-ok-btn',
+-    disconnectedMidiConnectDialog: '#disconnected-midi-connect-dialog',
+-    disconnectedMidiConnectRefreshBtn: '#disconnected-midi-connect-dialog-refresh-btn',
+-    disconnectedMidiConnectSelector: '#disconnected-midi-connect-dialog-selector',
+-    disconnectedMidiConnectCancelBtn: '#disconnected-midi-connect-dialog-cancel-btn',
+-    disconnectedMidiConnectOkBtn: '#disconnected-midi-connect-dialog-ok-btn',
+-    deviceErrMidiConnectDialog: '#device-err-midi-connect-dialog',
+-    deviceErrMidiConnectRefreshBtn: '#device-err-midi-connect-dialog-refresh',
+-    deviceErrMidiInputSelector: '#device-err-midi-connect-dialog-midi-in-selector',
+-    deviceErrMidiOutputSelector: '#device-err-midi-connect-dialog-midi-out-selector',
+-    deviceErrMidiConnectCancelBtn: '#device-err-midi-connect-dialog-cancel-btn',
+-    deviceErrMidiConnectOkBtn: '#device-err-midi-connect-dialog-ok-btn',
+-    connectionErrMidiConnectDialog: '#connection-err-midi-connect-dialog',
+-    connectionErrMidiConnectRefreshBtn: '#connection-err-midi-connect-dialog-refresh-btn',
+-    connectionErrMidiConnectSelector: '#connection-err-midi-connect-dialog-selector',
+-    connectionErrMidiConnectSelector2: '#connection-err-midi-connect-dialog-selector-2',
+-    connectionErrMidiConnectCancelBtn: '#connection-err-midi-connect-dialog-cancel-btn',
+-    connectionErrMidiConnectOkBtn: '#connection-err-midi-connect-dialog-ok-btn',
+-    menuMidiRefreshBtn: '#menu-device-setting-device-refresh-btn',
+-    menuMidiDeviceSelector: '#menu-device-setting-device-select',
+-    menuMidiInputSelector: '#menu-device-setting-midi-in-select',
+-    menuMidiOutputSelector: '#menu-device-setting-midi-out-select',
+-    menuMidiOkBtn: '#menu-device-setting-ok-btn',
+-    menuMidiOkMask: '#menu-device-setting-ok-mask',
+-    deviceNotFoundDialog: '#device-not-found-dialog',
+-    deviceNotFoundDialogRefreshBtn: '#device-not-found-dialog-refresh-btn',
+-    deviceNotFoundDialogOfflineModeBtn: '#device-not-found-dialog-offline-mode-btn',
+-  });
+-  /**
+-   * MIDI関連のHTML Class名
+-   */
+-   var MIDI_ELEMENT_CLASS_NAMES = Object.freeze({
+-    midiConnectSelectorOption: '.bts-small-select-list-small-font-style-option'
+-  });
+-
+-  // 現在接続中のMIDI
+-  var currentMIDI = null;
+-  // 現在認識中のInputs
+-  var inputs = [];
+-  // 現在認識中のOutputs
+-  var outputs = [];
+-  // 初回起動時のフラグ
+-  var hasInitialized = false;
+-  window.currentMIDIConnect = null;
+-
+-  function disabledTopWriteWhenOflineMode() {
+-    btsDOMController.disableBtnByTemporaryDT1(true);
+-    btsDOMController.setAmpInSlaveMode(false);
+-  }
+-  function enableTopWriteWhenConnect() {
+-    btsDOMController.disableBtnByTemporaryDT1(false);
+-  }
+-
+-  window.midiConnectionController = {
+-    /**
+-     * 上記クロージャ変数を取得、更新するメソッド群
+-     */
+-     setCurrentMIDI: function(val) {
+-      currentMIDI = val;
+-      window.currentMIDIConnect = val;
+-    },
+-    getCurrentMIDI: function() {
+-      return currentMIDI;
+-    },
+-    setInputs: function(val) {
+-      inputs = val;
+-    },
+-    getInput: function(num) {
+-      return inputs[num] ? inputs[num] : null;
+-    },
+-    getInputs: function() {
+-      return inputs;
+-    },
+-    setOutputs: function(val) {
+-      outputs = val;
+-    },
+-    getOutput: function(num) {
+-      return outputs[num] ? outputs[num] : null;
+-    },
+-    getOutputs: function() {
+-      return outputs;
+-    },
+-    updateHasInitialized: function() {
+-      hasInitialized = true;
+-    },
+-    getHasInitialized: function() {
+-      return hasInitialized;
+-    },
+-
+-    /**
+-     * midi接続処理を開始
+-     * @param input
+-     * @param output
+-     */
+-     connectMIDI: function(input, output) {
+-      // loading画面を開く
+-      btsDOMController.openLoading();
+-
+-      // outputが引数として渡されない場合、選択したinputに一致するoutputを探す
+-      // (PC特有)
+-      var matchedOutput = output;
+-      if (matchedOutput === undefined) {
+-        matchedOutput = this._getMatchedOutput(input);
+-        if (matchedOutput === null) {
+-          btsDOMController.closeLoading();
+-          return;
+-        }
+-      }
+-
+-      // nativeの接続
+-      $native.midi.input.connect(input);
+-      $native.midi.output.connect(matchedOutput);
+-
+-      // storageに接続情報を反映
+-      util.writeStorage('input', input);
+-      util.writeStorage('output', matchedOutput);
+-
+-      // MIDI通信処理開始
+-      // 終了時のコールバック関数を渡す
+-      // この中でcurrentMIDIを更新し、current patch numberのRQ1を送る
+-      this.startCommunication(function() {
+-        midiConnectionController.setCurrentMIDI(input);
+-        midiDOMController.updateCurrentMIDI();
+-      });
+-    },
+-    /**
+-     * MIDI接続解除
+-     */
+-     disconnectMIDI: function() {
+-      // nativeの接続解除
+-      $native.midi.input.disconnect();
+-      $native.midi.output.disconnect();
+-      this.setCurrentMIDI(null);
+-
+-      // storageに反映
+-      util.writeStorage('input', null);
+-      util.writeStorage('output', null);
+-
+-      midiDOMController.updateCurrentMIDI();
+-    },
+-    /**
+-     * 接続処理のシーケンス
+-     * @param finishFunc
+-     */
+-     startCommunication: function(finishFunc) {
+-      // CommunicationError発生時のダイアログ表示関数
+-
+-      var communicationErrorFunc = function() {
+-        ERROR_DIALOG_MAP.communicationError.open(function() {
+-          midiConnectionController.disconnectMIDI();
+-        }, function() {
+-          btsDOMController.openLoading();
+-          util.waitForMIDIMsgReply(ADDRESS_CONST.IDENTITY_REQUEST, identityRequestObserver);
+-        });
+-        btsDOMController.closeLoading();
+-      };
+-
+-      // DeviceInquiryのObserver
+-      var identityRequestObserver = {
+-        isSucceeded: function(msg) {
+-          // Replyの一部分が一致するかを判定
+-          var partOfIdentityReply = ADDRESS_CONST.PART_OF_IDENTITY_REPLY;
+-          if (msg.slice(0, 4) !== partOfIdentityReply.slice(0, 4))    return false;
+-          if (msg.slice(6, 16) !== partOfIdentityReply.slice(6, 16))  return false;
+-          if (window.modelInfo) {
+-            if (! window.modelInfo.setModel(msg.slice(20, 22)))  return false;
+-          }
+-          return true;
+-        },
+-        success: function(msg) {
+-          // DeviceIDを書き換え
+-          ProductSetting.deviceId = msg.slice(4, 6);
+-          // 後続処理へ
+-          util.waitForRQ1Reply(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_LEVEL, 1, editorCommunicationLevelObserver);
+-        },
+-        error: function() {
+-          // 接続を解除
+-          midiConnectionController.disconnectMIDI();
+-          // WrongDeviceダイアログを開く
+-          ERROR_DIALOG_MAP.wrongDeviceError.open(function() {
+-            ERROR_DIALOG_MAP.offLineMode.open();
+-            disabledTopWriteWhenOflineMode();
+-          }, function() {
+-            // midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.deviceErrMidiInputSelector, MIDI_ELEMENT_IDS.deviceErrMidiConnectDialog, MIDI_ELEMENT_IDS.deviceErrMidiOutputSelector);
+-            midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector2, MIDI_ELEMENT_IDS.deviceErrMidiConnectDialog);
+-          });
+-          btsDOMController.closeLoading();
+-        }
+-      };
+-
+-      // EditorCommunicationLevel取得のObserver
+-      var editorCommunicationLevelObserver = {
+-        success: function(msg) {
+-          if (ProductSetting.developmentMode || (parseInt(msg) === ProductSetting.communicationLevel)) {
+-            // CommunicationModeを1に設定
+-            MIDIController.dt1(nibble(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_MODE), hex2(1));       
+-            if (ProductSetting.communicationRevision) {
+-              // communicationRevisionに対応している場合は後続処理
+-              util.waitForRQ1Reply(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_REVISION, 1, editorCommunicationRevisionObserver);
+-            } else {
+-              syncParameters();
+-            }
+-          } else if (parseInt(msg) < ProductSetting.communicationLevel) {
+-            // アプリのバージョンが上の場合
+-            // 接続を解除し、ダイアログを開く
+-            midiConnectionController.disconnectMIDI();
+-            ERROR_DIALOG_MAP.oldVersionOfInstrument.open(function() {
+-              ERROR_DIALOG_MAP.offLineMode.open();
+-              disabledTopWriteWhenOflineMode();
+-            });
+-            btsDOMController.closeLoading();
+-          } else if (parseInt(msg) > ProductSetting.communicationLevel) {
+-            // 実機のバージョンが上の場合
+-            // 接続を解除し、ダイアログを開く
+-            midiConnectionController.disconnectMIDI();
+-            ERROR_DIALOG_MAP.oldVersionOfBTS.open(function() {
+-              ERROR_DIALOG_MAP.offLineMode.open();
+-              disabledTopWriteWhenOflineMode();
+-            });
+-            btsDOMController.closeLoading();
+-          }
+-        },
+-        // Timeoutの場合
+-        error: function() {
+-          communicationErrorFunc();
+-        }
+-      };
+-      // EditorCommunicationRevision取得のObserver
+-      var editorCommunicationRevisionObserver = {
+-        success: function(msg) {
+-          if (parseInt(msg) <= ProductSetting.communicationRevision) {
+-            // アプリのリビジョンが上の場合
+-            /**
+-             * コンバート処理
+-             */
+-          }
+-          syncParameters();
+-        },
+-        error: function() {
+-          communicationErrorFunc();
+-        }
+-      };
+-      
+-      function syncParameters() {
+-        enableTopWriteWhenConnect();
+-        patchMIDIController.fetchPatchNames(function () {
+-          systemRead();
+-        }, function() {
+-          communicationErrorFunc();
+-        });
+-      }
+-
+-      // Temporary, System, Statusを取得
+-      function systemRead() {
+-        window.isReadPatch0 = false;
+-        midiConnectionController.readEditor([4, 0, 1, 3], function () {
+-          btsDOMController.closeLoading();
+-          finishFunc();
+-          setupKnobModFxTargetList();
+-          // GA-FCの接続状態をRQ1
+-          MIDIController.rq1(nibble(ADDRESS_CONST.COMMAND.GAFC_TYPE), 1, function() {});
+-        }, function () {
+-          communicationErrorFunc();
+-        });
+-      } 
+-
+-      // Loadingの画面を開く
+-      btsDOMController.openLoading();
+-      // DeviceInquiryを送信
+-      util.waitForMIDIMsgReply(ADDRESS_CONST.IDENTITY_REQUEST, identityRequestObserver);
+-
+-    },
+-    /**
+-     * EditorReadを行う
+-     * @param indexes readするeditorのname(配列で渡す)
+-     * @param completeFunc 成功時に呼び出されるコールバック関数
+-     * @param errorFunc エラー時に呼び出されるコールバック関数
+-     * @param delayTime 遅延させる場合にmsecを渡す(現在使用箇所なし)
+-     * @returns {Function} Cancel時の呼び出すべき関数をreturn
+-     */
+-    readEditor: function(indexes, completeFunc, errorFunc, delayTime) {
+-      var editors = [];
+-      var observers = [];
+-      var completedNum = 0;
+-      var errorNum = 0;
+-      for (var i = 0; i < indexes.length; i++) {
+-        if (indexes[i] == 0) {
+-          window.isReadPatch0 = true;
+-        }
+-        editors.push(new Editor(ProductSetting.editor[indexes[i]].config));
+-      }
+-      for (var j = 0; j < indexes.length; j++) {
+-        observers.push({
+-          index: j,
+-          notify: function(msg, arg) {
+-            if (arg === 'end') {
+-              completedNum += 1;
+-              editors[this.index].removeObserver(observers[this.index]);
+-              if (this.index + 1 < indexes.length) {
+-                editors[this.index + 1].read();
+-                editors[this.index + 1].addObserver(observers[this.index + 1]);
+-              }
+-              if (completedNum === indexes.length) {
+-                if (completeFunc !== undefined && typeof completeFunc === 'function') {
+-                  window.isReadPatch0 = false;
+-                  completeFunc();
+-                }
+-              } else if (completedNum + errorNum === indexes.length) {
+-                if (errorFunc !== undefined && typeof errorFunc === 'function') {
+-                  window.isReadPatch0 = false;
+-                  errorFunc();
+-                }
+-              }
+-            } else if (msg === 'editor_cancel' || arg === 'timeout') {
+-              errorNum += 1;
+-              editors[this.index].removeObserver(observers[this.index]);
+-              if (this.index + 1 < indexes.length) {
+-                editors[this.index + 1].read();
+-                editors[this.index + 1].addObserver(observers[this.index + 1]);
+-              }
+-              if (completedNum + errorNum === indexes.length) {
+-                if (errorFunc !== undefined && typeof errorFunc === 'function') {
+-                  window.isReadPatch0 = false;
+-                  errorFunc();
+-                }
+-              }
+-            } else {
+-              // debug log
+-              // console.log(this.index, msg, arg);
+-            }
+-          }
+-        });
+-      }
+-      if (delayTime !== undefined) {
+-        setTimeout(function() {
+-          editors[0].read();
+-          editors[0].addObserver(observers[0]);
+-        }, delayTime);
+-      } else {
+-        editors[0].read();
+-        editors[0].addObserver(observers[0]);
+-      }
+-      return function() {
+-        editors.forEach(function(editor, i) {
+-          editor.removeObserver(observers[i]);
+-        });
+-      };
+-    },
+-    /**
+-     * 初回接続ダイアログを開く or Storageの情報を使って自動接続
+-     * index.jsで呼び出し
+-     */
 -     startInitSetting: function() {
 -      midiConnectionController.setInputs($native.midi.input.endpoints());
 -      midiConnectionController.setOutputs($native.midi.output.endpoints());
+-      midiDOMController.updateMIDISelector();
+-
+-      // input, outputのどちらかが0件の場合はDeviceNotFoundのダイアログを開く
+-      if (midiConnectionController.getInputs().length === 0 || midiConnectionController.getOutputs().length === 0) {
+-        popup_open(MIDI_ELEMENT_IDS.deviceNotFoundDialog.slice(1));
+-        return;
+-      }
+-
+-      // ストレージに保存されているMIDI情報を取得(ない場合はnull)
+-      var storedInput = null;
+-      var storedOutput = null;
+-      var storage = util.readStorage();
+-      if (storage.input !== undefined && storage.output !== undefined) {
+-        storedInput = storage.input;
+-        storedOutput = storage.output;
+-      }
+-
+-      // ストレージに保存されたMIDIと一致するEndpointsがある場合は接続
+-      // 見つからない場合、ストレージに保存されていない場合はダイアログを開く
+-      if (storedInput !== null && storedOutput !== null) {
+-        var inputs = midiConnectionController.getInputs();
+-        var outputs = midiConnectionController.getOutputs();
+-        var matchedInput = null;
+-        var matchedOutput = null;
+-        for (var i = 0, l = inputs.length; i < l; i++) {
+-          if (inputs[i].MIDIEndpointUIDKey === storedInput.MIDIEndpointUIDKey) {
+-            matchedInput = inputs[i];
+-            break;
+-          }
+-        }
+-        for (var i = 0, l = outputs.length; i < l; i++) {
+-          if (outputs[i].MIDIEndpointUIDKey === storedOutput.MIDIEndpointUIDKey) {
+-            matchedOutput = outputs[i];
+-            break;
+-          }
+-        }
+-        if (matchedInput !== null && matchedOutput !== null) {
+-          // Input, Outputどちらも合致するものが見つかった場合
+-          btsDOMController.closeConnectingPage();
+-          this.connectMIDI(matchedInput, matchedOutput);
+-          midiConnectionController.updateHasInitialized();
+-        } else {
+-          // 一致するEndpointsが見当たらない場合
+-          midiDOMController.openInitialMIDIConnect();
+-        }
+-      } else {
+-        // ストレージに保存されていない場合
+-        midiDOMController.openInitialMIDIConnect();
+-      }
+-    },
+-    /**
+-     * 引数で与えられたSelectListのチェックのindexを取得し、
+-     * 該当するinputを使って接続
+-     * @param selectorId
+-     * @param dialogId
+-     */
+-     connectCheckedEndpoint: function(inputSelectorId, dialogId, outputSelectorId) {
+-      var inputCheckedNum = null;
+-      var outputCheckedNum = null;
+-      $(inputSelectorId + ' div a').each(function(index, elm) {
+-        if ($(elm).attr('checked') === 'checked') {
+-          inputCheckedNum = index;
+-        }
+-      });
+-      if (outputSelectorId !== undefined) {
+-        $(outputSelectorId + ' div a').each(function(index, elm) {
+-          if ($(elm).attr('checked') === 'checked') {
+-            outputCheckedNum = index;
+-          }
+-        });
+-        if (inputCheckedNum !== null && outputCheckedNum !== null) {
+-          var input = midiConnectionController.getInput(inputCheckedNum);
+-          var output = midiConnectionController.getOutput(outputCheckedNum);
+-          if (input !== null && output !== null) {
+-            popup_close(dialogId.slice(1));
+-            midiConnectionController.connectMIDI(input, output);
+-          }
+-        }
+-      } else {
+-        if (inputCheckedNum !== null) {
+-          var input = midiConnectionController.getInput(inputCheckedNum);
+-          if (input !== null) {
+-            popup_close(dialogId.slice(1));
+-            midiConnectionController.connectMIDI(input);
+-          }
+-        }
+-      }
+-    },
+-    // Refresh処理
+-    refresh: function() {
+-      /**
+-       * Endpointを更新
+-       */
+-       midiConnectionController.setInputs($native.midi.input.endpoints());
+-       midiConnectionController.setOutputs($native.midi.output.endpoints());
+-
+-       midiDOMController.updateMIDISelector();
+-
+-      /**
+-       * 初期画面の場合は終了
+-       */
+-       if (!midiConnectionController.getHasInitialized()) {
+-        return;
+-      }
+-
+-      /**
+-       * currentMIDIがnullではなく(接続中と認識している)、一致するNameKeyがない場合はdisconnectedと判断
+-       */
+-       var currentMIDI = midiConnectionController.getCurrentMIDI();
+-
+-       var hasConnected = midiConnectionController.getInputs().some(function(value) {
+-        return currentMIDI !== null && value.MIDIEntityNameKey === currentMIDI.MIDIEntityNameKey;
+-      });
+-       if (currentMIDI !== null && !hasConnected) {
+-        midiConnectionController.disconnectMIDI();
+-        midiDOMController.openDisconnectedDialog();
+-      }
+-
+-    },
+-    /**
+-     * inputに一致するoutputを探す
+-     * (見つからない場合はnull)
+-     * @param input
+-     * @returns {*}
+-     * @private
+-     */
+-     _getMatchedOutput: function(input) {
+-      var replacedInputName = input.MIDIEntityNameKey.replace(/^\([\d]+\)$/g, '');
+-      var outputArray = this.getOutputs();
+-      for (var i = 0, l = outputArray.length; i < l; i++) {
+-        if (replacedInputName === outputArray[i].MIDIEntityNameKey) {
+-          return outputArray[i];
+-        }
+-      }
+-      return null;
+-    }
+-  };
+-
+-  /**
+-   * MIDIに関連するDOM処理を定義
+-   */
+-   window.midiDOMController = {
+-    inputSelectorIds: [
+-      MIDI_ELEMENT_IDS.midiConnectSelector,
+-      MIDI_ELEMENT_IDS.disconnectedMidiConnectSelector,
+-      // MIDI_ELEMENT_IDS.deviceErrMidiInputSelector,
+-      MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector,
+-      MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector2,
+-      MIDI_ELEMENT_IDS.menuMidiDeviceSelector,
+-      // MIDI_ELEMENT_IDS.menuMidiInputSelector
+-    ],
+-    outputSelectorIds: [
+-      // MIDI_ELEMENT_IDS.menuMidiOutputSelector,
+-      // MIDI_ELEMENT_IDS.deviceErrMidiOutputSelector
+-    ],
+-    okBtnIds: [
+-      MIDI_ELEMENT_IDS.midiConnectOkBtn,
+-      MIDI_ELEMENT_IDS.disconnectedMidiConnectOkBtn,
+-      MIDI_ELEMENT_IDS.deviceErrMidiConnectOkBtn,
+-      MIDI_ELEMENT_IDS.connectionErrMidiConnectOkBtn
+-    ],
+-    /**
+-     * 初期接続画面を開く
+-     */
+-     openInitialMIDIConnect: function() {
+-      popup_open(MIDI_ELEMENT_IDS.midiConnectDialog.slice(1));
+-    },
+-    /**
+-     * MIDIのEndpoint変更によるDOMの更新
+-     *
+-     * 0件か否かに応じて、自動的に先頭をチェック状態にする処理、ボタンの非活性化を行う
+-     */
+-     updateMIDISelector: function() {
+-      var inputs = midiConnectionController.getInputs();
+-      var outputs = midiConnectionController.getOutputs();
+-      var inputHtml = '';
+-      inputs.forEach(function(input) {
+-        inputHtml += ('<a href="#" class="' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption.slice(1) + ' elf-select-list-option-control" msg="">' + input.MIDIEntityNameKey + '</a>');
+-      });
+-      var outputHtml = '';
+-      outputs.forEach(function(output) {
+-        outputHtml += ('<a href="#" class="' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption.slice(1) + ' elf-select-list-option-control" msg="">' + output.MIDIEntityNameKey + '</a>');
+-      });
+-      this.inputSelectorIds.forEach(function(value) {
+-        $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption).html(inputHtml);
+-        if (inputs.length > 0) {
+-          $(value).removeClass('disabled');
+-          if (value !== MIDI_ELEMENT_IDS.menuMidiDeviceSelector && value !== MIDI_ELEMENT_IDS.menuMidiInputSelector) {
+-            $(value + ' p').text(inputs[0].MIDIEntityNameKey);
+-            $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(0).attr('checked', 'checked');
+-          }
+-        } else {
+-          $(value).addClass('disabled');
+-          $(value + ' p').empty();
+-        }
+-      });
+-      this.outputSelectorIds.forEach(function(value) {
+-        $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption).html(outputHtml);
+-        if (outputs.length > 0) {
+-          $(value).removeClass('disabled');
+-          if (value !== MIDI_ELEMENT_IDS.menuMidiOutputSelector) {
+-            $(value + ' p').text(outputs[0].MIDIEntityNameKey);
+-            $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(0).attr('checked', 'checked');
+-          }
+-        } else {
+-          $(value).addClass('disabled');
+-          $(value + ' p').empty();
+-        }
+-      });
+-      this.okBtnIds.forEach(function(value) {
+-        if (inputs.length > 0) {
+-          $(value).removeClass('disabled-blue');
+-        } else {
+-          $(value).addClass('disabled-blue');
+-        }
+-      });
+-      this.updateInitialDialogSelector();
+-      this.updateMenuPageSelector();
+-    },
+-    /**
+-     * 初期ダイアログ内のーの表示を更新
+-     */
+-     updateInitialDialogSelector: function () {
+-      var inputs = midiConnectionController.getInputs();
+-      var inputHtml = '';
+-      inputs.forEach(function(input, index) {
+-        inputHtml += '<input type="radio" name="device-connect-select-dialog-menu-btn" id="device-connect-select-dialog-menu-btn-' + index + '">'
+-        inputHtml += '<label class="elf-radio-button-item" for="device-connect-select-dialog-menu-btn-' + index + '" style="width: 100%; height: 10%; line-height: 33.6px;">' + input.MIDIEntityNameKey + '</label>';
+-      });
+-      $(MIDI_ELEMENT_IDS.midiConnectSelector).html(inputHtml);
+-      if (inputs.length > 0) {
+-        $(MIDI_ELEMENT_IDS.midiConnectSelector + ' input').eq(0).prop('checked', true);
+-      }
+-    },
+-    /**
+-     * Menuダイアログ・DiviceSetting画面内の表示を更新
+-     */
+-     updateMenuPageSelector: function() {
+-      var currentMIDI = midiConnectionController.getCurrentMIDI();
+-      var matchedInputIndex = midiConnectionController.getInputs().findIndex(function(input) {
+-        return currentMIDI !== null && input.MIDIEntityNameKey === currentMIDI.MIDIEntityNameKey;
+-      });
+-      if (matchedInputIndex !== -1) {
+-        var inputName = midiConnectionController.getInput(matchedInputIndex).MIDIEntityNameKey;
+-        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(matchedInputIndex).attr('checked', 'checked');
+-        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' p').text(inputName);
+-        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(matchedInputIndex).attr('checked', 'checked');
+-        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' p').text(inputName);
+-      } else {
+-        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
+-        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' p').text('');
+-        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
+-        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' p').text('');
+-      }
+-      // var matchedOutputIndex = midiConnectionController.getOutputs().findIndex(function(output) {
+-      //   return currentMIDI !== null && output.MIDIEntityNameKey === currentMIDI.MIDIEntityNameKey;
+-      // });
+-      // if (matchedOutputIndex !== -1) {
+-      //   var outputName = midiConnectionController.getOutput(matchedOutputIndex).MIDIEntityNameKey;
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(matchedOutputIndex).attr('checked', 'checked');
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' p').text(outputName);
+-      // } else {
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' p').text('');
+-      // }
+-
+-      // if (matchedInputIndex === -1 || matchedOutputIndex === -1) {
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOkMask).css('display', 'block');
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOkBtn).addClass('disabled-blue');
+-      // } else {
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOkMask).css('display', 'none');
+-      //   $(MIDI_ELEMENT_IDS.menuMidiOkBtn).removeClass('disabled-blue');
+-      // }
+-    },
+-    /**
+-     * 選択中MIDIの変更によるDOMの更新
+-     */
+-     updateCurrentMIDI: function() {
+-      var addCheck = function (id, nameKey) {
+-        $(id + ' p').text(nameKey);
+-        var selectOptions = $(id + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a');
+-        for (var i = 0; i < selectOptions.length; i++) {
+-          if ($(selectOptions[i]).text() === nameKey) {
+-            $(selectOptions[i]).attr('checked', 'checked');
+-            break;
+-          }
+-        }
+-      };
+-      var removeCheck = function (id) {
+-        $(id + ' p').text('');
+-        $(id + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
+-      };
+-      var current = midiConnectionController.getCurrentMIDI();
+-      if (current !== null) {
+-        addCheck(MIDI_ELEMENT_IDS.menuMidiDeviceSelector, current.MIDIEntityNameKey);
+-        // addCheck(MIDI_ELEMENT_IDS.menuMidiInputSelector, current.MIDIEntityNameKey);
+-        // addCheck(MIDI_ELEMENT_IDS.menuMidiOutputSelector, current.MIDIEntityNameKey);
+-        // Writeボタンの活性化
+-        patchDOMController.updatePatchWriteButton(false);
+-        patchDOMController.updatePatchClearButton(false);
+-      } else {
+-        removeCheck(MIDI_ELEMENT_IDS.menuMidiDeviceSelector);
+-        // removeCheck(MIDI_ELEMENT_IDS.menuMidiInputSelector);
+-        // removeCheck(MIDI_ELEMENT_IDS.menuMidiOutputSelector);
+-        // Writeボタンの非活性化
+-        patchDOMController.updatePatchWriteButton(true);
+-        patchDOMController.updatePatchClearButton(true);
+-      }
+-    },
+-    /**
+-     * DisconnectedDialogを開く際の前処理
+-     */
+-     openDisconnectedDialog: function() {
+-      processingController.allClear();
+-
+-      closeNumpad();
+-      closeNumpadList();
+-      popup_close('write-dialog');
+-      popup_close('write-clear-dialog');
+-
+-      btsDOMController.closeWritePopupMenu();
+-      toneCentralController.stopYoutubeVideo();
+-      toneCentralController.stopScMusicPlayer();
+-      window.librarianForceTransition();
+-
+-      ERROR_DIALOG_MAP.disconnectedError.open(function() {
+-        ERROR_DIALOG_MAP.offLineMode.open();
+-        disabledTopWriteWhenOflineMode();
+-      }, function() {
+-        midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.disconnectedMidiConnectSelector, MIDI_ELEMENT_IDS.disconnectedMidiConnectDialog);
+-      });
+-    }
+-  };
+-
+-  /**
+-   * quattro nativeのMIDIイベントと、MIDI関連のDOMイベントを監視
+-   */
+-   window.assignMIDIEvent = function() {
+-    $native.midi.event.changed = function() {
+-      midiConnectionController.refresh();
+-    };
+-    $native.midi.event.error = function() {
+-      midiConnectionController.disconnectMIDI();
+-      midiDOMController.openDisconnectedDialog();
+-    };
+-    $native.midi.event.connectfailed = function() {
+-      midiConnectionController.disconnectMIDI();
+-      ERROR_DIALOG_MAP.midiDeviceConnectionError.open(function() {
+-        ERROR_DIALOG_MAP.offLineMode.open();
+-      }, function() {
+-        midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector, MIDI_ELEMENT_IDS.connectionErrMidiConnectDialog);
+-      });
+-    };
+-    $native.app.event.command = function(param1, param2) {
+-      if (param1 === 'exit') {
+-        MIDIController.dt1(nibble(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_MODE), hex2(0));
+-        setTimeout(function () {
+-          $native.app.exit();
+-        }, 500);
+-      } else if (param1 === 'wakeup') {
+-        if(currentMIDI !== null) {
+-          midiConnectionController.disconnectMIDI();
+-          midiDOMController.openDisconnectedDialog();
+-        }
+-      }
+-    };
+-
+-    /**
+-     * MIDI RefreshBtns
+-     */
+-
+-    var refreshBtns = [
+-      MIDI_ELEMENT_IDS.midiConnectRefreshBtn,
+-      MIDI_ELEMENT_IDS.menuMidiRefreshBtn,
+-      MIDI_ELEMENT_IDS.disconnectedMidiConnectRefreshBtn,
+-      MIDI_ELEMENT_IDS.deviceErrMidiConnectRefreshBtn,
+-      MIDI_ELEMENT_IDS.connectionErrMidiConnectRefreshBtn
+-    ];
+-    $(refreshBtns.join(',')).on(pointer.click, function(e) {
+-      e.preventDefault();
+-      midiConnectionController.refresh();
+-    });
+-    // 初期接続画面のOKボタン
+-    $(MIDI_ELEMENT_IDS.midiConnectOkBtn).on(pointer.click, function(e) {
+-      e.preventDefault();
+-      var selectedNum = null;
+-      $(MIDI_ELEMENT_IDS.midiConnectSelector + ' input').each(function(index, elm) {
+-        if ($(elm).prop('checked') === true) {
+-          selectedNum = index;
+-        }
+-      });
+-      if (selectedNum !== null) {
+-        popup_close(MIDI_ELEMENT_IDS.midiConnectDialog.slice(1));
+-        btsDOMController.closeConnectingPage();
+-        midiConnectionController.updateHasInitialized();
+-        midiConnectionController.connectMIDI(midiConnectionController.getInput(selectedNum));
+-      }
+-    });
+-
+-    // Menuダイアログ・DiviceSetting画面内のDeviceセレクター更新時
+-    $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector).on('elf-changed', function(e, v) {
+-      midiConnectionController.disconnectMIDI();
+-      midiConnectionController.connectMIDI(midiConnectionController.getInput(v));
+-    });
+-    // // Menuダイアログ・DiviceSetting画面内のOKボタン押下時
+-    // $(MIDI_ELEMENT_IDS.menuMidiOkBtn).on('click', function(e, v) {
+-    //   $native.midi.input.disconnect();
+-    //   $native.midi.output.disconnect();
+-    //   midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.menuMidiInputSelector, '', MIDI_ELEMENT_IDS.menuMidiOutputSelector);
+-    // });
+-    // // Menuダイアログ・DiviceSetting画面内のInput,Outputセレクター更新時
+-    // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ', ' + MIDI_ELEMENT_IDS.menuMidiOutputSelector).on('elf-changed', function(e, v) {
+-    //   var isInputSelected = false;
+-    //   var isOutputSelected = false;
+-    //   $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' a').each(function(index, elm) {
+-    //     if ($(elm).attr('checked') === 'checked') {
+-    //       isInputSelected = true;
+-    //     }
+-    //   });
+-    //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' a').each(function(index, elm) {
+-    //     if ($(elm).attr('checked') === 'checked') {
+-    //       isOutputSelected = true;
+-    //     }
+-    //   });
+-    //   if (isInputSelected && isOutputSelected) {
+-    //     $(MIDI_ELEMENT_IDS.menuMidiOkMask).css('display', 'none');
+-    //     $(MIDI_ELEMENT_IDS.menuMidiOkBtn).removeClass('disabled-blue');
+-    //   }
+-    // });
+-
+-    // DeviceNotFoundダイアログのRefreshモード押下時
+-    $(MIDI_ELEMENT_IDS.deviceNotFoundDialogRefreshBtn).on(pointer.click, function(e) {
+-      midiConnectionController.refresh();
+-      popup_close(MIDI_ELEMENT_IDS.deviceNotFoundDialog.slice(1));
+-      midiConnectionController.startInitSetting();
+-    });
+-
+-    // 初期接続画面のCancelボタン
+-    $(MIDI_ELEMENT_IDS.midiConnectCancelBtn).on(pointer.click, function(e) {
+-      e.preventDefault();
+-      popup_close(MIDI_ELEMENT_IDS.midiConnectDialog.slice(1));
+-      btsDOMController.closeConnectingPage();
+-      midiConnectionController.updateHasInitialized();
+-      ERROR_DIALOG_MAP.offLineMode.open();
+-      disabledTopWriteWhenOflineMode();
+-    });
+-    // DeviceNotFoundダイアログのOfflineモード押下時
+-    $(MIDI_ELEMENT_IDS.deviceNotFoundDialogOfflineModeBtn).on(pointer.click, function(e) {
+-      e.preventDefault();
+-      popup_close(MIDI_ELEMENT_IDS.deviceNotFoundDialog.slice(1));
+-      btsDOMController.closeConnectingPage();
+-      midiConnectionController.updateHasInitialized();
+-      ERROR_DIALOG_MAP.offLineMode.open();
+-      disabledTopWriteWhenOflineMode();
+-    });
+-  };
+-  
+-})();
++/**
++ * [概要]
++ * MIDI接続処理全般
++ *
++ * [使用箇所]
++ * 全体
++ *
++ * assignMIDIEventをindex.jsで呼び出し
++ * midiConnectionController.startInitSetting()をindex.jsで呼び出し
++ *
++ */
++
++/* to prevent error for eslint */
++/* global $native, util, ProductSetting, hex2, Editor, pointer,
++    popup_open, popup_close, closeNumpad, closeNumpadList,
++    MIDIController, midiConnectionController, patchMIDIController,
++    midiDOMController, patchDOMController, librarianDOMController, btsDOMController,
++    toneCentralController, processingController,
++    ADDRESS_CONST,
++    ERROR_DIALOG_MAP,
++ */
++
++ (function() {
++  /**
++   * MIDI関連のHTML ID
++   */
++   var MIDI_ELEMENT_IDS = Object.freeze({
++    midiConnectDialog: '#device-connect-select-dialog',
++    midiConnectRefreshBtn: '#device-connect-select-dialog-refresh-btn',
++    midiConnectSelector: '#device-connect-select-dialog-menu-btn',
++    midiConnectCancelBtn: '#device-connect-select-dialog-cancel-btn',
++    midiConnectOkBtn: '#device-connect-select-dialog-ok-btn',
++    disconnectedMidiConnectDialog: '#disconnected-midi-connect-dialog',
++    disconnectedMidiConnectRefreshBtn: '#disconnected-midi-connect-dialog-refresh-btn',
++    disconnectedMidiConnectSelector: '#disconnected-midi-connect-dialog-selector',
++    disconnectedMidiConnectCancelBtn: '#disconnected-midi-connect-dialog-cancel-btn',
++    disconnectedMidiConnectOkBtn: '#disconnected-midi-connect-dialog-ok-btn',
++    deviceErrMidiConnectDialog: '#device-err-midi-connect-dialog',
++    deviceErrMidiConnectRefreshBtn: '#device-err-midi-connect-dialog-refresh',
++    deviceErrMidiInputSelector: '#device-err-midi-connect-dialog-midi-in-selector',
++    deviceErrMidiOutputSelector: '#device-err-midi-connect-dialog-midi-out-selector',
++    deviceErrMidiConnectCancelBtn: '#device-err-midi-connect-dialog-cancel-btn',
++    deviceErrMidiConnectOkBtn: '#device-err-midi-connect-dialog-ok-btn',
++    connectionErrMidiConnectDialog: '#connection-err-midi-connect-dialog',
++    connectionErrMidiConnectRefreshBtn: '#connection-err-midi-connect-dialog-refresh-btn',
++    connectionErrMidiConnectSelector: '#connection-err-midi-connect-dialog-selector',
++    connectionErrMidiConnectSelector2: '#connection-err-midi-connect-dialog-selector-2',
++    connectionErrMidiConnectCancelBtn: '#connection-err-midi-connect-dialog-cancel-btn',
++    connectionErrMidiConnectOkBtn: '#connection-err-midi-connect-dialog-ok-btn',
++    menuMidiRefreshBtn: '#menu-device-setting-device-refresh-btn',
++    menuMidiDeviceSelector: '#menu-device-setting-device-select',
++    menuMidiInputSelector: '#menu-device-setting-midi-in-select',
++    menuMidiOutputSelector: '#menu-device-setting-midi-out-select',
++    menuMidiOkBtn: '#menu-device-setting-ok-btn',
++    menuMidiOkMask: '#menu-device-setting-ok-mask',
++    deviceNotFoundDialog: '#device-not-found-dialog',
++    deviceNotFoundDialogRefreshBtn: '#device-not-found-dialog-refresh-btn',
++    deviceNotFoundDialogOfflineModeBtn: '#device-not-found-dialog-offline-mode-btn',
++  });
++  /**
++   * MIDI関連のHTML Class名
++   */
++   var MIDI_ELEMENT_CLASS_NAMES = Object.freeze({
++    midiConnectSelectorOption: '.bts-small-select-list-small-font-style-option'
++  });
++
++  // 現在接続中のMIDI
++  var currentMIDI = null;
++  // 現在認識中のInputs
++  var inputs = [];
++  // 現在認識中のOutputs
++  var outputs = [];
++  // 初回起動時のフラグ
++  var hasInitialized = false;
++  window.currentMIDIConnect = null;
++
++  function disabledTopWriteWhenOflineMode() {
++    btsDOMController.disableBtnByTemporaryDT1(true);
++    btsDOMController.setAmpInSlaveMode(false);
++  }
++  function enableTopWriteWhenConnect() {
++    btsDOMController.disableBtnByTemporaryDT1(false);
++  }
++
++  window.midiConnectionController = {
++    /**
++     * 上記クロージャ変数を取得、更新するメソッド群
++     */
++     setCurrentMIDI: function(val) {
++      currentMIDI = val;
++      window.currentMIDIConnect = val;
++    },
++    getCurrentMIDI: function() {
++      return currentMIDI;
++    },
++    setInputs: function(val) {
++      inputs = val;
++    },
++    getInput: function(num) {
++      return inputs[num] ? inputs[num] : null;
++    },
++    getInputs: function() {
++      return inputs;
++    },
++    setOutputs: function(val) {
++      outputs = val;
++    },
++    getOutput: function(num) {
++      return outputs[num] ? outputs[num] : null;
++    },
++    getOutputs: function() {
++      return outputs;
++    },
++    updateHasInitialized: function() {
++      hasInitialized = true;
++    },
++    getHasInitialized: function() {
++      return hasInitialized;
++    },
++
++    /**
++     * midi接続処理を開始
++     * @param input
++     * @param output
++     */
++     connectMIDI: function(input, output) {
++      // loading画面を開く
++      btsDOMController.openLoading();
++
++      // outputが引数として渡されない場合、選択したinputに一致するoutputを探す
++      // (PC特有)
++      var matchedOutput = output;
++      if (matchedOutput === undefined) {
++        matchedOutput = this._getMatchedOutput(input);
++        if (matchedOutput === null) {
++          btsDOMController.closeLoading();
++          return;
++        }
++      }
++
++      // nativeの接続
++      $native.midi.input.connect(input);
++      $native.midi.output.connect(matchedOutput);
++
++      // storageに接続情報を反映
++      util.writeStorage('input', input);
++      util.writeStorage('output', matchedOutput);
++
++      // MIDI通信処理開始
++      // 終了時のコールバック関数を渡す
++      // この中でcurrentMIDIを更新し、current patch numberのRQ1を送る
++      this.startCommunication(function() {
++        midiConnectionController.setCurrentMIDI(input);
++        midiDOMController.updateCurrentMIDI();
++      });
++    },
++    /**
++     * MIDI接続解除
++     */
++     disconnectMIDI: function() {
++      // nativeの接続解除
++      $native.midi.input.disconnect();
++      $native.midi.output.disconnect();
++      this.setCurrentMIDI(null);
++
++      // storageに反映
++      util.writeStorage('input', null);
++      util.writeStorage('output', null);
++
++      midiDOMController.updateCurrentMIDI();
++    },
++    /**
++     * 接続処理のシーケンス
++     * @param finishFunc
++     */
++     startCommunication: function(finishFunc) {
++      // CommunicationError発生時のダイアログ表示関数
++
++      var communicationErrorFunc = function() {
++        ERROR_DIALOG_MAP.communicationError.open(function() {
++          midiConnectionController.disconnectMIDI();
++        }, function() {
++          btsDOMController.openLoading();
++          util.waitForMIDIMsgReply(ADDRESS_CONST.IDENTITY_REQUEST, identityRequestObserver);
++        });
++        btsDOMController.closeLoading();
++      };
++
++      // DeviceInquiryのObserver
++      var identityRequestObserver = {
++        isSucceeded: function(msg) {
++          // Replyの一部分が一致するかを判定
++          var partOfIdentityReply = ADDRESS_CONST.PART_OF_IDENTITY_REPLY;
++          if (msg.slice(0, 4) !== partOfIdentityReply.slice(0, 4))    return false;
++          if (msg.slice(6, 16) !== partOfIdentityReply.slice(6, 16))  return false;
++          if (window.modelInfo) {
++            if (! window.modelInfo.setModel(msg.slice(20, 22)))  return false;
++          }
++          return true;
++        },
++        success: function(msg) {
++          // DeviceIDを書き換え
++          ProductSetting.deviceId = msg.slice(4, 6);
++          // 後続処理へ
++          util.waitForRQ1Reply(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_LEVEL, 1, editorCommunicationLevelObserver);
++        },
++        error: function() {
++          // 接続を解除
++          midiConnectionController.disconnectMIDI();
++          // WrongDeviceダイアログを開く
++          ERROR_DIALOG_MAP.wrongDeviceError.open(function() {
++            ERROR_DIALOG_MAP.offLineMode.open();
++            disabledTopWriteWhenOflineMode();
++          }, function() {
++            // midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.deviceErrMidiInputSelector, MIDI_ELEMENT_IDS.deviceErrMidiConnectDialog, MIDI_ELEMENT_IDS.deviceErrMidiOutputSelector);
++            midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector2, MIDI_ELEMENT_IDS.deviceErrMidiConnectDialog);
++          });
++          btsDOMController.closeLoading();
++        }
++      };
++
++      // EditorCommunicationLevel取得のObserver
++      var editorCommunicationLevelObserver = {
++        success: function(msg) {
++          if (ProductSetting.developmentMode || (parseInt(msg) === ProductSetting.communicationLevel)) {
++            // CommunicationModeを1に設定
++            MIDIController.dt1(nibble(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_MODE), hex2(1));       
++            if (ProductSetting.communicationRevision) {
++              // communicationRevisionに対応している場合は後続処理
++              util.waitForRQ1Reply(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_REVISION, 1, editorCommunicationRevisionObserver);
++            } else {
++              syncParameters();
++            }
++          } else if (parseInt(msg) < ProductSetting.communicationLevel) {
++            // アプリのバージョンが上の場合
++            // 接続を解除し、ダイアログを開く
++            midiConnectionController.disconnectMIDI();
++            ERROR_DIALOG_MAP.oldVersionOfInstrument.open(function() {
++              ERROR_DIALOG_MAP.offLineMode.open();
++              disabledTopWriteWhenOflineMode();
++            });
++            btsDOMController.closeLoading();
++          } else if (parseInt(msg) > ProductSetting.communicationLevel) {
++            // 実機のバージョンが上の場合
++            // 接続を解除し、ダイアログを開く
++            midiConnectionController.disconnectMIDI();
++            ERROR_DIALOG_MAP.oldVersionOfBTS.open(function() {
++              ERROR_DIALOG_MAP.offLineMode.open();
++              disabledTopWriteWhenOflineMode();
++            });
++            btsDOMController.closeLoading();
++          }
++        },
++        // Timeoutの場合
++        error: function() {
++          communicationErrorFunc();
++        }
++      };
++      // EditorCommunicationRevision取得のObserver
++      var editorCommunicationRevisionObserver = {
++        success: function(msg) {
++          if (parseInt(msg) <= ProductSetting.communicationRevision) {
++            // アプリのリビジョンが上の場合
++            /**
++             * コンバート処理
++             */
++          }
++          syncParameters();
++        },
++        error: function() {
++          communicationErrorFunc();
++        }
++      };
++      
++      function syncParameters() {
++        enableTopWriteWhenConnect();
++        patchMIDIController.fetchPatchNames(function () {
++          systemRead();
++        }, function() {
++          communicationErrorFunc();
++        });
++      }
++
++      // Temporary, System, Statusを取得
++      function systemRead() {
++        window.isReadPatch0 = false;
++        midiConnectionController.readEditor([4, 0, 1, 3], function () {
++          btsDOMController.closeLoading();
++          finishFunc();
++          setupKnobModFxTargetList();
++          // GA-FCの接続状態をRQ1
++          MIDIController.rq1(nibble(ADDRESS_CONST.COMMAND.GAFC_TYPE), 1, function() {});
++        }, function () {
++          communicationErrorFunc();
++        });
++      } 
++
++      // Loadingの画面を開く
++      btsDOMController.openLoading();
++      // DeviceInquiryを送信
++      util.waitForMIDIMsgReply(ADDRESS_CONST.IDENTITY_REQUEST, identityRequestObserver);
++
++    },
++    /**
++     * EditorReadを行う
++     * @param indexes readするeditorのname(配列で渡す)
++     * @param completeFunc 成功時に呼び出されるコールバック関数
++     * @param errorFunc エラー時に呼び出されるコールバック関数
++     * @param delayTime 遅延させる場合にmsecを渡す(現在使用箇所なし)
++     * @returns {Function} Cancel時の呼び出すべき関数をreturn
++     */
++    readEditor: function(indexes, completeFunc, errorFunc, delayTime) {
++      var editors = [];
++      var observers = [];
++      var completedNum = 0;
++      var errorNum = 0;
++      for (var i = 0; i < indexes.length; i++) {
++        if (indexes[i] == 0) {
++          window.isReadPatch0 = true;
++        }
++        editors.push(new Editor(ProductSetting.editor[indexes[i]].config));
++      }
++      for (var j = 0; j < indexes.length; j++) {
++        observers.push({
++          index: j,
++          notify: function(msg, arg) {
++            if (arg === 'end') {
++              completedNum += 1;
++              editors[this.index].removeObserver(observers[this.index]);
++              if (this.index + 1 < indexes.length) {
++                editors[this.index + 1].read();
++                editors[this.index + 1].addObserver(observers[this.index + 1]);
++              }
++              if (completedNum === indexes.length) {
++                if (completeFunc !== undefined && typeof completeFunc === 'function') {
++                  window.isReadPatch0 = false;
++                  completeFunc();
++                }
++              } else if (completedNum + errorNum === indexes.length) {
++                if (errorFunc !== undefined && typeof errorFunc === 'function') {
++                  window.isReadPatch0 = false;
++                  errorFunc();
++                }
++              }
++            } else if (msg === 'editor_cancel' || arg === 'timeout') {
++              errorNum += 1;
++              editors[this.index].removeObserver(observers[this.index]);
++              if (this.index + 1 < indexes.length) {
++                editors[this.index + 1].read();
++                editors[this.index + 1].addObserver(observers[this.index + 1]);
++              }
++              if (completedNum + errorNum === indexes.length) {
++                if (errorFunc !== undefined && typeof errorFunc === 'function') {
++                  window.isReadPatch0 = false;
++                  errorFunc();
++                }
++              }
++            } else {
++              // debug log
++              // console.log(this.index, msg, arg);
++            }
++          }
++        });
++      }
++      if (delayTime !== undefined) {
++        setTimeout(function() {
++          editors[0].read();
++          editors[0].addObserver(observers[0]);
++        }, delayTime);
++      } else {
++        editors[0].read();
++        editors[0].addObserver(observers[0]);
++      }
++      return function() {
++        editors.forEach(function(editor, i) {
++          editor.removeObserver(observers[i]);
++        });
++      };
++    },
++    /**
++     * 初回接続ダイアログを開く or Storageの情報を使って自動接続
++     * index.jsで呼び出し
++     */
 +     startInitSetting: async function() {
 +      midiConnectionController.setInputs(await $native.midi.input.endpoints());
 +      midiConnectionController.setOutputs(await $native.midi.output.endpoints());
-       midiDOMController.updateMIDISelector();
- 
-       // input, outputのどちらかが0件の場合はDeviceNotFoundのダイアログを開く
-diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/system_icon_setting.js html/js/businesslogic/bts/system_icon_setting.js
++      midiDOMController.updateMIDISelector();
++
++      // input, outputのどちらかが0件の場合はDeviceNotFoundのダイアログを開く
++      if (midiConnectionController.getInputs().length === 0 || midiConnectionController.getOutputs().length === 0) {
++        popup_open(MIDI_ELEMENT_IDS.deviceNotFoundDialog.slice(1));
++        return;
++      }
++
++      // ストレージに保存されているMIDI情報を取得(ない場合はnull)
++      var storedInput = null;
++      var storedOutput = null;
++      var storage = util.readStorage();
++      if (storage.input !== undefined && storage.output !== undefined) {
++        storedInput = storage.input;
++        storedOutput = storage.output;
++      }
++
++      // ストレージに保存されたMIDIと一致するEndpointsがある場合は接続
++      // 見つからない場合、ストレージに保存されていない場合はダイアログを開く
++      if (storedInput !== null && storedOutput !== null) {
++        var inputs = midiConnectionController.getInputs();
++        var outputs = midiConnectionController.getOutputs();
++        var matchedInput = null;
++        var matchedOutput = null;
++        for (var i = 0, l = inputs.length; i < l; i++) {
++          if (inputs[i].MIDIEndpointUIDKey === storedInput.MIDIEndpointUIDKey) {
++            matchedInput = inputs[i];
++            break;
++          }
++        }
++        for (var i = 0, l = outputs.length; i < l; i++) {
++          if (outputs[i].MIDIEndpointUIDKey === storedOutput.MIDIEndpointUIDKey) {
++            matchedOutput = outputs[i];
++            break;
++          }
++        }
++        if (matchedInput !== null && matchedOutput !== null) {
++          // Input, Outputどちらも合致するものが見つかった場合
++          btsDOMController.closeConnectingPage();
++          this.connectMIDI(matchedInput, matchedOutput);
++          midiConnectionController.updateHasInitialized();
++        } else {
++          // 一致するEndpointsが見当たらない場合
++          midiDOMController.openInitialMIDIConnect();
++        }
++      } else {
++        // ストレージに保存されていない場合
++        midiDOMController.openInitialMIDIConnect();
++      }
++    },
++    /**
++     * 引数で与えられたSelectListのチェックのindexを取得し、
++     * 該当するinputを使って接続
++     * @param selectorId
++     * @param dialogId
++     */
++     connectCheckedEndpoint: function(inputSelectorId, dialogId, outputSelectorId) {
++      var inputCheckedNum = null;
++      var outputCheckedNum = null;
++      $(inputSelectorId + ' div a').each(function(index, elm) {
++        if ($(elm).attr('checked') === 'checked') {
++          inputCheckedNum = index;
++        }
++      });
++      if (outputSelectorId !== undefined) {
++        $(outputSelectorId + ' div a').each(function(index, elm) {
++          if ($(elm).attr('checked') === 'checked') {
++            outputCheckedNum = index;
++          }
++        });
++        if (inputCheckedNum !== null && outputCheckedNum !== null) {
++          var input = midiConnectionController.getInput(inputCheckedNum);
++          var output = midiConnectionController.getOutput(outputCheckedNum);
++          if (input !== null && output !== null) {
++            popup_close(dialogId.slice(1));
++            midiConnectionController.connectMIDI(input, output);
++          }
++        }
++      } else {
++        if (inputCheckedNum !== null) {
++          var input = midiConnectionController.getInput(inputCheckedNum);
++          if (input !== null) {
++            popup_close(dialogId.slice(1));
++            midiConnectionController.connectMIDI(input);
++          }
++        }
++      }
++    },
++    // Refresh処理
++    refresh: function() {
++      /**
++       * Endpointを更新
++       */
++       midiConnectionController.setInputs($native.midi.input.endpoints());
++       midiConnectionController.setOutputs($native.midi.output.endpoints());
++
++       midiDOMController.updateMIDISelector();
++
++      /**
++       * 初期画面の場合は終了
++       */
++       if (!midiConnectionController.getHasInitialized()) {
++        return;
++      }
++
++      /**
++       * currentMIDIがnullではなく(接続中と認識している)、一致するNameKeyがない場合はdisconnectedと判断
++       */
++       var currentMIDI = midiConnectionController.getCurrentMIDI();
++
++       var hasConnected = midiConnectionController.getInputs().some(function(value) {
++        return currentMIDI !== null && value.MIDIEntityNameKey === currentMIDI.MIDIEntityNameKey;
++      });
++       if (currentMIDI !== null && !hasConnected) {
++        midiConnectionController.disconnectMIDI();
++        midiDOMController.openDisconnectedDialog();
++      }
++
++    },
++    /**
++     * inputに一致するoutputを探す
++     * (見つからない場合はnull)
++     * @param input
++     * @returns {*}
++     * @private
++     */
++     _getMatchedOutput: function(input) {
++      var replacedInputName = input.MIDIEntityNameKey.replace(/^\([\d]+\)$/g, '');
++      var outputArray = this.getOutputs();
++      for (var i = 0, l = outputArray.length; i < l; i++) {
++        if (replacedInputName === outputArray[i].MIDIEntityNameKey) {
++          return outputArray[i];
++        }
++      }
++      return null;
++    }
++  };
++
++  /**
++   * MIDIに関連するDOM処理を定義
++   */
++   window.midiDOMController = {
++    inputSelectorIds: [
++      MIDI_ELEMENT_IDS.midiConnectSelector,
++      MIDI_ELEMENT_IDS.disconnectedMidiConnectSelector,
++      // MIDI_ELEMENT_IDS.deviceErrMidiInputSelector,
++      MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector,
++      MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector2,
++      MIDI_ELEMENT_IDS.menuMidiDeviceSelector,
++      // MIDI_ELEMENT_IDS.menuMidiInputSelector
++    ],
++    outputSelectorIds: [
++      // MIDI_ELEMENT_IDS.menuMidiOutputSelector,
++      // MIDI_ELEMENT_IDS.deviceErrMidiOutputSelector
++    ],
++    okBtnIds: [
++      MIDI_ELEMENT_IDS.midiConnectOkBtn,
++      MIDI_ELEMENT_IDS.disconnectedMidiConnectOkBtn,
++      MIDI_ELEMENT_IDS.deviceErrMidiConnectOkBtn,
++      MIDI_ELEMENT_IDS.connectionErrMidiConnectOkBtn
++    ],
++    /**
++     * 初期接続画面を開く
++     */
++     openInitialMIDIConnect: function() {
++      popup_open(MIDI_ELEMENT_IDS.midiConnectDialog.slice(1));
++    },
++    /**
++     * MIDIのEndpoint変更によるDOMの更新
++     *
++     * 0件か否かに応じて、自動的に先頭をチェック状態にする処理、ボタンの非活性化を行う
++     */
++     updateMIDISelector: function() {
++      var inputs = midiConnectionController.getInputs();
++      var outputs = midiConnectionController.getOutputs();
++      var inputHtml = '';
++      inputs.forEach(function(input) {
++        inputHtml += ('<a href="#" class="' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption.slice(1) + ' elf-select-list-option-control" msg="">' + input.MIDIEntityNameKey + '</a>');
++      });
++      var outputHtml = '';
++      outputs.forEach(function(output) {
++        outputHtml += ('<a href="#" class="' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption.slice(1) + ' elf-select-list-option-control" msg="">' + output.MIDIEntityNameKey + '</a>');
++      });
++      this.inputSelectorIds.forEach(function(value) {
++        $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption).html(inputHtml);
++        if (inputs.length > 0) {
++          $(value).removeClass('disabled');
++          if (value !== MIDI_ELEMENT_IDS.menuMidiDeviceSelector && value !== MIDI_ELEMENT_IDS.menuMidiInputSelector) {
++            $(value + ' p').text(inputs[0].MIDIEntityNameKey);
++            $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(0).attr('checked', 'checked');
++          }
++        } else {
++          $(value).addClass('disabled');
++          $(value + ' p').empty();
++        }
++      });
++      this.outputSelectorIds.forEach(function(value) {
++        $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption).html(outputHtml);
++        if (outputs.length > 0) {
++          $(value).removeClass('disabled');
++          if (value !== MIDI_ELEMENT_IDS.menuMidiOutputSelector) {
++            $(value + ' p').text(outputs[0].MIDIEntityNameKey);
++            $(value + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(0).attr('checked', 'checked');
++          }
++        } else {
++          $(value).addClass('disabled');
++          $(value + ' p').empty();
++        }
++      });
++      this.okBtnIds.forEach(function(value) {
++        if (inputs.length > 0) {
++          $(value).removeClass('disabled-blue');
++        } else {
++          $(value).addClass('disabled-blue');
++        }
++      });
++      this.updateInitialDialogSelector();
++      this.updateMenuPageSelector();
++    },
++    /**
++     * 初期ダイアログ内のーの表示を更新
++     */
++     updateInitialDialogSelector: function () {
++      var inputs = midiConnectionController.getInputs();
++      var inputHtml = '';
++      inputs.forEach(function(input, index) {
++        inputHtml += '<input type="radio" name="device-connect-select-dialog-menu-btn" id="device-connect-select-dialog-menu-btn-' + index + '">'
++        inputHtml += '<label class="elf-radio-button-item" for="device-connect-select-dialog-menu-btn-' + index + '" style="width: 100%; height: 10%; line-height: 33.6px;">' + input.MIDIEntityNameKey + '</label>';
++      });
++      $(MIDI_ELEMENT_IDS.midiConnectSelector).html(inputHtml);
++      if (inputs.length > 0) {
++        $(MIDI_ELEMENT_IDS.midiConnectSelector + ' input').eq(0).prop('checked', true);
++      }
++    },
++    /**
++     * Menuダイアログ・DiviceSetting画面内の表示を更新
++     */
++     updateMenuPageSelector: function() {
++      var currentMIDI = midiConnectionController.getCurrentMIDI();
++      var matchedInputIndex = midiConnectionController.getInputs().findIndex(function(input) {
++        return currentMIDI !== null && input.MIDIEntityNameKey === currentMIDI.MIDIEntityNameKey;
++      });
++      if (matchedInputIndex !== -1) {
++        var inputName = midiConnectionController.getInput(matchedInputIndex).MIDIEntityNameKey;
++        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(matchedInputIndex).attr('checked', 'checked');
++        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' p').text(inputName);
++        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(matchedInputIndex).attr('checked', 'checked');
++        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' p').text(inputName);
++      } else {
++        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
++        $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector + ' p').text('');
++        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
++        // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' p').text('');
++      }
++      // var matchedOutputIndex = midiConnectionController.getOutputs().findIndex(function(output) {
++      //   return currentMIDI !== null && output.MIDIEntityNameKey === currentMIDI.MIDIEntityNameKey;
++      // });
++      // if (matchedOutputIndex !== -1) {
++      //   var outputName = midiConnectionController.getOutput(matchedOutputIndex).MIDIEntityNameKey;
++      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').eq(matchedOutputIndex).attr('checked', 'checked');
++      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' p').text(outputName);
++      // } else {
++      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
++      //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' p').text('');
++      // }
++
++      // if (matchedInputIndex === -1 || matchedOutputIndex === -1) {
++      //   $(MIDI_ELEMENT_IDS.menuMidiOkMask).css('display', 'block');
++      //   $(MIDI_ELEMENT_IDS.menuMidiOkBtn).addClass('disabled-blue');
++      // } else {
++      //   $(MIDI_ELEMENT_IDS.menuMidiOkMask).css('display', 'none');
++      //   $(MIDI_ELEMENT_IDS.menuMidiOkBtn).removeClass('disabled-blue');
++      // }
++    },
++    /**
++     * 選択中MIDIの変更によるDOMの更新
++     */
++     updateCurrentMIDI: function() {
++      var addCheck = function (id, nameKey) {
++        $(id + ' p').text(nameKey);
++        var selectOptions = $(id + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a');
++        for (var i = 0; i < selectOptions.length; i++) {
++          if ($(selectOptions[i]).text() === nameKey) {
++            $(selectOptions[i]).attr('checked', 'checked');
++            break;
++          }
++        }
++      };
++      var removeCheck = function (id) {
++        $(id + ' p').text('');
++        $(id + ' ' + MIDI_ELEMENT_CLASS_NAMES.midiConnectSelectorOption + ' a').removeAttr('checked');
++      };
++      var current = midiConnectionController.getCurrentMIDI();
++      if (current !== null) {
++        addCheck(MIDI_ELEMENT_IDS.menuMidiDeviceSelector, current.MIDIEntityNameKey);
++        // addCheck(MIDI_ELEMENT_IDS.menuMidiInputSelector, current.MIDIEntityNameKey);
++        // addCheck(MIDI_ELEMENT_IDS.menuMidiOutputSelector, current.MIDIEntityNameKey);
++        // Writeボタンの活性化
++        patchDOMController.updatePatchWriteButton(false);
++        patchDOMController.updatePatchClearButton(false);
++      } else {
++        removeCheck(MIDI_ELEMENT_IDS.menuMidiDeviceSelector);
++        // removeCheck(MIDI_ELEMENT_IDS.menuMidiInputSelector);
++        // removeCheck(MIDI_ELEMENT_IDS.menuMidiOutputSelector);
++        // Writeボタンの非活性化
++        patchDOMController.updatePatchWriteButton(true);
++        patchDOMController.updatePatchClearButton(true);
++      }
++    },
++    /**
++     * DisconnectedDialogを開く際の前処理
++     */
++     openDisconnectedDialog: function() {
++      processingController.allClear();
++
++      closeNumpad();
++      closeNumpadList();
++      popup_close('write-dialog');
++      popup_close('write-clear-dialog');
++
++      btsDOMController.closeWritePopupMenu();
++      toneCentralController.stopYoutubeVideo();
++      toneCentralController.stopScMusicPlayer();
++      window.librarianForceTransition();
++
++      ERROR_DIALOG_MAP.disconnectedError.open(function() {
++        ERROR_DIALOG_MAP.offLineMode.open();
++        disabledTopWriteWhenOflineMode();
++      }, function() {
++        midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.disconnectedMidiConnectSelector, MIDI_ELEMENT_IDS.disconnectedMidiConnectDialog);
++      });
++    }
++  };
++
++  /**
++   * quattro nativeのMIDIイベントと、MIDI関連のDOMイベントを監視
++   */
++   window.assignMIDIEvent = function() {
++    $native.midi.event.changed = function() {
++      midiConnectionController.refresh();
++    };
++    $native.midi.event.error = function() {
++      midiConnectionController.disconnectMIDI();
++      midiDOMController.openDisconnectedDialog();
++    };
++    $native.midi.event.connectfailed = function() {
++      midiConnectionController.disconnectMIDI();
++      ERROR_DIALOG_MAP.midiDeviceConnectionError.open(function() {
++        ERROR_DIALOG_MAP.offLineMode.open();
++      }, function() {
++        midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.connectionErrMidiConnectSelector, MIDI_ELEMENT_IDS.connectionErrMidiConnectDialog);
++      });
++    };
++    $native.app.event.command = function(param1, param2) {
++      if (param1 === 'exit') {
++        MIDIController.dt1(nibble(ADDRESS_CONST.COMMAND.EDITOR_COMMUNICATION_MODE), hex2(0));
++        setTimeout(function () {
++          $native.app.exit();
++        }, 500);
++      } else if (param1 === 'wakeup') {
++        if(currentMIDI !== null) {
++          midiConnectionController.disconnectMIDI();
++          midiDOMController.openDisconnectedDialog();
++        }
++      }
++    };
++
++    /**
++     * MIDI RefreshBtns
++     */
++
++    var refreshBtns = [
++      MIDI_ELEMENT_IDS.midiConnectRefreshBtn,
++      MIDI_ELEMENT_IDS.menuMidiRefreshBtn,
++      MIDI_ELEMENT_IDS.disconnectedMidiConnectRefreshBtn,
++      MIDI_ELEMENT_IDS.deviceErrMidiConnectRefreshBtn,
++      MIDI_ELEMENT_IDS.connectionErrMidiConnectRefreshBtn
++    ];
++    $(refreshBtns.join(',')).on(pointer.click, function(e) {
++      e.preventDefault();
++      midiConnectionController.refresh();
++    });
++    // 初期接続画面のOKボタン
++    $(MIDI_ELEMENT_IDS.midiConnectOkBtn).on(pointer.click, function(e) {
++      e.preventDefault();
++      var selectedNum = null;
++      $(MIDI_ELEMENT_IDS.midiConnectSelector + ' input').each(function(index, elm) {
++        if ($(elm).prop('checked') === true) {
++          selectedNum = index;
++        }
++      });
++      if (selectedNum !== null) {
++        popup_close(MIDI_ELEMENT_IDS.midiConnectDialog.slice(1));
++        btsDOMController.closeConnectingPage();
++        midiConnectionController.updateHasInitialized();
++        midiConnectionController.connectMIDI(midiConnectionController.getInput(selectedNum));
++      }
++    });
++
++    // Menuダイアログ・DiviceSetting画面内のDeviceセレクター更新時
++    $(MIDI_ELEMENT_IDS.menuMidiDeviceSelector).on('elf-changed', function(e, v) {
++      midiConnectionController.disconnectMIDI();
++      midiConnectionController.connectMIDI(midiConnectionController.getInput(v));
++    });
++    // // Menuダイアログ・DiviceSetting画面内のOKボタン押下時
++    // $(MIDI_ELEMENT_IDS.menuMidiOkBtn).on('click', function(e, v) {
++    //   $native.midi.input.disconnect();
++    //   $native.midi.output.disconnect();
++    //   midiConnectionController.connectCheckedEndpoint(MIDI_ELEMENT_IDS.menuMidiInputSelector, '', MIDI_ELEMENT_IDS.menuMidiOutputSelector);
++    // });
++    // // Menuダイアログ・DiviceSetting画面内のInput,Outputセレクター更新時
++    // $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ', ' + MIDI_ELEMENT_IDS.menuMidiOutputSelector).on('elf-changed', function(e, v) {
++    //   var isInputSelected = false;
++    //   var isOutputSelected = false;
++    //   $(MIDI_ELEMENT_IDS.menuMidiInputSelector + ' a').each(function(index, elm) {
++    //     if ($(elm).attr('checked') === 'checked') {
++    //       isInputSelected = true;
++    //     }
++    //   });
++    //   $(MIDI_ELEMENT_IDS.menuMidiOutputSelector + ' a').each(function(index, elm) {
++    //     if ($(elm).attr('checked') === 'checked') {
++    //       isOutputSelected = true;
++    //     }
++    //   });
++    //   if (isInputSelected && isOutputSelected) {
++    //     $(MIDI_ELEMENT_IDS.menuMidiOkMask).css('display', 'none');
++    //     $(MIDI_ELEMENT_IDS.menuMidiOkBtn).removeClass('disabled-blue');
++    //   }
++    // });
++
++    // DeviceNotFoundダイアログのRefreshモード押下時
++    $(MIDI_ELEMENT_IDS.deviceNotFoundDialogRefreshBtn).on(pointer.click, function(e) {
++      midiConnectionController.refresh();
++      popup_close(MIDI_ELEMENT_IDS.deviceNotFoundDialog.slice(1));
++      midiConnectionController.startInitSetting();
++    });
++
++    // 初期接続画面のCancelボタン
++    $(MIDI_ELEMENT_IDS.midiConnectCancelBtn).on(pointer.click, function(e) {
++      e.preventDefault();
++      popup_close(MIDI_ELEMENT_IDS.midiConnectDialog.slice(1));
++      btsDOMController.closeConnectingPage();
++      midiConnectionController.updateHasInitialized();
++      ERROR_DIALOG_MAP.offLineMode.open();
++      disabledTopWriteWhenOflineMode();
++    });
++    // DeviceNotFoundダイアログのOfflineモード押下時
++    $(MIDI_ELEMENT_IDS.deviceNotFoundDialogOfflineModeBtn).on(pointer.click, function(e) {
++      e.preventDefault();
++      popup_close(MIDI_ELEMENT_IDS.deviceNotFoundDialog.slice(1));
++      btsDOMController.closeConnectingPage();
++      midiConnectionController.updateHasInitialized();
++      ERROR_DIALOG_MAP.offLineMode.open();
++      disabledTopWriteWhenOflineMode();
++    });
++  };
++  
++})();
+diff '--color=auto' -urN html_unmodified/js/businesslogic/bts/system_icon_setting.js html/js/businesslogic/bts/system_icon_setting.js
 --- html_unmodified/js/businesslogic/bts/system_icon_setting.js	2025-06-28 15:25:51.669762887 -0400
 +++ html/js/businesslogic/bts/system_icon_setting.js	2025-06-27 20:49:26.789261881 -0400
 @@ -21,14 +21,14 @@
@@ -221,35 +2537,82 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/system_icon_settin
        })
  
        if (typeof callback == 'function') {
-diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/tips_controller.js html/js/businesslogic/bts/tips_controller.js
+diff '--color=auto' -urN html_unmodified/js/businesslogic/bts/tips_controller.js html/js/businesslogic/bts/tips_controller.js
 --- html_unmodified/js/businesslogic/bts/tips_controller.js	2025-06-28 15:25:51.669791510 -0400
 +++ html/js/businesslogic/bts/tips_controller.js	2025-06-27 22:42:56.990780424 -0400
-@@ -13,15 +13,15 @@
- var tipsVersion = 1;
- var variationCntTemp = [];
- 
+@@ -1,573 +1,570 @@
+-var http = $native.http;
+-var fs = $native.fs;
+-
+-var URL_TIPS = null;
+-var DEFAULT_LANGUAGE = 'en'
+-
+-//const dirTips = null;//makeDirTips();
+-var dirTips = null;
+-
+-var langStr = DEFAULT_LANGUAGE;
+-
+-
+-var tipsVersion = 1;
+-var variationCntTemp = [];
+-
 -function makeDirTips()  {
-+async function makeDirTips()  {
-   try {
+-  try {
 -    const prefDir = fs.path('library') + 'pref/';
 -    fs.mkdir(prefDir);
 -    fs.mkdir(prefDir + "tips/");
 -    fs.mkdir(prefDir + "tips_image/");
-+    const prefDir = await fs.path('library') + 'pref/';
-+    await fs.mkdir(prefDir);
-+    await fs.mkdir(prefDir + "tips/");
-+    await fs.mkdir(prefDir + "tips_image/");
- 
-     const _tipsHtmlDir = prefDir + "tips/" + langStr + "/";
+-
+-    const _tipsHtmlDir = prefDir + "tips/" + langStr + "/";
 -    fs.mkdir(_tipsHtmlDir);
-+    await fs.mkdir(_tipsHtmlDir);
- 
-     const _tipsImgDir = prefDir + "tips_image/" ;
- 
-@@ -70,26 +70,19 @@
-   });
- }
- BTSTipsController.prototype.loadTips = function (urlTips, dataType, successFunc, errorFunc, completeFunc) {
+-
+-    const _tipsImgDir = prefDir + "tips_image/" ;
+-
+-    return {
+-      tipsHtmlDir: _tipsHtmlDir,
+-      tipsImgDir: _tipsImgDir,
+-    }
+-  } catch (error) {
+-    // console.log(error);
+-    return {
+-      tipsHtmlDir: '',
+-      tipsImgDir: '',
+-    }
+-  }
+-}
+-
+-function BTSTipsController() {
+-  this.isTipsReady = false;
+-  this.htmlLoaded = [];
+-  this.tipsViews = [
+-    { page: "EDIT", block: "CHAIN",      typeSelect: "",                             contentFrame: "main-chain-frame-1",    multiFrame: false },
+-    { page: "EDIT", block: "BOOSTER",    typeSelect: "booster-type-select-box",      contentFrame: "booster-content-page",  multiFrame: false },
+-    { page: "EDIT", block: "FX",         typeSelect: "modfx-mod-type-select-box",    contentFrame: "modfx-content-frame",   multiFrame: true  }, // i.e. MOD
+-    { page: "EDIT", block: "FX",         typeSelect: "modfx-fx-type-select-box",     contentFrame: "modfx-content-frame",   multiFrame: true  },
+-    { page: "EDIT", block: "DELAY",      typeSelect: "delay-delay1-type-select-box", contentFrame: "delay-content-frame",   multiFrame: true  },
+-    { page: "EDIT", block: "DELAY",      typeSelect: "delay-delay2-type-select-box", contentFrame: "delay-content-frame",   multiFrame: true  }, // i.e. DELAY2 
+-    { page: "EDIT", block: "REVERB",     typeSelect: "reverb-type-select-box",       contentFrame: "reverb-content-frame",  multiFrame: true  },
+-    { page: "EDIT", block: "SOLO",       typeSelect: "",                             contentFrame: "solo-content-page",     multiFrame: false },
+-    { page: "EDIT", block: "CONTOUR",    typeSelect: "" ,                            contentFrame: "editor-contour-page",   multiFrame: false },
+-    { page: "EDIT", block: "PEDAL FX",   typeSelect: "pedalfx-type-select-box",      contentFrame: "pedalfx-content-frame", multiFrame: true  },
+-    { page: "EDIT", block: "EQ",         typeSelect: "",                             contentFrame: "eq-content-frame",      multiFrame: true  },
+-    { page: "EDIT", block: "EQ",         typeSelect: "",                             contentFrame: "eq2-content-frame",     multiFrame: true  }, // i.e. EQ2
+-    { page: "EDIT", block: "NS",         typeSelect: "" ,                            contentFrame: "ns-content-page",       multiFrame: false },
+-    { page: "EDIT", block: "SEND/RETURN",typeSelect: "",                             contentFrame: "sr-content-page",       multiFrame: false },
+-  ]
+-}
+-
+-const BTS_SERVICE_TIMEOUT_MSEC = 15000;
+-BTSTipsController.prototype.SortDefTable = function () {
+-  // sort online TIPS_DEF by variation
+-  $.each(TIPS_DEF.TIPS_TABLE, function (index, tipDetail) {
+-    tipDetail[1] = tipDetail[1].sort((a, b) => b[3] - a[3]); // i.e. VARIATION (9 .. 0)
+-    tipDetail[1] = tipDetail[1].sort((a, b) => { var idx = 2; return a[idx] < b[idx] ? -1 : 1; }); // i.e. TYPE      (a .. b)
+-    tipDetail[1] = tipDetail[1].sort((a, b) => { var idx = 1; return a[idx] < b[idx] ? -1 : 1; }); // i.e. BLOCK     (a .. b)
+-    tipDetail[1] = tipDetail[1].sort((a, b) => { var idx = 0; return a[idx] < b[idx] ? -1 : 1; }); // i.e. PAGE      (a .. b)
+-  });
+-}
+-BTSTipsController.prototype.loadTips = function (urlTips, dataType, successFunc, errorFunc, completeFunc) {
 -  $.ajax({
 -    url: urlTips,
 -    type: 'GET',
@@ -261,101 +2624,154 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/tips_controller.js
 -      }
 -    },
 -    error: function () {
-+  $native.http.request({ url: urlTips }, (err, body) => {
-+    if (err) {
-       if (typeof errorFunc == 'function') {
-         errorFunc();
-       }
+-      if (typeof errorFunc == 'function') {
+-        errorFunc();
+-      }
 -    },
 -    complete: function () {
-+    } else {
-+      if (typeof successFunc == 'function') {
-+        successFunc(body);
-+      }
-+    }
-       if (typeof completeFunc == 'function') {
-         completeFunc();
-       }
+-      if (typeof completeFunc == 'function') {
+-        completeFunc();
+-      }
 -    }
-   });
- };
- 
-@@ -137,19 +130,20 @@
-           'text',
-         
-           // success function
+-  });
+-};
+-
+-BTSTipsController.prototype.loadTipsLocal = function (urlTips) {
+-  try {
+-    // ----------------------------------------
+-    // load tipsdef.js
+-    // ----------------------------------------
+-    this.loadTips(
+-
+-      urlTips.domain + "js/" + urlTips.def,
+-      'script',
+-
+-      // success function
+-      (obj) => {
+-        this.SortDefTable(); // sort online TIPS_DEF by variation
+-        let onlineData = TIPS_DEF;
+-        //load from storage
+-        let localData = $native.app.storage2('tipsdef');
+-        if (localData && localData == JSON.stringify(onlineData)) {
+-          window.TIPS_DEF = JSON.parse(localData);
+-        } else {
+-          window.TIPS_DEF = JSON.stringify(onlineData);
+-          $native.app.storage2('tipsdef', JSON.stringify(onlineData)); // update storage
+-        }
+-      },
+-
+-      // error function
+-      () => {
+-      //load from storage if no data on the server
+-        let localData = $native.app.storage2('tipsdef');
+-        if (localData) {
+-          window.TIPS_DEF = JSON.parse(localData);
+-        }
+-      },
+-
+-      // complete function
+-      () => {
+-        // ----------------------------------------
+-        // load tipsapi.js
+-        // ----------------------------------------
+-        this.loadTips(
+-          
+-          urlTips.domain + "js/" + urlTips.api,
+-          'text',
+-        
+-          // success function
 -          (obj) => {
-+          async (obj) => {
-             let onlineData = obj;
-             var localData = null;
- 
-             //load from storage
-             try {
+-            let onlineData = obj;
+-            var localData = null;
+-
+-            //load from storage
+-            try {
 -              var pathTips = fs.path('library') + 'pref/';
 -              let tipsContent = fs.contents(pathTips);
-+              var pathTips = await fs.path('library') + 'pref/';
-+              await fs.contents(pathTips).then(async tipsContent => {
-               if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
-                 // this.loadTips(pathTips + "tipsapi.js");
--                localData = fs.readString(pathTips + "tipsapi.js")
-+                  localData = await fs.readString(pathTips + "tipsapi.js")
-                 //$.globalEval(scriptContent);
-               }
-+              });
-             } catch (error) {
-               // console.log(error);
-             }
-@@ -163,27 +157,30 @@
-             let tipsApi = new TipsApi();
-             langStr = tipsApi.GetLanguageStr();
-             tipsVersion = tipsApi.GetVersion();
--            dirTips = makeDirTips();
-+            dirTips = await makeDirTips();
- 
-             if (localData && localData == onlineData) {
-               
-             } else {
--              fs.writeString(pathTips + "tipsapi.js", onlineData);
-+              await fs.writeString(pathTips + "tipsapi.js", onlineData);
-             }
-           },
-         
-           // error
--          () => {
-+          async () => {
-             //load from storage if no data on the server
-             var localData = null;
-             try {
--              var pathTips = fs.path('library') + 'pref/';
--              let tipsContent = fs.contents(pathTips);
-+              var pathTips = await fs.path('library') + 'pref/';
-+              await fs.contents(pathTips).then(async tipsContent => {
-               if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
-                 // this.loadTips(pathTips + "tipsapi.js");
+-              if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
+-                // this.loadTips(pathTips + "tipsapi.js");
 -                localData = fs.readString(pathTips + "tipsapi.js")
 -                //$.globalEval(scriptContent);
-+                  await fs.readString(pathTips + "tipsapi.js").then(scriptContent => {
-+                    localData = scriptContent;
-+                    $.globalEval(scriptContent);
-+                  });
-               }
-+              });
-             } catch (error) {
-               // console.log(error);
-             }
-@@ -193,7 +190,7 @@
-               let tipsApi = new TipsApi();
-               langStr = tipsApi.GetLanguageStr();
-               tipsVersion = tipsApi.GetVersion();
+-              }
+-            } catch (error) {
+-              // console.log(error);
+-            }
+-
+-            if (localData && localData == onlineData) {
+-              $.globalEval(localData);
+-            } else {
+-              $.globalEval(onlineData);
+-            }
+-
+-            let tipsApi = new TipsApi();
+-            langStr = tipsApi.GetLanguageStr();
+-            tipsVersion = tipsApi.GetVersion();
+-            dirTips = makeDirTips();
+-
+-            if (localData && localData == onlineData) {
+-              
+-            } else {
+-              fs.writeString(pathTips + "tipsapi.js", onlineData);
+-            }
+-          },
+-        
+-          // error
+-          () => {
+-            //load from storage if no data on the server
+-            var localData = null;
+-            try {
+-              var pathTips = fs.path('library') + 'pref/';
+-              let tipsContent = fs.contents(pathTips);
+-              if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
+-                // this.loadTips(pathTips + "tipsapi.js");
+-                localData = fs.readString(pathTips + "tipsapi.js")
+-                //$.globalEval(scriptContent);
+-              }
+-            } catch (error) {
+-              // console.log(error);
+-            }
+-            if (localData) {
+-              $.globalEval(localData);
+-
+-              let tipsApi = new TipsApi();
+-              langStr = tipsApi.GetLanguageStr();
+-              tipsVersion = tipsApi.GetVersion();
 -              dirTips = makeDirTips();
-+              dirTips = await makeDirTips();
-             }
-           }
-         );
-@@ -229,25 +226,20 @@
- }
- 
- BTSTipsController.prototype.loadContentHtml = function (url, tipsItemArr, fileName, successFunc, errorFunc) {
+-            }
+-          }
+-        );
+-        
+-      },
+-    );
+-
+-    // ----------------------------------------
+-  } catch (e) {
+-    // console.log(e.message);
+-  }
+-};
+-
+-BTSTipsController.prototype.waitForTipsJsLoaded = function (successFunc) {
+-  var self = this;
+-  var maxAttempts = 50;
+-  var attempts = 0;
+-
+-  function isTipsJsLoaded() {
+-    return typeof TipsApi === 'function' && typeof TIPS_DEF !== 'undefined' && TIPS_DEF !== null;
+-  }
+-  function checkTipsJsLoaded() {
+-    if (isTipsJsLoaded()) {
+-      self.isTipsReady = true;
+-      successFunc();
+-    } else if (attempts < maxAttempts) {
+-      attempts++;
+-      setTimeout(checkTipsJsLoaded, 100);
+-    } else {
+-    }
+-  }
+-  checkTipsJsLoaded();
+-}
+-
+-BTSTipsController.prototype.loadContentHtml = function (url, tipsItemArr, fileName, successFunc, errorFunc) {
 -  $.ajax({
 -    url: url,
 -    type: 'GET',
@@ -367,183 +2783,1014 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/tips_controller.js
 -      }
 -    },
 -    error: function (e) {
+-      if (typeof errorFunc == 'function') {
+-        errorFunc(fileName, tipsItemArr);
+-      }
+-    }
+-  });
+-};
+-
+-BTSTipsController.prototype.tipsImgLoaded = function(src, fullPath, fileName, tipsItemArr) {
+-  const self = this;
+-  try {
+-    let tipsImgDir = dirTips.tipsImgDir;
+-    if (tipsItemArr.length <= 3) return;
+-    const page = tipsItemArr[0];
+-    const block = tipsItemArr[1];
+-    const type = tipsItemArr[2];
+-    const variation = tipsItemArr[3];
+-    let imgPageDir = tipsImgDir + page + "/";
+-    fs.mkdir(imgPageDir);
+-    let imgBlockDir = block !== "" ? imgPageDir + block + "/" : imgPageDir;
+-    fs.mkdir(imgBlockDir);
+-    let imgTypeDir = type !== "" ? imgBlockDir + type + "/" : imgBlockDir;
+-    fs.mkdir(imgTypeDir);
+-    let imgVariationDir = variation !== "" ? imgTypeDir + variation + "/" : imgTypeDir;
+-    fs.mkdir(imgVariationDir);
+-
+-    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
+-    let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
+-
+-    let origin = "Local";
+-    if (fullPath.startsWith("https://")) {
+-        origin = "HTTPS";
+-    } else if (fullPath.startsWith("http://")) {
+-        origin = "HTTP";
+-    }
+-    let imgName = fullPath.substring(fullPath.lastIndexOf('/') + 1)
+-    let imgContent = fs.contents(imgVariationDir);
+-
+-    var targetPath = urlDefinition.TIPS_DOMAIN;
+-    if (origin != "Local" || fullPath.includes(targetPath)) {
+-      if (imgContent.findIndex(item => item.name == imgName) != -1) {
+-        fs.unlink(imgVariationDir + imgName);
+-      }
+-
+-      if(origin != "Local") {
+-        http.download(src, imgVariationDir + imgName);
+-      } else {
+-        fs.copy(fullPath.replace("file:///", ""), imgVariationDir + imgName);
+-      }
+-
+-      // update content html
+-      let htmlContents = fs.contents(tipsVariationDir);
+-      if (htmlContents.findIndex(item => item.name == fileName) != -1) {
+-        let localContentHtml = fs.readString(tipsVariationDir + fileName);
+-        let newContentHtml = localContentHtml.replace(src, imgVariationDir + imgName);
+-        fs.writeString(tipsVariationDir + fileName, newContentHtml);
+-
+-        if(htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
+-          self.htmlLoaded[htmlLoadedIndex].content = newContentHtml;
+-        };
+-      }
+-    }
+-  } catch (error) {
+-    // console.error("Failed to load image:" + src);
+-  }
+-}
+-BTSTipsController.prototype.tipsImgFailed = function(src, fileName, tipsItemArr) {
+-  // console.error("Failed to load image:" + src);
+-}
+-
+-BTSTipsController.prototype.saveImageToStorage = function (htmlContent, fileName, tipsItemArr) {
+-  var self = this;
+-  var regex = /<img([^>]+)src="([^">]+)"/g;
+-  htmlContent.replace(regex, function(match, attributes, src) {
+-    let img = new Image();
+-    img.src = src;
+-    img.onload = function() {
+-      self.tipsImgLoaded(src, this.src, fileName, tipsItemArr);
+-    };
+-    img.onerror = function() {
+-      self.tipsImgFailed(src, fileName, tipsItemArr);
+-    };
+-
+-    return match;
+-  });
+-}
+-
+-BTSTipsController.prototype.updateContentHtml = function () { // called from URLDefinition.prototype._updateTipsApi()
+-  var self = this;
+-  let updateHtmlToStorage = (htmlContent, url, fileName, _tipDetail) => {
+-    if (_tipDetail.length <=3) return;
+-    const page = _tipDetail[0];
+-    const block = _tipDetail[1];
+-    const type = _tipDetail[2];
+-    const variation = _tipDetail[3];
+-
+-    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
+-    let tipsVariationContents = fs.contents(tipsVariationDir);
+-    if (tipsVariationContents.findIndex(item => item.name == fileName) != -1) {
+-      fs.unlink(tipsVariationDir + fileName); //file exist
+-    }
+-    fs.writeString(tipsVariationDir + fileName, htmlContent); // create html file
+-    let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
+-    if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
+-      self.htmlLoaded[htmlLoadedIndex] = {
+-        page,
+-        block,
+-        type,
+-        variation,
+-        url: tipsVariationDir + fileName,
+-        content: htmlContent
+-      };
+-    };
+-
+-    //check and update image
+-    setTimeout(() => {
+-      self.saveImageToStorage(htmlContent, fileName, _tipDetail);
+-    }, 500);
+-  }
+-
+-  let updateHtmlFail = (fileName, _tipDetail) => {
+-    if (_tipDetail.length <=3) return;
+-    const page = _tipDetail[0];
+-    const block = _tipDetail[1];
+-    const type = _tipDetail[2];
+-    const variation = _tipDetail[3];
+-    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
+-    let tipsVariationContents = fs.contents(tipsVariationDir);
+-    let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
+-    if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
+-      self.htmlLoaded[htmlLoadedIndex] = {
+-        page,
+-        block,
+-        type,
+-        variation,
+-        url: tipsVariationDir + fileName,
+-        content: tipsVariationContents.findIndex(item => item.name == fileName) >= 0 ? fs.readString(tipsVariationContents + fileName) : null,
+-      };
+-    };
+-  }
+-
+-  let successFunc = () => {
+-    let tipsApi = new TipsApi();
+-    $.each(TIPS_DEF.TIPS_TABLE[tipsApi.GetLanguageIndex('')][1], function (index, tipDetail) {
+-      if (tipDetail.length <=3) return;
+-      const page = tipDetail[0];
+-      const block = tipDetail[1];
+-      const type = tipDetail[2];
+-      const variation = tipDetail[3];
+-      let htmlPath = tipDetail[4];
+-      //let htmlPath = tipsApi.GetUrl(page, block, type, variation);
+-      // if html file exist in storage then load from storage, if not then call by ajax
+-      // const listHtmlLoaded = self.filterHtmlLoaded(page, block, type, variation);
+-      if (htmlPath) {
+-        // if (listHtmlLoaded.filter(x => x.htmlPath === htmlPath) > 0) {
+-        //   return;
+-        // }
+-        self.htmlLoaded.push({
+-          page,
+-          block,
+-          type,
+-          variation,
+-          htmlPath,
+-        });
+-
+-        let fileName = htmlPath.substring(htmlPath.lastIndexOf('/') + 1);
+-        var targetPath = urlDefinition.TIPS_DOMAIN;
+-        var fullPath = targetPath + 'html/' + langStr + '/' + htmlPath;
+-        self.loadContentHtml(fullPath, tipDetail, fileName, updateHtmlToStorage, updateHtmlFail);
+-      }
+-    });
+-
+-    setTimeout(function () {
+-      self.showTips();
+-      //console.log(self.htmlLoaded);
+-    }, 3000);
+-  }
+-
+-  this.waitForTipsJsLoaded(successFunc);
+-};
+-
+-BTSTipsController.prototype.showTipsByTab = function (tipsElement) {
+-
+-  var self = this;
+-  let typeSelectedTemp = tipsElement.typeSelect ? $("#" + tipsElement.typeSelect + ">p").text() : "";
+-  let variationTemp = self.getStorageVariationCnt(tipsElement.page, tipsElement.block, typeSelectedTemp);
+-
+-  let contentIndexTemp = -1;
+-  if (self.isTipsReady) {
+-    contentIndexTemp = self.getTipsContentIndex(this.htmlLoaded, tipsElement.page, tipsElement.block, typeSelectedTemp, variationTemp);
+-  }
+-  if (contentIndexTemp >= 0){//} && self.htmlLoaded.length > 0) {
+-    let contentTemp = self.htmlLoaded[contentIndexTemp].content;
+-    let domTemp = $('<div>').attr('class', 'tips-content-block').css({"width": "400px", "height": "100px"}).html(contentTemp);
+-
+-      if(tipsElement.multiFrame && !typeSelectedTemp) {
+-        $("#" + tipsElement.contentFrame + '>div').find(".tips-content-block").remove();
+-        $("#" + tipsElement.contentFrame + '>div').append(domTemp);
+-      } else if(tipsElement.multiFrame) {
+-        $("#" + tipsElement.contentFrame + '>div[displayed != none]').find(".tips-content-block").remove();
+-        $("#" + tipsElement.contentFrame + '>div[displayed != none]').append(domTemp);
+-      } else {
+-        $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
+-        $("#" + tipsElement.contentFrame).append(domTemp);
+-      }
+-
+-      self.countVariation(tipsElement.page, tipsElement.block, typeSelectedTemp, variationTemp);
+-      
+-  } else {
+-    $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
+-  }
+-};
+-
+-BTSTipsController.prototype.showTips = function () {
+-  var self = this;
+-  $.each(this.tipsViews, function (index, tipsElement) {
+-    // self.showTipsByTab(tipsElement);
+-
+-    //effect type selectbox changed
+-    if(tipsElement.typeSelect) {
+-      $("#" + tipsElement.typeSelect).on('elf-changed', function(e, v) {
+-        setTimeout(() => {
+-          self.showTipsByTab(tipsElement);
+-        }, 500);
+-      });
+-    }
+-  });
+-};
+-
+-BTSTipsController.prototype.showTipsChain = function (typeSelectedTemp) {
+-  var self = this;
+-  let tipsElement = self.tipsViews.find(item => item.block == "CHAIN");
+-  let contentIndexTemp = -1;
+-  if (self.isTipsReady) {
+-    contentIndexTemp = self.getTipsContentIndex(this.htmlLoaded, tipsElement.page, tipsElement.block, typeSelectedTemp, tipsElement['variation']);
+-  }
+-  if(contentIndexTemp >= 0) {
+-    let contentTemp = self.htmlLoaded[contentIndexTemp].content;
+-    let domTemp = $('<div>').attr('class', 'tips-content-block').css({"width": "400px", "height": "100px"}).html(contentTemp);
+-    $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
+-    $("#" + tipsElement.contentFrame).append(domTemp);
+-  } else {
+-    $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
+-  }
+-};
+-
+-BTSTipsController.prototype.getTipsContentIndex = function (table, page, block, type, variation) {
+-  if (table != undefined && this != undefined && this.isTipsReady) {
+-    let tipsApi = new TipsApi();
+-    //console.log(tipsApi);
+-    return tipsApi.GetUrlIndex(table, page, block, type, variation);
+-  } else {
+-    return -1;
+-  }
+-};
+-
+-BTSTipsController.prototype.updateTipsChangeTab = function (typeSelectedTemp) {
+-  var self = this;
+-  let tipsElement = this.tipsViews.find(item => item.block == typeSelectedTemp);
+-  self.showTipsByTab(tipsElement);
+-};
+-
+-BTSTipsController.prototype.createTipsVariationDir = function (page, block, type, variation) {
+-  try {
+-    if (variation == undefined) {
+-      variation = TIPS_VARIATION;
+-    }
+-    let tipsHtmlDir = dirTips.tipsHtmlDir;
+-    let tipsPageDir = tipsHtmlDir + page + "/";
+-    fs.mkdir(tipsPageDir);
+-    let tipsBlockDir = block !== "" ? tipsPageDir + block + "/" : tipsPageDir;
+-    fs.mkdir(tipsBlockDir);
+-    let tipsTypeDir = type !== "" ? tipsBlockDir + type + "/" : tipsBlockDir;
+-    fs.mkdir(tipsTypeDir);
+-    let tipsVariationDir = variation !== "" ? tipsTypeDir + variation + "/" : tipsTypeDir;
+-    fs.mkdir(tipsVariationDir);
+-
+-    return tipsVariationDir;
+-  } catch (error) {
+-    // console.log(error);
+-    return ""
+-  }
+-};
+-
+-BTSTipsController.prototype.countVariation = function (page, block, type, variation) {
+-  let tipsApi = new TipsApi();
+-  let tbl = TIPS_DEF.TIPS_TABLE[tipsApi.GetLanguageIndex('')][1]; 
+-  let tblindex = tipsApi.GetUrlIndex(tbl, page, block, type, variation);
+-  if(variationCntTemp.findIndex(item => item.page == tbl[tblindex][0] && item.block == tbl[tblindex][1] && item.type == tbl[tblindex][2]) == -1){
+-      var displayedInfo = {page: tbl[tblindex][0], block: tbl[tblindex][1],  type: tbl[tblindex][2]};
+-      variationCntTemp.push(displayedInfo); 
+-      let storageCntArray = $native.app.storage2('tipsVariationCnt');
+-      if(storageCntArray){
+-        let loadArray = JSON.parse(storageCntArray);
+-        let tempIndex = loadArray.findIndex(item => item.page == page && item.block == block && item.type == type);
+-        // console.log(loadArray);
+-        if(tempIndex != -1){
+-          loadArray[tempIndex].variationCnt++;
+-          $native.app.storage2('tipsVariationCnt', JSON.stringify(loadArray));
+-        }else{
+-          displayedInfo.variationCnt = 0;
+-          loadArray.push(displayedInfo);
+-          $native.app.storage2('tipsVariationCnt', JSON.stringify(loadArray));
+-        }
+-      }else{
+-        displayedInfo.variationCnt = 0;
+-        let newArray = [];
+-        newArray.push(displayedInfo);
+-        // console.log(displayedInfo);
+-        $native.app.storage2('tipsVariationCnt', JSON.stringify(newArray));
+-      }
+-    }
+-  };
+-
+-BTSTipsController.prototype.getStorageVariationCnt = function(page, block, type){
+-    var storageCntArray = $native.app.storage2('tipsVariationCnt');
+-    if(storageCntArray){
+-      var loadArray = JSON.parse(storageCntArray);
+-      var variationIndex = loadArray.findIndex(element => element.page == page && element.block == block && element.type == type);
+-      if(variationIndex != -1){
+-        return curVariationCnt = loadArray[variationIndex].variationCnt;
+-      }else{
+-        return curVariationCnt = 0;
+-      }
+-    }else{
+-      return curVariationCnt = 0;
+-    }
+-  };
+-
+-(function () {
+-  window.btsTipsController = new BTSTipsController();
+-})();
++var http = $native.http;
++var fs = $native.fs;
++
++var URL_TIPS = null;
++var DEFAULT_LANGUAGE = 'en'
++
++//const dirTips = null;//makeDirTips();
++var dirTips = null;
++
++var langStr = DEFAULT_LANGUAGE;
++
++
++var tipsVersion = 1;
++var variationCntTemp = [];
++
++async function makeDirTips()  {
++  try {
++    const prefDir = await fs.path('library') + 'pref/';
++    await fs.mkdir(prefDir);
++    await fs.mkdir(prefDir + "tips/");
++    await fs.mkdir(prefDir + "tips_image/");
++
++    const _tipsHtmlDir = prefDir + "tips/" + langStr + "/";
++    await fs.mkdir(_tipsHtmlDir);
++
++    const _tipsImgDir = prefDir + "tips_image/" ;
++
++    return {
++      tipsHtmlDir: _tipsHtmlDir,
++      tipsImgDir: _tipsImgDir,
++    }
++  } catch (error) {
++    // console.log(error);
++    return {
++      tipsHtmlDir: '',
++      tipsImgDir: '',
++    }
++  }
++}
++
++function BTSTipsController() {
++  this.isTipsReady = false;
++  this.htmlLoaded = [];
++  this.tipsViews = [
++    { page: "EDIT", block: "CHAIN",      typeSelect: "",                             contentFrame: "main-chain-frame-1",    multiFrame: false },
++    { page: "EDIT", block: "BOOSTER",    typeSelect: "booster-type-select-box",      contentFrame: "booster-content-page",  multiFrame: false },
++    { page: "EDIT", block: "FX",         typeSelect: "modfx-mod-type-select-box",    contentFrame: "modfx-content-frame",   multiFrame: true  }, // i.e. MOD
++    { page: "EDIT", block: "FX",         typeSelect: "modfx-fx-type-select-box",     contentFrame: "modfx-content-frame",   multiFrame: true  },
++    { page: "EDIT", block: "DELAY",      typeSelect: "delay-delay1-type-select-box", contentFrame: "delay-content-frame",   multiFrame: true  },
++    { page: "EDIT", block: "DELAY",      typeSelect: "delay-delay2-type-select-box", contentFrame: "delay-content-frame",   multiFrame: true  }, // i.e. DELAY2 
++    { page: "EDIT", block: "REVERB",     typeSelect: "reverb-type-select-box",       contentFrame: "reverb-content-frame",  multiFrame: true  },
++    { page: "EDIT", block: "SOLO",       typeSelect: "",                             contentFrame: "solo-content-page",     multiFrame: false },
++    { page: "EDIT", block: "CONTOUR",    typeSelect: "" ,                            contentFrame: "editor-contour-page",   multiFrame: false },
++    { page: "EDIT", block: "PEDAL FX",   typeSelect: "pedalfx-type-select-box",      contentFrame: "pedalfx-content-frame", multiFrame: true  },
++    { page: "EDIT", block: "EQ",         typeSelect: "",                             contentFrame: "eq-content-frame",      multiFrame: true  },
++    { page: "EDIT", block: "EQ",         typeSelect: "",                             contentFrame: "eq2-content-frame",     multiFrame: true  }, // i.e. EQ2
++    { page: "EDIT", block: "NS",         typeSelect: "" ,                            contentFrame: "ns-content-page",       multiFrame: false },
++    { page: "EDIT", block: "SEND/RETURN",typeSelect: "",                             contentFrame: "sr-content-page",       multiFrame: false },
++  ]
++}
++
++const BTS_SERVICE_TIMEOUT_MSEC = 15000;
++BTSTipsController.prototype.SortDefTable = function () {
++  // sort online TIPS_DEF by variation
++  $.each(TIPS_DEF.TIPS_TABLE, function (index, tipDetail) {
++    tipDetail[1] = tipDetail[1].sort((a, b) => b[3] - a[3]); // i.e. VARIATION (9 .. 0)
++    tipDetail[1] = tipDetail[1].sort((a, b) => { var idx = 2; return a[idx] < b[idx] ? -1 : 1; }); // i.e. TYPE      (a .. b)
++    tipDetail[1] = tipDetail[1].sort((a, b) => { var idx = 1; return a[idx] < b[idx] ? -1 : 1; }); // i.e. BLOCK     (a .. b)
++    tipDetail[1] = tipDetail[1].sort((a, b) => { var idx = 0; return a[idx] < b[idx] ? -1 : 1; }); // i.e. PAGE      (a .. b)
++  });
++}
++BTSTipsController.prototype.loadTips = function (urlTips, dataType, successFunc, errorFunc, completeFunc) {
++  $native.http.request({ url: urlTips }, (err, body) => {
++    if (err) {
++      if (typeof errorFunc == 'function') {
++        errorFunc();
++      }
++    } else {
++      if (typeof successFunc == 'function') {
++        successFunc(body);
++      }
++    }
++    if (typeof completeFunc == 'function') {
++      completeFunc();
++    }
++  });
++};
++
++BTSTipsController.prototype.loadTipsLocal = function (urlTips) {
++  try {
++    // ----------------------------------------
++    // load tipsdef.js
++    // ----------------------------------------
++    this.loadTips(
++
++      urlTips.domain + "js/" + urlTips.def,
++      'script',
++
++      // success function
++      (obj) => {
++        this.SortDefTable(); // sort online TIPS_DEF by variation
++        let onlineData = TIPS_DEF;
++        //load from storage
++        let localData = $native.app.storage2('tipsdef');
++        if (localData && localData == JSON.stringify(onlineData)) {
++          window.TIPS_DEF = JSON.parse(localData);
++        } else {
++          window.TIPS_DEF = JSON.stringify(onlineData);
++          $native.app.storage2('tipsdef', JSON.stringify(onlineData)); // update storage
++        }
++      },
++
++      // error function
++      () => {
++      //load from storage if no data on the server
++        let localData = $native.app.storage2('tipsdef');
++        if (localData) {
++          window.TIPS_DEF = JSON.parse(localData);
++        }
++      },
++
++      // complete function
++      () => {
++        // ----------------------------------------
++        // load tipsapi.js
++        // ----------------------------------------
++        this.loadTips(
++          
++          urlTips.domain + "js/" + urlTips.api,
++          'text',
++        
++          // success function
++          async (obj) => {
++            let onlineData = obj;
++            var localData = null;
++
++            //load from storage
++            try {
++              var pathTips = await fs.path('library') + 'pref/';
++              await fs.contents(pathTips).then(async tipsContent => {
++                if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
++                  // this.loadTips(pathTips + "tipsapi.js");
++                  localData = await fs.readString(pathTips + "tipsapi.js")
++                  //$.globalEval(scriptContent);
++                }
++              });
++            } catch (error) {
++              // console.log(error);
++            }
++
++            if (localData && localData == onlineData) {
++              $.globalEval(localData);
++            } else {
++              $.globalEval(onlineData);
++            }
++
++            let tipsApi = new TipsApi();
++            langStr = tipsApi.GetLanguageStr();
++            tipsVersion = tipsApi.GetVersion();
++            dirTips = await makeDirTips();
++
++            if (localData && localData == onlineData) {
++              
++            } else {
++              await fs.writeString(pathTips + "tipsapi.js", onlineData);
++            }
++          },
++        
++          // error
++          async () => {
++            //load from storage if no data on the server
++            var localData = null;
++            try {
++              var pathTips = await fs.path('library') + 'pref/';
++              await fs.contents(pathTips).then(async tipsContent => {
++                if (tipsContent.findIndex(item => item.name == 'tipsapi.js') != -1) {
++                  // this.loadTips(pathTips + "tipsapi.js");
++                  await fs.readString(pathTips + "tipsapi.js").then(scriptContent => {
++                    localData = scriptContent;
++                    $.globalEval(scriptContent);
++                  });
++                }
++              });
++            } catch (error) {
++              // console.log(error);
++            }
++            if (localData) {
++              $.globalEval(localData);
++
++              let tipsApi = new TipsApi();
++              langStr = tipsApi.GetLanguageStr();
++              tipsVersion = tipsApi.GetVersion();
++              dirTips = await makeDirTips();
++            }
++          }
++        );
++        
++      },
++    );
++
++    // ----------------------------------------
++  } catch (e) {
++    // console.log(e.message);
++  }
++};
++
++BTSTipsController.prototype.waitForTipsJsLoaded = function (successFunc) {
++  var self = this;
++  var maxAttempts = 50;
++  var attempts = 0;
++
++  function isTipsJsLoaded() {
++    return typeof TipsApi === 'function' && typeof TIPS_DEF !== 'undefined' && TIPS_DEF !== null;
++  }
++  function checkTipsJsLoaded() {
++    if (isTipsJsLoaded()) {
++      self.isTipsReady = true;
++      successFunc();
++    } else if (attempts < maxAttempts) {
++      attempts++;
++      setTimeout(checkTipsJsLoaded, 100);
++    } else {
++    }
++  }
++  checkTipsJsLoaded();
++}
++
++BTSTipsController.prototype.loadContentHtml = function (url, tipsItemArr, fileName, successFunc, errorFunc) {
 +  $native.http.request({ url: url }, (err, data) => {
 +    if (err) {
-       if (typeof errorFunc == 'function') {
-         errorFunc(fileName, tipsItemArr);
-       }
++      if (typeof errorFunc == 'function') {
++        errorFunc(fileName, tipsItemArr);
++      }
 +    } else {
 +      if (typeof successFunc == 'function') {
 +        successFunc(data, url, fileName, tipsItemArr);
 +      }
-     }
-   });
- };
- 
--BTSTipsController.prototype.tipsImgLoaded = function(src, fullPath, fileName, tipsItemArr) {
++    }
++  });
++};
++
 +BTSTipsController.prototype.tipsImgLoaded = async function(src, fullPath, fileName, tipsItemArr) {
-   const self = this;
-   try {
-     let tipsImgDir = dirTips.tipsImgDir;
-@@ -257,15 +249,15 @@
-     const type = tipsItemArr[2];
-     const variation = tipsItemArr[3];
-     let imgPageDir = tipsImgDir + page + "/";
--    fs.mkdir(imgPageDir);
++  const self = this;
++  try {
++    let tipsImgDir = dirTips.tipsImgDir;
++    if (tipsItemArr.length <= 3) return;
++    const page = tipsItemArr[0];
++    const block = tipsItemArr[1];
++    const type = tipsItemArr[2];
++    const variation = tipsItemArr[3];
++    let imgPageDir = tipsImgDir + page + "/";
 +    await fs.mkdir(imgPageDir);
-     let imgBlockDir = block !== "" ? imgPageDir + block + "/" : imgPageDir;
--    fs.mkdir(imgBlockDir);
++    let imgBlockDir = block !== "" ? imgPageDir + block + "/" : imgPageDir;
 +    await fs.mkdir(imgBlockDir);
-     let imgTypeDir = type !== "" ? imgBlockDir + type + "/" : imgBlockDir;
--    fs.mkdir(imgTypeDir);
++    let imgTypeDir = type !== "" ? imgBlockDir + type + "/" : imgBlockDir;
 +    await fs.mkdir(imgTypeDir);
-     let imgVariationDir = variation !== "" ? imgTypeDir + variation + "/" : imgTypeDir;
--    fs.mkdir(imgVariationDir);
++    let imgVariationDir = variation !== "" ? imgTypeDir + variation + "/" : imgTypeDir;
 +    await fs.mkdir(imgVariationDir);
- 
--    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
++
 +    let tipsVariationDir = await self.createTipsVariationDir(page, block, type, variation);
-     let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
- 
-     let origin = "Local";
-@@ -275,32 +267,35 @@
-         origin = "HTTP";
-     }
-     let imgName = fullPath.substring(fullPath.lastIndexOf('/') + 1)
--    let imgContent = fs.contents(imgVariationDir);
- 
++    let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
++
++    let origin = "Local";
++    if (fullPath.startsWith("https://")) {
++        origin = "HTTPS";
++    } else if (fullPath.startsWith("http://")) {
++        origin = "HTTP";
++    }
++    let imgName = fullPath.substring(fullPath.lastIndexOf('/') + 1)
++    
 +    await fs.contents(imgVariationDir).then(async imgContent => {
-     var targetPath = urlDefinition.TIPS_DOMAIN;
-     if (origin != "Local" || fullPath.includes(targetPath)) {
-       if (imgContent.findIndex(item => item.name == imgName) != -1) {
--        fs.unlink(imgVariationDir + imgName);
++      var targetPath = urlDefinition.TIPS_DOMAIN;
++      if (origin != "Local" || fullPath.includes(targetPath)) {
++        if (imgContent.findIndex(item => item.name == imgName) != -1) {
 +          await fs.unlink(imgVariationDir + imgName);
-       }
- 
-       if(origin != "Local") {
--        http.download(src, imgVariationDir + imgName);
++        }
++
++        if(origin != "Local") {
 +          await http.download(src, imgVariationDir + imgName);
-       } else {
--        fs.copy(fullPath.replace("file:///", ""), imgVariationDir + imgName);
++        } else {
 +          await fs.copy(fullPath.replace("file:///", ""), imgVariationDir + imgName);
-       }
- 
-       // update content html
--      let htmlContents = fs.contents(tipsVariationDir);
++        }
++
++        // update content html
 +        await fs.contents(tipsVariationDir).then(async htmlContents => {
-       if (htmlContents.findIndex(item => item.name == fileName) != -1) {
--        let localContentHtml = fs.readString(tipsVariationDir + fileName);
++          if (htmlContents.findIndex(item => item.name == fileName) != -1) {
 +            await fs.readString(tipsVariationDir + fileName).then(async localContentHtml => {
-         let newContentHtml = localContentHtml.replace(src, imgVariationDir + imgName);
--        fs.writeString(tipsVariationDir + fileName, newContentHtml);
++              let newContentHtml = localContentHtml.replace(src, imgVariationDir + imgName);
 +              await fs.writeString(tipsVariationDir + fileName, newContentHtml);
- 
-         if(htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
-           self.htmlLoaded[htmlLoadedIndex].content = newContentHtml;
-         };
++
++              if(htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
++                self.htmlLoaded[htmlLoadedIndex].content = newContentHtml;
++              };
 +            });
-       }
++          }
 +        });
-     }
++      }
 +    });
-   } catch (error) {
-     // console.error("Failed to load image:" + src);
-   }
-@@ -328,19 +323,19 @@
- 
- BTSTipsController.prototype.updateContentHtml = function () { // called from URLDefinition.prototype._updateTipsApi()
-   var self = this;
--  let updateHtmlToStorage = (htmlContent, url, fileName, _tipDetail) => {
++  } catch (error) {
++    // console.error("Failed to load image:" + src);
++  }
++}
++BTSTipsController.prototype.tipsImgFailed = function(src, fileName, tipsItemArr) {
++  // console.error("Failed to load image:" + src);
++}
++
++BTSTipsController.prototype.saveImageToStorage = function (htmlContent, fileName, tipsItemArr) {
++  var self = this;
++  var regex = /<img([^>]+)src="([^">]+)"/g;
++  htmlContent.replace(regex, function(match, attributes, src) {
++    let img = new Image();
++    img.src = src;
++    img.onload = function() {
++      self.tipsImgLoaded(src, this.src, fileName, tipsItemArr);
++    };
++    img.onerror = function() {
++      self.tipsImgFailed(src, fileName, tipsItemArr);
++    };
++
++    return match;
++  });
++}
++
++BTSTipsController.prototype.updateContentHtml = function () { // called from URLDefinition.prototype._updateTipsApi()
++  var self = this;
 +  let updateHtmlToStorage = async (htmlContent, url, fileName, _tipDetail) => {
-     if (_tipDetail.length <=3) return;
-     const page = _tipDetail[0];
-     const block = _tipDetail[1];
-     const type = _tipDetail[2];
-     const variation = _tipDetail[3];
- 
--    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
--    let tipsVariationContents = fs.contents(tipsVariationDir);
++    if (_tipDetail.length <=3) return;
++    const page = _tipDetail[0];
++    const block = _tipDetail[1];
++    const type = _tipDetail[2];
++    const variation = _tipDetail[3];
++
 +    let tipsVariationDir = await self.createTipsVariationDir(page, block, type, variation);
 +    await fs.contents(tipsVariationDir).then(async tipsVariationContents => {
-     if (tipsVariationContents.findIndex(item => item.name == fileName) != -1) {
--      fs.unlink(tipsVariationDir + fileName); //file exist
++      if (tipsVariationContents.findIndex(item => item.name == fileName) != -1) {
 +        await fs.unlink(tipsVariationDir + fileName); //file exist
-     }
--    fs.writeString(tipsVariationDir + fileName, htmlContent); // create html file
++      }
 +      await fs.writeString(tipsVariationDir + fileName, htmlContent); // create html file
-     let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
-     if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
-       self.htmlLoaded[htmlLoadedIndex] = {
-@@ -352,6 +347,7 @@
-         content: htmlContent
-       };
-     };
++      let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
++      if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
++        self.htmlLoaded[htmlLoadedIndex] = {
++          page,
++          block,
++          type,
++          variation,
++          url: tipsVariationDir + fileName,
++          content: htmlContent
++        };
++      };
 +    });
- 
-     //check and update image
-     setTimeout(() => {
-@@ -359,14 +355,14 @@
-     }, 500);
-   }
- 
--  let updateHtmlFail = (fileName, _tipDetail) => {
++
++    //check and update image
++    setTimeout(() => {
++      self.saveImageToStorage(htmlContent, fileName, _tipDetail);
++    }, 500);
++  }
++
 +  let updateHtmlFail = async (fileName, _tipDetail) => {
-     if (_tipDetail.length <=3) return;
-     const page = _tipDetail[0];
-     const block = _tipDetail[1];
-     const type = _tipDetail[2];
-     const variation = _tipDetail[3];
-     let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
--    let tipsVariationContents = fs.contents(tipsVariationDir);
++    if (_tipDetail.length <=3) return;
++    const page = _tipDetail[0];
++    const block = _tipDetail[1];
++    const type = _tipDetail[2];
++    const variation = _tipDetail[3];
++    let tipsVariationDir = self.createTipsVariationDir(page, block, type, variation);
 +    await fs.contents(tipsVariationDir).then(async tipsVariationContents => {
-     let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
-     if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
-       self.htmlLoaded[htmlLoadedIndex] = {
-@@ -375,9 +371,10 @@
-         type,
-         variation,
-         url: tipsVariationDir + fileName,
--        content: tipsVariationContents.findIndex(item => item.name == fileName) >= 0 ? fs.readString(tipsVariationContents + fileName) : null,
++      let htmlLoadedIndex = self.getTipsContentIndex(this.htmlLoaded, page, block, type, variation);
++      if (htmlLoadedIndex >= 0 && htmlLoadedIndex < self.htmlLoaded.length) {
++        self.htmlLoaded[htmlLoadedIndex] = {
++          page,
++          block,
++          type,
++          variation,
++          url: tipsVariationDir + fileName,
 +          content: tipsVariationContents.findIndex(item => item.name == fileName) >= 0 ? await fs.readString(tipsVariationContents + fileName) : null,
-       };
-     };
++        };
++      };
 +    });
-   }
- 
-   let successFunc = () => {
-@@ -501,20 +498,20 @@
-   self.showTipsByTab(tipsElement);
- };
- 
--BTSTipsController.prototype.createTipsVariationDir = function (page, block, type, variation) {
++  }
++
++  let successFunc = () => {
++    let tipsApi = new TipsApi();
++    $.each(TIPS_DEF.TIPS_TABLE[tipsApi.GetLanguageIndex('')][1], function (index, tipDetail) {
++      if (tipDetail.length <=3) return;
++      const page = tipDetail[0];
++      const block = tipDetail[1];
++      const type = tipDetail[2];
++      const variation = tipDetail[3];
++      let htmlPath = tipDetail[4];
++      //let htmlPath = tipsApi.GetUrl(page, block, type, variation);
++      // if html file exist in storage then load from storage, if not then call by ajax
++      // const listHtmlLoaded = self.filterHtmlLoaded(page, block, type, variation);
++      if (htmlPath) {
++        // if (listHtmlLoaded.filter(x => x.htmlPath === htmlPath) > 0) {
++        //   return;
++        // }
++        self.htmlLoaded.push({
++          page,
++          block,
++          type,
++          variation,
++          htmlPath,
++        });
++
++        let fileName = htmlPath.substring(htmlPath.lastIndexOf('/') + 1);
++        var targetPath = urlDefinition.TIPS_DOMAIN;
++        var fullPath = targetPath + 'html/' + langStr + '/' + htmlPath;
++        self.loadContentHtml(fullPath, tipDetail, fileName, updateHtmlToStorage, updateHtmlFail);
++      }
++    });
++
++    setTimeout(function () {
++      self.showTips();
++      //console.log(self.htmlLoaded);
++    }, 3000);
++  }
++
++  this.waitForTipsJsLoaded(successFunc);
++};
++
++BTSTipsController.prototype.showTipsByTab = function (tipsElement) {
++
++  var self = this;
++  let typeSelectedTemp = tipsElement.typeSelect ? $("#" + tipsElement.typeSelect + ">p").text() : "";
++  let variationTemp = self.getStorageVariationCnt(tipsElement.page, tipsElement.block, typeSelectedTemp);
++
++  let contentIndexTemp = -1;
++  if (self.isTipsReady) {
++    contentIndexTemp = self.getTipsContentIndex(this.htmlLoaded, tipsElement.page, tipsElement.block, typeSelectedTemp, variationTemp);
++  }
++  if (contentIndexTemp >= 0){//} && self.htmlLoaded.length > 0) {
++    let contentTemp = self.htmlLoaded[contentIndexTemp].content;
++    let domTemp = $('<div>').attr('class', 'tips-content-block').css({"width": "400px", "height": "100px"}).html(contentTemp);
++
++      if(tipsElement.multiFrame && !typeSelectedTemp) {
++        $("#" + tipsElement.contentFrame + '>div').find(".tips-content-block").remove();
++        $("#" + tipsElement.contentFrame + '>div').append(domTemp);
++      } else if(tipsElement.multiFrame) {
++        $("#" + tipsElement.contentFrame + '>div[displayed != none]').find(".tips-content-block").remove();
++        $("#" + tipsElement.contentFrame + '>div[displayed != none]').append(domTemp);
++      } else {
++        $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
++        $("#" + tipsElement.contentFrame).append(domTemp);
++      }
++
++      self.countVariation(tipsElement.page, tipsElement.block, typeSelectedTemp, variationTemp);
++      
++  } else {
++    $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
++  }
++};
++
++BTSTipsController.prototype.showTips = function () {
++  var self = this;
++  $.each(this.tipsViews, function (index, tipsElement) {
++    // self.showTipsByTab(tipsElement);
++
++    //effect type selectbox changed
++    if(tipsElement.typeSelect) {
++      $("#" + tipsElement.typeSelect).on('elf-changed', function(e, v) {
++        setTimeout(() => {
++          self.showTipsByTab(tipsElement);
++        }, 500);
++      });
++    }
++  });
++};
++
++BTSTipsController.prototype.showTipsChain = function (typeSelectedTemp) {
++  var self = this;
++  let tipsElement = self.tipsViews.find(item => item.block == "CHAIN");
++  let contentIndexTemp = -1;
++  if (self.isTipsReady) {
++    contentIndexTemp = self.getTipsContentIndex(this.htmlLoaded, tipsElement.page, tipsElement.block, typeSelectedTemp, tipsElement['variation']);
++  }
++  if(contentIndexTemp >= 0) {
++    let contentTemp = self.htmlLoaded[contentIndexTemp].content;
++    let domTemp = $('<div>').attr('class', 'tips-content-block').css({"width": "400px", "height": "100px"}).html(contentTemp);
++    $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
++    $("#" + tipsElement.contentFrame).append(domTemp);
++  } else {
++    $("#" + tipsElement.contentFrame).find(".tips-content-block").remove();
++  }
++};
++
++BTSTipsController.prototype.getTipsContentIndex = function (table, page, block, type, variation) {
++  if (table != undefined && this != undefined && this.isTipsReady) {
++    let tipsApi = new TipsApi();
++    //console.log(tipsApi);
++    return tipsApi.GetUrlIndex(table, page, block, type, variation);
++  } else {
++    return -1;
++  }
++};
++
++BTSTipsController.prototype.updateTipsChangeTab = function (typeSelectedTemp) {
++  var self = this;
++  let tipsElement = this.tipsViews.find(item => item.block == typeSelectedTemp);
++  self.showTipsByTab(tipsElement);
++};
++
 +BTSTipsController.prototype.createTipsVariationDir = async function (page, block, type, variation) {
-   try {
-     if (variation == undefined) {
-       variation = TIPS_VARIATION;
-     }
-     let tipsHtmlDir = dirTips.tipsHtmlDir;
-     let tipsPageDir = tipsHtmlDir + page + "/";
--    fs.mkdir(tipsPageDir);
++  try {
++    if (variation == undefined) {
++      variation = TIPS_VARIATION;
++    }
++    let tipsHtmlDir = dirTips.tipsHtmlDir;
++    let tipsPageDir = tipsHtmlDir + page + "/";
 +    await fs.mkdir(tipsPageDir);
-     let tipsBlockDir = block !== "" ? tipsPageDir + block + "/" : tipsPageDir;
--    fs.mkdir(tipsBlockDir);
++    let tipsBlockDir = block !== "" ? tipsPageDir + block + "/" : tipsPageDir;
 +    await fs.mkdir(tipsBlockDir);
-     let tipsTypeDir = type !== "" ? tipsBlockDir + type + "/" : tipsBlockDir;
--    fs.mkdir(tipsTypeDir);
++    let tipsTypeDir = type !== "" ? tipsBlockDir + type + "/" : tipsBlockDir;
 +    await fs.mkdir(tipsTypeDir);
-     let tipsVariationDir = variation !== "" ? tipsTypeDir + variation + "/" : tipsTypeDir;
--    fs.mkdir(tipsVariationDir);
++    let tipsVariationDir = variation !== "" ? tipsTypeDir + variation + "/" : tipsTypeDir;
 +    await fs.mkdir(tipsVariationDir);
- 
-     return tipsVariationDir;
-   } catch (error) {
-diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/url_definition.js html/js/businesslogic/bts/url_definition.js
++
++    return tipsVariationDir;
++  } catch (error) {
++    // console.log(error);
++    return ""
++  }
++};
++
++BTSTipsController.prototype.countVariation = function (page, block, type, variation) {
++  let tipsApi = new TipsApi();
++  let tbl = TIPS_DEF.TIPS_TABLE[tipsApi.GetLanguageIndex('')][1]; 
++  let tblindex = tipsApi.GetUrlIndex(tbl, page, block, type, variation);
++  if(variationCntTemp.findIndex(item => item.page == tbl[tblindex][0] && item.block == tbl[tblindex][1] && item.type == tbl[tblindex][2]) == -1){
++      var displayedInfo = {page: tbl[tblindex][0], block: tbl[tblindex][1],  type: tbl[tblindex][2]};
++      variationCntTemp.push(displayedInfo); 
++      let storageCntArray = $native.app.storage2('tipsVariationCnt');
++      if(storageCntArray){
++        let loadArray = JSON.parse(storageCntArray);
++        let tempIndex = loadArray.findIndex(item => item.page == page && item.block == block && item.type == type);
++        // console.log(loadArray);
++        if(tempIndex != -1){
++          loadArray[tempIndex].variationCnt++;
++          $native.app.storage2('tipsVariationCnt', JSON.stringify(loadArray));
++        }else{
++          displayedInfo.variationCnt = 0;
++          loadArray.push(displayedInfo);
++          $native.app.storage2('tipsVariationCnt', JSON.stringify(loadArray));
++        }
++      }else{
++        displayedInfo.variationCnt = 0;
++        let newArray = [];
++        newArray.push(displayedInfo);
++        // console.log(displayedInfo);
++        $native.app.storage2('tipsVariationCnt', JSON.stringify(newArray));
++      }
++    }
++  };
++
++BTSTipsController.prototype.getStorageVariationCnt = function(page, block, type){
++    var storageCntArray = $native.app.storage2('tipsVariationCnt');
++    if(storageCntArray){
++      var loadArray = JSON.parse(storageCntArray);
++      var variationIndex = loadArray.findIndex(element => element.page == page && element.block == block && element.type == type);
++      if(variationIndex != -1){
++        return curVariationCnt = loadArray[variationIndex].variationCnt;
++      }else{
++        return curVariationCnt = 0;
++      }
++    }else{
++      return curVariationCnt = 0;
++    }
++  };
++
++(function () {
++  window.btsTipsController = new BTSTipsController();
++})();
+diff '--color=auto' -urN html_unmodified/js/businesslogic/bts/url_definition.js html/js/businesslogic/bts/url_definition.js
 --- html_unmodified/js/businesslogic/bts/url_definition.js	2025-06-28 15:25:51.669823841 -0400
 +++ html/js/businesslogic/bts/url_definition.js	2025-06-27 20:15:03.005563135 -0400
-@@ -101,38 +101,41 @@
-       completeFunc();
-     }
-   };
+@@ -1,253 +1,256 @@
+-/**
+- * [概要]
+- * URL取得処理
+- *
+- * [使用箇所]
+- * index.jsでurlDefinition.fetchUrlDefinition()を呼び出し、url定義を取得。
+- * その後はurlDefinition.BTC_DOMAINのように取得したURLを各箇所で用いる。
+- *
+- */
+-
+-/**
+- *
+- * @constructor
+- */
+-var URLDefinition = function () {
+-  this.MODEL = ProductSetting.toneCentral.info().model;
+-  if (this.MODEL === undefined) {
+-    this.MODEL = ProductSetting.name;
+-  }
+-
+-  // json ver
+-  this.BTC_VERSION = '';
+-
+-  // BTC
+-  this.BTC_DOMAIN = '';
+-  this.BTC_DATA_API = '';
+-  this.BTC_LIVESET_FILE = '';
+-
+-  // Roland
+-  this.API_DOMAIN = '';
+-  this.API_USER = '';
+-  this.API_STATUS_LOGS = '';
+-  this.API_UPDATE_LOGS = '';
+-  this.API_PATCH_USE_LOGS = '';
+-  this.API_LIVESET_ADD_LOGS = '';
+-  this.API_LIVESET_LOGS = '';
+-  this.API_YOUTUBE_LOGS = '';
+-  this.API_SOUND_CLOUD_LOGS = '';
+-
+-  // Sound Cloud
+-  this.SC_DOMAIN = '';
+-  this.SC_CLIENT_ID = '';
+-  this.SC_RESOLVE = '';
+-
+-  // Youtube
+-  this.YOUTUBE_URL = '';
+-
+-  // マニュアル
+-  this.OWNERS_MANUALS_JA = 'https://www.boss.info/jp/products/katana-50_gen_3/support/';
+-  this.OWNERS_MANUALS_EN = 'https://www.boss.info/global/products/katana-50_gen_3/support/';
+-
+-  // ドライバーアップデート
+-  this.UPDATES_DRIVERS_JA = 'https://www.boss.info/jp/products/katana-50_gen_3/downloads/';
+-  this.UPDATES_DRIVERS_EN = 'https://www.boss.info/global/products/katana-50_gen_3/downloads/';
+-
+-  // tips
+-  this.TIPS_DOMAIN = null;
+-  this.TIPS_MODE = 0; // 0:pub, 1:dev, 2:local
+-};
+-
+-URLDefinition.prototype.execURL = function (url) {
+-  if (url === '') {
+-    processingController.start(function (index) {
+-      var hasCanceled = false;
+-      urlDefinition.fetchUrlDefinition(function () {
+-        if (hasCanceled) {
+-          return;
+-        }
+-        processingController.finish(index);
+-        $native.fs.exec(url);
+-      });
+-      return function () {
+-        hasCanceled = true;
+-      };
+-    });
+-  } else {
+-    $native.fs.exec(url);
+-  }
+-}
+-
+-/**
+- * サーバから各URLを取得
+- * 起動時に呼び出す必要有り
+- */
+-URLDefinition.prototype.fetchUrlDefinition = function (completeFunc) {
+-  var self = this;
+-  var result = { urlObj: null, isSuccess: false };
+-  var isOnLine = navigator.onLine;
+-
+-  const completeHndl = () => {
+-    let urlObj = {};
+-    if (result.urlObj !== null && result.isSuccess) {
+-      urlObj = result.urlObj;
+-    } else {
+-      urlObj = {};
+-    }
+-    self._updateTipsApi(urlObj);
+-    self._setUrlDefinition(urlObj);
+-    self._updateProductSettingManual();
+-    if (typeof completeFunc === 'function') {
+-      completeFunc();
+-    }
+-  };
 -  $.ajax({
 -    url: ProductSetting.toneCentral.info().url,
 -    type: 'GET',
@@ -557,21 +3804,255 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/url_definition.js 
 -      result.isSuccess = true;
 -    },
 -    error: function () {
-+
-+  $native.http.request({ url: ProductSetting.toneCentral.info().url }, (err, body) => {
-+    if (err) {
-       result.urlObj = null;
-       result.isSuccess = false;
- 
-       if (ProductSetting.toneCentral.devMode == false) {
-         /* PIDDまでUUIDで表現された仮ファイルを取得する処理 */
-         const urlSubstitute = ProductSetting.toneCentral.info().urlSubstitute
+-      result.urlObj = null;
+-      result.isSuccess = false;
+-
+-      if (ProductSetting.toneCentral.devMode == false) {
+-        /* PIDDまでUUIDで表現された仮ファイルを取得する処理 */
+-        const urlSubstitute = ProductSetting.toneCentral.info().urlSubstitute
 -        $.ajax({
 -          url: urlSubstitute,
 -          type: 'GET',
 -          dataType: 'json',
 -          success: function (obj) {
 -            result.urlObj = obj;
+-            result.isSuccess = true;
+-          },
+-          complete: completeHndl
+-        });
+-      }
+-    },
+-    complete: completeHndl
+-  });
+-};
+-
+-/**
+- * 取得したJSONをクラスメンバに代入(private method)
+- * @param urlObj
+- * @private
+- */
+-URLDefinition.prototype._setUrlDefinition = function (urlObj) {
+-  // undefinedを空文字に変換する関数
+-  var convertUndefined = function (str) {
+-    return str === undefined ? '' : str;
+-  };
+-
+-  var btcObj = urlObj.btc;
+-  var apiObj = urlObj.api;
+-  var externalServiceObj = urlObj.external_service;
+-  var supportObj = urlObj.support;
+-
+-  this.BTC_VERSION = convertUndefined(urlObj.version)
+-
+-  if (btcObj !== undefined) {
+-    this.BTC_DOMAIN = convertUndefined(btcObj.domain);
+-    this.BTC_LIVESET_FILE = convertUndefined(btcObj.liveset_file);
+-    this.BTC_DATA_API = convertUndefined(btcObj.dataapi);
+-  }
+-  if (apiObj !== undefined) {
+-    this.API_DOMAIN = convertUndefined(apiObj.domain);
+-    this.API_USER = convertUndefined(apiObj.user);
+-    this.API_STATUS_LOGS = convertUndefined(apiObj.statuslogs);
+-    this.API_UPDATE_LOGS = convertUndefined(apiObj.updatelogs);
+-    this.API_PATCH_USE_LOGS = convertUndefined(apiObj.patchuselogs);
+-    this.API_LIVESET_ADD_LOGS = convertUndefined(apiObj.livesetaddlogs);
+-    this.API_LIVESET_LOGS = convertUndefined(apiObj.livesetlogs);
+-    this.API_YOUTUBE_LOGS = convertUndefined(apiObj.youtubelogs);
+-    this.API_SOUND_CLOUD_LOGS = convertUndefined(apiObj.soundcloudlogs);
+-  }
+-  if (externalServiceObj !== undefined) {
+-    if (externalServiceObj.soundcloud !== undefined) {
+-      var soundCloudObj = externalServiceObj.soundcloud;
+-      this.SC_DOMAIN = convertUndefined(soundCloudObj.domain);
+-      this.SC_CLIENT_ID = convertUndefined(soundCloudObj.client_id);
+-      this.SC_RESOLVE = convertUndefined(soundCloudObj.resolve);
+-    }
+-    if (externalServiceObj.youtube !== undefined) {
+-      var youtubeObj = externalServiceObj.youtube;
+-      this.YOUTUBE_URL = convertUndefined(youtubeObj.url);
+-    }
+-  }
+-  if (supportObj !== undefined) {
+-    if (supportObj.owners_manuals !== undefined) {
+-      var manuals = supportObj.owners_manuals;
+-      this.OWNERS_MANUALS_JA = convertUndefined(manuals.jp);
+-      this.OWNERS_MANUALS_EN = convertUndefined(manuals.en);
+-    }
+-    if (supportObj.updates_drivers !== undefined) {
+-      var updatesDrivers = supportObj.updates_drivers;
+-      this.UPDATES_DRIVERS_JA = convertUndefined(updatesDrivers.jp);
+-      this.UPDATES_DRIVERS_EN = convertUndefined(updatesDrivers.en);
+-    }
+-  }
+-};
+-
+-URLDefinition.prototype._updateTipsApi = function (urlObj) {
+-  // undefinedを空文字に変換する関数
+-  var convertUndefined = function (str) {
+-    return str === undefined ? '' : str;
+-  };
+-
+-  if (btsTipsController.isTipsReady) {
+-    return; // TIPS 切り替え非対応.
+-  }
+-
+-  var isOnLine = navigator.onLine;
+-  var tipsObj = {};
+-
+-  if (urlObj.tips !== undefined) {
+-    tipsObj.domain = convertUndefined(urlObj.tips.domain);
+-    tipsObj.api = convertUndefined(urlObj.tips.api);
+-    tipsObj.def = convertUndefined(urlObj.tips.def);
+-    }else { // load local
+-    tipsObj.api = "tipsapi.js";
+-    tipsObj.def = "tipsdef.js";
+-    tipsObj.domain = ProductSetting.toneCentral.tips_dev_local.url;
+-  } 
+-
+-  if (isOnLine && !btsTipsController.isTipsReady && tipsObj.domain != "") {
+-    urlDefinition.TIPS_MODE = ProductSetting.toneCentral.devMode ? 1 : 0; // i.e. 0:pub, 1:dev
+-  } else {
+-    // console.log("url error1:" + tipsObj.domain);
+-    //if (tipsObj.domain == "") // 34ea9a27dd767be7.json の domain が空白の場合のみ有効にする.
+-    {
+-      tipsObj.domain = ProductSetting.toneCentral.tips_dev_local.url;
+-    }
+-    this.TIPS_MODE = 2; // i.e. 2:local
+-  }
+-  btsTipsController.loadTipsLocal(tipsObj);
+-
+-  btsTipsController.updateContentHtml();
+-  this.TIPS_DOMAIN = tipsObj.domain;
+-  initializeMenuPage();
+-};
+-
+-/**
+- * ProductSetting内のマニュアル定義を書き換え
+- * @private
+- */
+-URLDefinition.prototype._updateProductSettingManual = function () {
+-  ProductSetting.manual.ja = this.OWNERS_MANUALS_JA;
+-  ProductSetting.manual.en = this.OWNERS_MANUALS_EN;
+-};
+-
+-/**
+- * インスタンスを作成
+- */
+-(function () {
+-  window.urlDefinition = new URLDefinition;
+-})();
++/**
++ * [概要]
++ * URL取得処理
++ *
++ * [使用箇所]
++ * index.jsでurlDefinition.fetchUrlDefinition()を呼び出し、url定義を取得。
++ * その後はurlDefinition.BTC_DOMAINのように取得したURLを各箇所で用いる。
++ *
++ */
++
++/**
++ *
++ * @constructor
++ */
++var URLDefinition = function () {
++  this.MODEL = ProductSetting.toneCentral.info().model;
++  if (this.MODEL === undefined) {
++    this.MODEL = ProductSetting.name;
++  }
++
++  // json ver
++  this.BTC_VERSION = '';
++
++  // BTC
++  this.BTC_DOMAIN = '';
++  this.BTC_DATA_API = '';
++  this.BTC_LIVESET_FILE = '';
++
++  // Roland
++  this.API_DOMAIN = '';
++  this.API_USER = '';
++  this.API_STATUS_LOGS = '';
++  this.API_UPDATE_LOGS = '';
++  this.API_PATCH_USE_LOGS = '';
++  this.API_LIVESET_ADD_LOGS = '';
++  this.API_LIVESET_LOGS = '';
++  this.API_YOUTUBE_LOGS = '';
++  this.API_SOUND_CLOUD_LOGS = '';
++
++  // Sound Cloud
++  this.SC_DOMAIN = '';
++  this.SC_CLIENT_ID = '';
++  this.SC_RESOLVE = '';
++
++  // Youtube
++  this.YOUTUBE_URL = '';
++
++  // マニュアル
++  this.OWNERS_MANUALS_JA = 'https://www.boss.info/jp/products/katana-50_gen_3/support/';
++  this.OWNERS_MANUALS_EN = 'https://www.boss.info/global/products/katana-50_gen_3/support/';
++
++  // ドライバーアップデート
++  this.UPDATES_DRIVERS_JA = 'https://www.boss.info/jp/products/katana-50_gen_3/downloads/';
++  this.UPDATES_DRIVERS_EN = 'https://www.boss.info/global/products/katana-50_gen_3/downloads/';
++
++  // tips
++  this.TIPS_DOMAIN = null;
++  this.TIPS_MODE = 0; // 0:pub, 1:dev, 2:local
++};
++
++URLDefinition.prototype.execURL = function (url) {
++  if (url === '') {
++    processingController.start(function (index) {
++      var hasCanceled = false;
++      urlDefinition.fetchUrlDefinition(function () {
++        if (hasCanceled) {
++          return;
++        }
++        processingController.finish(index);
++        $native.fs.exec(url);
++      });
++      return function () {
++        hasCanceled = true;
++      };
++    });
++  } else {
++    $native.fs.exec(url);
++  }
++}
++
++/**
++ * サーバから各URLを取得
++ * 起動時に呼び出す必要有り
++ */
++URLDefinition.prototype.fetchUrlDefinition = function (completeFunc) {
++  var self = this;
++  var result = { urlObj: null, isSuccess: false };
++  var isOnLine = navigator.onLine;
++
++  const completeHndl = () => {
++    let urlObj = {};
++    if (result.urlObj !== null && result.isSuccess) {
++      urlObj = result.urlObj;
++    } else {
++      urlObj = {};
++    }
++    self._updateTipsApi(urlObj);
++    self._setUrlDefinition(urlObj);
++    self._updateProductSettingManual();
++    if (typeof completeFunc === 'function') {
++      completeFunc();
++    }
++  };
++
++  $native.http.request({ url: ProductSetting.toneCentral.info().url }, (err, body) => {
++    if (err) {
++      result.urlObj = null;
++      result.isSuccess = false;
++
++      if (ProductSetting.toneCentral.devMode == false) {
++        /* PIDDまでUUIDで表現された仮ファイルを取得する処理 */
++        const urlSubstitute = ProductSetting.toneCentral.info().urlSubstitute
 +        $native.http.request({ url: urlSubstitute }, (err, body) => {
 +            if (err) {
 +                result.urlObj = null;
@@ -582,12 +4063,10 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/url_definition.js 
 +                } catch (e) {
 +                    result.urlObj = body;
 +                }
-             result.isSuccess = true;
--          },
--          complete: completeHndl
++                result.isSuccess = true;
 +            }
 +            completeHndl();
-         });
++        });
 +      } else {
 +        completeHndl();
 +      }
@@ -599,13 +4078,126 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/bts/url_definition.js 
 +        }
 +        result.isSuccess = true;
 +        completeHndl();
-       }
--    },
--    complete: completeHndl
-   });
- };
- 
-diff '--color=auto' -bur html_unmodified/js/businesslogic/btx_controller.js html/js/businesslogic/btx_controller.js
++    }
++  });
++};
++
++/**
++ * 取得したJSONをクラスメンバに代入(private method)
++ * @param urlObj
++ * @private
++ */
++URLDefinition.prototype._setUrlDefinition = function (urlObj) {
++  // undefinedを空文字に変換する関数
++  var convertUndefined = function (str) {
++    return str === undefined ? '' : str;
++  };
++
++  var btcObj = urlObj.btc;
++  var apiObj = urlObj.api;
++  var externalServiceObj = urlObj.external_service;
++  var supportObj = urlObj.support;
++
++  this.BTC_VERSION = convertUndefined(urlObj.version)
++
++  if (btcObj !== undefined) {
++    this.BTC_DOMAIN = convertUndefined(btcObj.domain);
++    this.BTC_LIVESET_FILE = convertUndefined(btcObj.liveset_file);
++    this.BTC_DATA_API = convertUndefined(btcObj.dataapi);
++  }
++  if (apiObj !== undefined) {
++    this.API_DOMAIN = convertUndefined(apiObj.domain);
++    this.API_USER = convertUndefined(apiObj.user);
++    this.API_STATUS_LOGS = convertUndefined(apiObj.statuslogs);
++    this.API_UPDATE_LOGS = convertUndefined(apiObj.updatelogs);
++    this.API_PATCH_USE_LOGS = convertUndefined(apiObj.patchuselogs);
++    this.API_LIVESET_ADD_LOGS = convertUndefined(apiObj.livesetaddlogs);
++    this.API_LIVESET_LOGS = convertUndefined(apiObj.livesetlogs);
++    this.API_YOUTUBE_LOGS = convertUndefined(apiObj.youtubelogs);
++    this.API_SOUND_CLOUD_LOGS = convertUndefined(apiObj.soundcloudlogs);
++  }
++  if (externalServiceObj !== undefined) {
++    if (externalServiceObj.soundcloud !== undefined) {
++      var soundCloudObj = externalServiceObj.soundcloud;
++      this.SC_DOMAIN = convertUndefined(soundCloudObj.domain);
++      this.SC_CLIENT_ID = convertUndefined(soundCloudObj.client_id);
++      this.SC_RESOLVE = convertUndefined(soundCloudObj.resolve);
++    }
++    if (externalServiceObj.youtube !== undefined) {
++      var youtubeObj = externalServiceObj.youtube;
++      this.YOUTUBE_URL = convertUndefined(youtubeObj.url);
++    }
++  }
++  if (supportObj !== undefined) {
++    if (supportObj.owners_manuals !== undefined) {
++      var manuals = supportObj.owners_manuals;
++      this.OWNERS_MANUALS_JA = convertUndefined(manuals.jp);
++      this.OWNERS_MANUALS_EN = convertUndefined(manuals.en);
++    }
++    if (supportObj.updates_drivers !== undefined) {
++      var updatesDrivers = supportObj.updates_drivers;
++      this.UPDATES_DRIVERS_JA = convertUndefined(updatesDrivers.jp);
++      this.UPDATES_DRIVERS_EN = convertUndefined(updatesDrivers.en);
++    }
++  }
++};
++
++URLDefinition.prototype._updateTipsApi = function (urlObj) {
++  // undefinedを空文字に変換する関数
++  var convertUndefined = function (str) {
++    return str === undefined ? '' : str;
++  };
++
++  if (btsTipsController.isTipsReady) {
++    return; // TIPS 切り替え非対応.
++  }
++
++  var isOnLine = navigator.onLine;
++  var tipsObj = {};
++
++  if (urlObj.tips !== undefined) {
++    tipsObj.domain = convertUndefined(urlObj.tips.domain);
++    tipsObj.api = convertUndefined(urlObj.tips.api);
++    tipsObj.def = convertUndefined(urlObj.tips.def);
++    }else { // load local
++    tipsObj.api = "tipsapi.js";
++    tipsObj.def = "tipsdef.js";
++    tipsObj.domain = ProductSetting.toneCentral.tips_dev_local.url;
++  } 
++
++  if (isOnLine && !btsTipsController.isTipsReady && tipsObj.domain != "") {
++    urlDefinition.TIPS_MODE = ProductSetting.toneCentral.devMode ? 1 : 0; // i.e. 0:pub, 1:dev
++  } else {
++    // console.log("url error1:" + tipsObj.domain);
++    //if (tipsObj.domain == "") // 34ea9a27dd767be7.json の domain が空白の場合のみ有効にする.
++    {
++      tipsObj.domain = ProductSetting.toneCentral.tips_dev_local.url;
++    }
++    this.TIPS_MODE = 2; // i.e. 2:local
++  }
++  btsTipsController.loadTipsLocal(tipsObj);
++
++  btsTipsController.updateContentHtml();
++  this.TIPS_DOMAIN = tipsObj.domain;
++  initializeMenuPage();
++};
++
++/**
++ * ProductSetting内のマニュアル定義を書き換え
++ * @private
++ */
++URLDefinition.prototype._updateProductSettingManual = function () {
++  ProductSetting.manual.ja = this.OWNERS_MANUALS_JA;
++  ProductSetting.manual.en = this.OWNERS_MANUALS_EN;
++};
++
++/**
++ * インスタンスを作成
++ */
++(function () {
++  window.urlDefinition = new URLDefinition;
++})();
+diff '--color=auto' -urN html_unmodified/js/businesslogic/btx_controller.js html/js/businesslogic/btx_controller.js
 --- html_unmodified/js/businesslogic/btx_controller.js	2025-06-28 15:25:51.685977688 -0400
 +++ html/js/businesslogic/btx_controller.js	2025-06-27 20:47:11.493395082 -0400
 @@ -342,7 +342,7 @@
@@ -634,7 +4226,7 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/btx_controller.js html
                      let liveset = new LibrarianModel('', librarianCommonInfo.settingMode);
                      liveset.load(tslJson);
                      if (liveset.cells[0].length > librarianCommonInfo.maxPatchNum) {
-diff '--color=auto' -bur html_unmodified/js/businesslogic/system_controller.js html/js/businesslogic/system_controller.js
+diff '--color=auto' -urN html_unmodified/js/businesslogic/system_controller.js html/js/businesslogic/system_controller.js
 --- html_unmodified/js/businesslogic/system_controller.js	2025-06-28 15:25:51.686087373 -0400
 +++ html/js/businesslogic/system_controller.js	2025-06-27 20:48:52.125335961 -0400
 @@ -57,7 +57,7 @@
@@ -657,4 +4249,91 @@ diff '--color=auto' -bur html_unmodified/js/businesslogic/system_controller.js h
  
  		doc = header();
  		for (var i = 0, num = inputs.length; i < num; i++) {
-Only in html/js/lib: native-tauri.js
+diff '--color=auto' -urN html_unmodified/js/lib/native-tauri.js html/js/lib/native-tauri.js
+--- html_unmodified/js/lib/native-tauri.js	1969-12-31 19:00:00.000000000 -0500
++++ html/js/lib/native-tauri.js	2025-06-27 22:04:57.768396194 -0400
+@@ -0,0 +1,84 @@
++const { invoke } = window.__TAURI__.core;
++const { listen } = window.__TAURI__.event;
++
++window.$native = {
++    app: {
++        control: async (cmd) => await invoke('app_control', { cmd }),
++        storage: (key, value) => {
++            if (value === undefined) {
++                return localStorage.getItem(key);
++            }
++            return localStorage.setItem(key, value);
++        },
++        storage2: (key, value) => {
++            if (value === undefined) {
++                return localStorage.getItem(key);
++            }
++            return localStorage.setItem(key, value);
++        },
++        exit: async () => window.__TAURI__.process.exit(),
++        event: {
++            command: async (param1, param2) => {
++                // This is a placeholder. The actual implementation will depend on how
++                // the 'exit' and 'wakeup' commands are handled in the Tauri backend.
++            }
++        },
++    },
++    btx: {
++        event: {
++            // Add event handlers as needed
++        },
++    },
++    fs: {
++        path: async (where) => await invoke('fs_path', { whereStr: where }),
++        mkdir: async (path) => await invoke('fs_mkdir', { path }),
++        contents: async (path) => await invoke('fs_contents', { path }),
++        readString: async (path) => await invoke('fs_read_string', { path }),
++        writeString: async (path, content) => await invoke('fs_write_string', { path, content }),
++        copy: async (from, to) => await invoke('fs_copy', { from, to }),
++        unlink: async (path) => await invoke('fs_unlink', { path }),
++        event: {},
++    },
++    http: {
++        request: async (options, callback) => {
++            invoke('http_request', { options })
++                .then(response => callback(null, response))
++                .catch(error => callback(error));
++        },
++        download: async (url, path) => {
++            return window.__TAURI__.http.download(url, path, {
++                method: 'GET',
++                timeout: 30,
++                headers: {},
++                proxy: null,
++                responseType: 2, // 2 = 'Binary'
++                body: null
++            });
++        }
++    },
++    midi: {
++        input: {
++            endpoints: async () => await invoke('midi_inendpoints'),
++            connect: async (endpoint) => await invoke('midi_inconnect', { endpoint }),
++        },
++        output: {
++            endpoints: async () => await invoke('midi_outendpoints'),
++            connect: async (endpoint) => await invoke('midi_outconnect', { endpoint }),
++        },
++
++        send: async (msg) => await invoke('midi_send', { msg }),
++        event: {},
++    },
++    // Add other namespaces as needed
++};
++
++window.$event = {
++    start: async () => { /* Placeholder */ }
++};
++
++listen('midi_message', (event) => {
++    if (window.$native.midi.event.message) {
++        window.$native.midi.event.message(event.payload[0], event.payload[1]);
++    }
++});
++

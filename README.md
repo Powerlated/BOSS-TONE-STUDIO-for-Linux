@@ -10,11 +10,15 @@ An unofficial port of BOSS TONE STUDIO to Linux.
 
 ### Building
 
-To build the application and place the resulting packages in a directory named `out/`, run:
+To build the application and place the resulting packages (.deb, .rpm, .AppImage) in a directory named `out/`, run:
 
 ```
 docker build . -o out
 ```
+
+## Developing
+
+
 
 ## Supported BOSS TONE STUDIO Versions
 
