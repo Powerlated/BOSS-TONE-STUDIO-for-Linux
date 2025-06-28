@@ -6,7 +6,7 @@ An unofficial port of BOSS TONE STUDIO to Linux.
 
 ### Requirements
 
-1. Docker Engine for Linux: https://docs.docker.com/engine/
+1. Docker Engine for Linux: https://docs.docker.com/engine/install/
 
 ### Building
 
@@ -43,6 +43,6 @@ npm run tauri dev
 
 ## Supported BOSS TONE STUDIO Versions
 
-| Version                           | Status | Notes                                 |
-| --------------------------------- | ------ | ------------------------------------- |
-| BOSS TONE STUDIO for KATANA Gen 3 | 🚧      | All controls that I have tested work. |
+| Version                                     | Status | Notes                                 |
+| ------------------------------------------- | ------ | ------------------------------------- |
+| BOSS TONE STUDIO for KATANA Gen 3 Ver 1.1.0 | 🚧      | All controls that I have tested work. |
